@@ -1,7 +1,7 @@
 #!/bin/bash
 # this is a setup scripts for mysql
-# author: luoning
-# date: 08/30/2014
+# author: lianglirong
+# date: 05/26/2018
 
 # setup mysql
 
