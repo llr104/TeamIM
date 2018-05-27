@@ -8,6 +8,7 @@
 #include "HttpConn.h"
 #include "json/json.h"
 #include "LoginConn.h"
+#include "HttpClient.h"
 #include "HttpParserWrapper.h"
 #include "ipparser.h"
 
@@ -18,6 +19,7 @@ extern map<uint32_t, msg_serv_info_t*>  g_msg_serv_info;
 extern IpParser* pIpParser;
 extern string strMsfsUrl;
 extern string strDiscovery;
+extern string httpMsgServer;
 
 // conn_handle 从0开始递增，可以防止因socket handle重用引起的一些冲突
 static uint32_t g_conn_handle_generator = 0;
@@ -194,6 +196,9 @@ void CHttpConn::OnRead()
 		if (strncmp(url.c_str(), "/msg_server", 11) == 0) {
             string content = m_cHttpParser.GetBodyContent();
             _HandleMsgServRequest(url, content);
+		} else if(strncmp(url.c_str(), "/register", 11) == 0) {
+            string content = m_cHttpParser.GetBodyContent();
+            _HandleRegisterRequest(url, content);
 		} else {
 			log("url unknown, url=%s ", url.c_str());
 			Close();
@@ -308,6 +313,17 @@ void CHttpConn::_HandleMsgServRequest(string& url, string& post_data)
         return;
     }
 }
+
+/*注册*/
+void CHttpConn::_HandleRegisterRequest(string& url, string& post_data)
+{
+   log("CHttpConn _HandleRegisterRequest：%s",post_data.c_str());
+   CHttpClient httpClient;
+   string strResponse;
+   httpClient.Post(httpMsgServer,post_data,strResponse);
+   
+}
+
 
 void CHttpConn::OnWriteComlete()
 {

@@ -15,6 +15,7 @@
 IpParser* pIpParser = NULL;
 string strMsfsUrl;
 string strDiscovery;//发现获取地址
+string httpMsgServer; 
 void client_callback(void* callback_data, uint8_t msg, uint32_t handle, void* pParam)
 {
 	if (msg == NETLIB_MSG_CONNECT)
@@ -78,6 +79,7 @@ int main(int argc, char* argv[])
 	char* str_msg_server_port = config_file.GetConfigName("MsgServerPort");
     char* str_msfs_url = config_file.GetConfigName("msfs");
     char* str_discovery = config_file.GetConfigName("discovery");
+	char* str_httpMsgServer = config_file.GetConfigName("httpMsgServer");
 
 	if (!msg_server_listen_ip || !str_msg_server_port || !http_listen_ip
         || !str_http_port || !str_msfs_url || !str_discovery) {
@@ -90,6 +92,7 @@ int main(int argc, char* argv[])
     uint16_t http_port = atoi(str_http_port);
     strMsfsUrl = str_msfs_url;
     strDiscovery = str_discovery;
+	httpMsgServer = str_httpMsgServer;
     
     
     pIpParser = new IpParser();
@@ -120,7 +123,7 @@ int main(int argc, char* argv[])
     }
     
 
-			printf("server start listen on:\nFor client %s:%d\nFor MsgServer: %s:%d\nFor http:%s:%d\n",
+	printf("server start listen on:\nFor client %s:%d\nFor MsgServer: %s:%d\nFor http:%s:%d\n",
 			client_listen_ip, client_port, msg_server_listen_ip, msg_server_port, http_listen_ip, http_port);
 	init_login_conn();
     init_http_conn();
