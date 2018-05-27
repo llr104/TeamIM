@@ -48,7 +48,7 @@ int32_t CInterLoginStrategy::doRegister(const std::string& strName,
     if (pDBConn)
     {
         //查询是否有账号
-        string strSql = "select * from IMUser where name=" + strName;
+        string strSql = "select * from IMUser where name='" + strName + "'";
         CResultSet* pResultSet = pDBConn->ExecuteQuery(strSql.c_str());
         while (pResultSet->Next()){
             log("user already has: %s",strName.c_str());
@@ -73,11 +73,14 @@ int32_t CInterLoginStrategy::doRegister(const std::string& strName,
         }
     }
 
+    log("doRegister-----ret: %d",Ret);
+
     return Ret;
 }
 
 bool CInterLoginStrategy::_findUser(const std::string &strName,IM::BaseDefine::UserInfo& user)
 {
+    log("_findUser-----: %s",strName.c_str());
     bool bRet = false;
     CDBManager* pDBManger = CDBManager::getInstance();
     CDBConn* pDBConn = pDBManger->GetDBConn("teamtalk_slave");
