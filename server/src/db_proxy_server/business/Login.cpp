@@ -91,8 +91,6 @@ void doLogin(CImPdu* pPdu, uint32_t conn_uuid)
         
         log("%s request login.", strDomain.c_str());
         
-        
-        
         IM::BaseDefine::UserInfo cUser;
         
         if(g_loginStrategy.doLogin(strDomain, strPass, cUser))
@@ -145,6 +143,29 @@ void doLogin(CImPdu* pPdu, uint32_t conn_uuid)
     pPduResp->SetServiceId(IM::BaseDefine::SID_OTHER);
     pPduResp->SetCommandId(IM::BaseDefine::CID_OTHER_VALIDATE_RSP);
     CProxyConn::AddResponsePdu(conn_uuid, pPduResp);
+}
+
+void doRegister(CImPdu* pPdu, uint32_t conn_uuid)
+{
+    log("doRegister-----------");
+    CImPdu* pPduResp = new CImPdu;
+    IM::Login::IMRegisterReq msg;
+    if(msg.ParseFromArray(pPdu->GetBodyData(), pPdu->GetBodyLength()))
+    {
+        string strDomain = msg.user_name();
+        string strPass = msg.password();
+        int32_t sex = msg.sex();
+        string strAvatar = msg.avatar();
+        string strNick = msg.nickname();
+
+        IM::BaseDefine::UserInfo cUser;
+        if(g_loginStrategy.doRegister(strDomain,strPass,strNick,sex,strAvatar,strNick,cUser) == 0){
+            log("doRegister----------- success");
+        }else{
+            log("doRegister----------- fail");
+        }
+
+    }
 }
 
 };

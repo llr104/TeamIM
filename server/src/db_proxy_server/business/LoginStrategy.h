@@ -20,6 +20,11 @@ class CLoginStrategy
 {
 public:
     virtual bool doLogin(const std::string& strName, const std::string& strPass, IM::BaseDefine::UserInfo& user) = 0;
+
+    virtual int32_t doRegister(const std::string& strName, 
+    const std::string& strPass, const std::string& strNick,const int32_t sex,
+    const std::string& strAvatar,IM::BaseDefine::UserInfo& user) = 0;
+
 };
 
 #endif /*defined(__LOGINSTRATEGY_H__) */
