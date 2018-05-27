@@ -176,7 +176,7 @@ void CHttpConn::OnRead()
 	if (m_HttpParser.IsReadAll()) {
 		string url =  m_HttpParser.GetUrl();
 
-		log("CHttpConn url: %s",url);
+		log("CHttpConn url: %s",url.c_str());
 		if (strncmp(url.c_str(), "/query/", 7) == 0) {
 			string content = m_HttpParser.GetBodyContent();
 			CHttpQuery* pQueryInstance = CHttpQuery::GetInstance();
