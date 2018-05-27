@@ -118,5 +118,6 @@ message IMRegisterReq{
 	required string nickname = 3;
 	optional uint32 sex = 4;
 	optional string avatar = 5;
+	optional bytes attach_data = 20;
 }
 
