@@ -14,7 +14,7 @@ import IM.BaseDefine_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='IM.Login.proto',
   package='IM.Login',
-  serialized_pb='\n\x0eIM.Login.proto\x12\x08IM.Login\x1a\x13IM.BaseDefine.proto\"\x0e\n\x0cIMMsgServReq\"q\n\x0cIMMsgServRsp\x12.\n\x0bresult_code\x18\x01 \x02(\x0e\x32\x19.IM.BaseDefine.ResultType\x12\x10\n\x08prior_ip\x18\x02 \x01(\t\x12\x11\n\tbackip_ip\x18\x03 \x01(\t\x12\x0c\n\x04port\x18\x04 \x01(\r\"\xad\x01\n\nIMLoginReq\x12\x11\n\tuser_name\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\x12\x32\n\ronline_status\x18\x03 \x02(\x0e\x32\x1b.IM.BaseDefine.UserStatType\x12.\n\x0b\x63lient_type\x18\x04 \x02(\x0e\x32\x19.IM.BaseDefine.ClientType\x12\x16\n\x0e\x63lient_version\x18\x05 \x01(\t\"\xc8\x01\n\nIMLoginRes\x12\x13\n\x0bserver_time\x18\x01 \x02(\r\x12.\n\x0bresult_code\x18\x02 \x02(\x0e\x32\x19.IM.BaseDefine.ResultType\x12\x15\n\rresult_string\x18\x03 \x01(\t\x12\x32\n\ronline_status\x18\x04 \x01(\x0e\x32\x1b.IM.BaseDefine.UserStatType\x12*\n\tuser_info\x18\x05 \x01(\x0b\x32\x17.IM.BaseDefine.UserInfo\"\r\n\x0bIMLogoutReq\"\"\n\x0bIMLogoutRsp\x12\x13\n\x0bresult_code\x18\x01 \x02(\r\"Q\n\nIMKickUser\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x32\n\x0bkick_reason\x18\x02 \x02(\x0e\x32\x1d.IM.BaseDefine.KickReasonType\"~\n\x10IMDeviceTokenReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x14\n\x0c\x64\x65vice_token\x18\x02 \x02(\t\x12.\n\x0b\x63lient_type\x18\x03 \x01(\x0e\x32\x19.IM.BaseDefine.ClientType\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"8\n\x10IMDeviceTokenRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"$\n\x11IMKickPCClientReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\"9\n\x11IMKickPCClientRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\"N\n\x0fIMPushShieldReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x15\n\rshield_status\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"c\n\x0fIMPushShieldRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x15\n\rshield_status\x18\x03 \x01(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"<\n\x14IMQueryPushShieldReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"h\n\x14IMQueryPushShieldRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x15\n\rshield_status\x18\x03 \x01(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\x42\x1b\n\x17\x63om.mogujie.tt.protobufH\x03')
+  serialized_pb='\n\x0eIM.Login.proto\x12\x08IM.Login\x1a\x13IM.BaseDefine.proto\"\x0e\n\x0cIMMsgServReq\"q\n\x0cIMMsgServRsp\x12.\n\x0bresult_code\x18\x01 \x02(\x0e\x32\x19.IM.BaseDefine.ResultType\x12\x10\n\x08prior_ip\x18\x02 \x01(\t\x12\x11\n\tbackip_ip\x18\x03 \x01(\t\x12\x0c\n\x04port\x18\x04 \x01(\r\"\xad\x01\n\nIMLoginReq\x12\x11\n\tuser_name\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\x12\x32\n\ronline_status\x18\x03 \x02(\x0e\x32\x1b.IM.BaseDefine.UserStatType\x12.\n\x0b\x63lient_type\x18\x04 \x02(\x0e\x32\x19.IM.BaseDefine.ClientType\x12\x16\n\x0e\x63lient_version\x18\x05 \x01(\t\"\xc8\x01\n\nIMLoginRes\x12\x13\n\x0bserver_time\x18\x01 \x02(\r\x12.\n\x0bresult_code\x18\x02 \x02(\x0e\x32\x19.IM.BaseDefine.ResultType\x12\x15\n\rresult_string\x18\x03 \x01(\t\x12\x32\n\ronline_status\x18\x04 \x01(\x0e\x32\x1b.IM.BaseDefine.UserStatType\x12*\n\tuser_info\x18\x05 \x01(\x0b\x32\x17.IM.BaseDefine.UserInfo\"\r\n\x0bIMLogoutReq\"\"\n\x0bIMLogoutRsp\x12\x13\n\x0bresult_code\x18\x01 \x02(\r\"Q\n\nIMKickUser\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x32\n\x0bkick_reason\x18\x02 \x02(\x0e\x32\x1d.IM.BaseDefine.KickReasonType\"~\n\x10IMDeviceTokenReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x14\n\x0c\x64\x65vice_token\x18\x02 \x02(\t\x12.\n\x0b\x63lient_type\x18\x03 \x01(\x0e\x32\x19.IM.BaseDefine.ClientType\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"8\n\x10IMDeviceTokenRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"$\n\x11IMKickPCClientReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\"9\n\x11IMKickPCClientRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\"N\n\x0fIMPushShieldReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x15\n\rshield_status\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"c\n\x0fIMPushShieldRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x15\n\rshield_status\x18\x03 \x01(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"<\n\x14IMQueryPushShieldReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"h\n\x14IMQueryPushShieldRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x15\n\rshield_status\x18\x03 \x01(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"c\n\rIMRegisterReq\x12\x11\n\tuser_name\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\x12\x10\n\x08nickname\x18\x03 \x02(\t\x12\x0b\n\x03sex\x18\x04 \x01(\r\x12\x0e\n\x06\x61vatar\x18\x05 \x01(\tB\x1b\n\x17\x63om.mogujie.tt.protobufH\x03')
 
 
 
@@ -606,6 +606,62 @@ _IMQUERYPUSHSHIELDRSP = _descriptor.Descriptor(
   serialized_end=1323,
 )
 
+
+_IMREGISTERREQ = _descriptor.Descriptor(
+  name='IMRegisterReq',
+  full_name='IM.Login.IMRegisterReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_name', full_name='IM.Login.IMRegisterReq.user_name', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='IM.Login.IMRegisterReq.password', index=1,
+      number=2, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='nickname', full_name='IM.Login.IMRegisterReq.nickname', index=2,
+      number=3, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='sex', full_name='IM.Login.IMRegisterReq.sex', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='avatar', full_name='IM.Login.IMRegisterReq.avatar', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=1325,
+  serialized_end=1424,
+)
+
 _IMMSGSERVRSP.fields_by_name['result_code'].enum_type = IM.BaseDefine_pb2._RESULTTYPE
 _IMLOGINREQ.fields_by_name['online_status'].enum_type = IM.BaseDefine_pb2._USERSTATTYPE
 _IMLOGINREQ.fields_by_name['client_type'].enum_type = IM.BaseDefine_pb2._CLIENTTYPE
@@ -629,6 +685,7 @@ DESCRIPTOR.message_types_by_name['IMPushShieldReq'] = _IMPUSHSHIELDREQ
 DESCRIPTOR.message_types_by_name['IMPushShieldRsp'] = _IMPUSHSHIELDRSP
 DESCRIPTOR.message_types_by_name['IMQueryPushShieldReq'] = _IMQUERYPUSHSHIELDREQ
 DESCRIPTOR.message_types_by_name['IMQueryPushShieldRsp'] = _IMQUERYPUSHSHIELDRSP
+DESCRIPTOR.message_types_by_name['IMRegisterReq'] = _IMREGISTERREQ
 
 class IMMsgServReq(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -719,6 +776,12 @@ class IMQueryPushShieldRsp(_message.Message):
   DESCRIPTOR = _IMQUERYPUSHSHIELDRSP
 
   # @@protoc_insertion_point(class_scope:IM.Login.IMQueryPushShieldRsp)
+
+class IMRegisterReq(_message.Message):
+  __metaclass__ = _reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _IMREGISTERREQ
+
+  # @@protoc_insertion_point(class_scope:IM.Login.IMRegisterReq)
 
 
 DESCRIPTOR.has_options = True

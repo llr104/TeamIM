@@ -260,6 +260,10 @@ public final class IMBaseDefine {
     CID_LOGIN_RES_QUERY_PUSH_SHIELD(14, 271),
     /**
      * <code>CID_LOGIN_RES_REGISTER = 272;</code>
+     *
+     * <pre>
+     *注册
+     * </pre>
      */
     CID_LOGIN_RES_REGISTER(15, 272),
     ;
@@ -363,6 +367,10 @@ public final class IMBaseDefine {
     public static final int CID_LOGIN_RES_QUERY_PUSH_SHIELD_VALUE = 271;
     /**
      * <code>CID_LOGIN_RES_REGISTER = 272;</code>
+     *
+     * <pre>
+     *注册
+     * </pre>
      */
     public static final int CID_LOGIN_RES_REGISTER_VALUE = 272;
 

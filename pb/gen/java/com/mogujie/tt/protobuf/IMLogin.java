@@ -8489,6 +8489,1035 @@ public final class IMLogin {
     // @@protoc_insertion_point(class_scope:IM.Login.IMQueryPushShieldRsp)
   }
 
+  public interface IMRegisterReqOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+
+    // required string user_name = 1;
+    /**
+     * <code>required string user_name = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0110
+     * </pre>
+     */
+    boolean hasUserName();
+    /**
+     * <code>required string user_name = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0110
+     * </pre>
+     */
+    java.lang.String getUserName();
+    /**
+     * <code>required string user_name = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0110
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
+
+    // required string password = 2;
+    /**
+     * <code>required string password = 2;</code>
+     */
+    boolean hasPassword();
+    /**
+     * <code>required string password = 2;</code>
+     */
+    java.lang.String getPassword();
+    /**
+     * <code>required string password = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+
+    // required string nickname = 3;
+    /**
+     * <code>required string nickname = 3;</code>
+     */
+    boolean hasNickname();
+    /**
+     * <code>required string nickname = 3;</code>
+     */
+    java.lang.String getNickname();
+    /**
+     * <code>required string nickname = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getNicknameBytes();
+
+    // optional uint32 sex = 4;
+    /**
+     * <code>optional uint32 sex = 4;</code>
+     */
+    boolean hasSex();
+    /**
+     * <code>optional uint32 sex = 4;</code>
+     */
+    int getSex();
+
+    // optional string avatar = 5;
+    /**
+     * <code>optional string avatar = 5;</code>
+     */
+    boolean hasAvatar();
+    /**
+     * <code>optional string avatar = 5;</code>
+     */
+    java.lang.String getAvatar();
+    /**
+     * <code>optional string avatar = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getAvatarBytes();
+  }
+  /**
+   * Protobuf type {@code IM.Login.IMRegisterReq}
+   */
+  public static final class IMRegisterReq extends
+      com.google.protobuf.GeneratedMessageLite
+      implements IMRegisterReqOrBuilder {
+    // Use IMRegisterReq.newBuilder() to construct.
+    private IMRegisterReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+
+    }
+    private IMRegisterReq(boolean noInit) {}
+
+    private static final IMRegisterReq defaultInstance;
+    public static IMRegisterReq getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public IMRegisterReq getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private IMRegisterReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              userName_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              password_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              nickname_ = input.readBytes();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              sex_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
+              avatar_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<IMRegisterReq> PARSER =
+        new com.google.protobuf.AbstractParser<IMRegisterReq>() {
+      public IMRegisterReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new IMRegisterReq(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IMRegisterReq> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required string user_name = 1;
+    public static final int USER_NAME_FIELD_NUMBER = 1;
+    private java.lang.Object userName_;
+    /**
+     * <code>required string user_name = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0110
+     * </pre>
+     */
+    public boolean hasUserName() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string user_name = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0110
+     * </pre>
+     */
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          userName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string user_name = 1;</code>
+     *
+     * <pre>
+     *cmd id:		0x0110
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required string password = 2;
+    public static final int PASSWORD_FIELD_NUMBER = 2;
+    private java.lang.Object password_;
+    /**
+     * <code>required string password = 2;</code>
+     */
+    public boolean hasPassword() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string password = 2;</code>
+     */
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          password_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string password = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required string nickname = 3;
+    public static final int NICKNAME_FIELD_NUMBER = 3;
+    private java.lang.Object nickname_;
+    /**
+     * <code>required string nickname = 3;</code>
+     */
+    public boolean hasNickname() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string nickname = 3;</code>
+     */
+    public java.lang.String getNickname() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          nickname_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string nickname = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNicknameBytes() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nickname_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional uint32 sex = 4;
+    public static final int SEX_FIELD_NUMBER = 4;
+    private int sex_;
+    /**
+     * <code>optional uint32 sex = 4;</code>
+     */
+    public boolean hasSex() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional uint32 sex = 4;</code>
+     */
+    public int getSex() {
+      return sex_;
+    }
+
+    // optional string avatar = 5;
+    public static final int AVATAR_FIELD_NUMBER = 5;
+    private java.lang.Object avatar_;
+    /**
+     * <code>optional string avatar = 5;</code>
+     */
+    public boolean hasAvatar() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional string avatar = 5;</code>
+     */
+    public java.lang.String getAvatar() {
+      java.lang.Object ref = avatar_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          avatar_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string avatar = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAvatarBytes() {
+      java.lang.Object ref = avatar_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        avatar_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      userName_ = "";
+      password_ = "";
+      nickname_ = "";
+      sex_ = 0;
+      avatar_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasUserName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPassword()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasNickname()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getUserNameBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getPasswordBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getNicknameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeUInt32(4, sex_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getAvatarBytes());
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getUserNameBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getPasswordBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getNicknameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, sex_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getAvatarBytes());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.mogujie.tt.protobuf.IMLogin.IMRegisterReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.mogujie.tt.protobuf.IMLogin.IMRegisterReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.IMLogin.IMRegisterReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.mogujie.tt.protobuf.IMLogin.IMRegisterReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.IMLogin.IMRegisterReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.mogujie.tt.protobuf.IMLogin.IMRegisterReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.IMLogin.IMRegisterReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.mogujie.tt.protobuf.IMLogin.IMRegisterReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.mogujie.tt.protobuf.IMLogin.IMRegisterReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.mogujie.tt.protobuf.IMLogin.IMRegisterReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.mogujie.tt.protobuf.IMLogin.IMRegisterReq prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code IM.Login.IMRegisterReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.mogujie.tt.protobuf.IMLogin.IMRegisterReq, Builder>
+        implements com.mogujie.tt.protobuf.IMLogin.IMRegisterReqOrBuilder {
+      // Construct using com.mogujie.tt.protobuf.IMLogin.IMRegisterReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        userName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        password_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        nickname_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        sex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        avatar_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.mogujie.tt.protobuf.IMLogin.IMRegisterReq getDefaultInstanceForType() {
+        return com.mogujie.tt.protobuf.IMLogin.IMRegisterReq.getDefaultInstance();
+      }
+
+      public com.mogujie.tt.protobuf.IMLogin.IMRegisterReq build() {
+        com.mogujie.tt.protobuf.IMLogin.IMRegisterReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.mogujie.tt.protobuf.IMLogin.IMRegisterReq buildPartial() {
+        com.mogujie.tt.protobuf.IMLogin.IMRegisterReq result = new com.mogujie.tt.protobuf.IMLogin.IMRegisterReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.userName_ = userName_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.password_ = password_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.nickname_ = nickname_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.sex_ = sex_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.avatar_ = avatar_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+
+      public Builder mergeFrom(com.mogujie.tt.protobuf.IMLogin.IMRegisterReq other) {
+        if (other == com.mogujie.tt.protobuf.IMLogin.IMRegisterReq.getDefaultInstance()) return this;
+        if (other.hasUserName()) {
+          bitField0_ |= 0x00000001;
+          userName_ = other.userName_;
+          
+        }
+        if (other.hasPassword()) {
+          bitField0_ |= 0x00000002;
+          password_ = other.password_;
+          
+        }
+        if (other.hasNickname()) {
+          bitField0_ |= 0x00000004;
+          nickname_ = other.nickname_;
+          
+        }
+        if (other.hasSex()) {
+          setSex(other.getSex());
+        }
+        if (other.hasAvatar()) {
+          bitField0_ |= 0x00000010;
+          avatar_ = other.avatar_;
+          
+        }
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasUserName()) {
+          
+          return false;
+        }
+        if (!hasPassword()) {
+          
+          return false;
+        }
+        if (!hasNickname()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.mogujie.tt.protobuf.IMLogin.IMRegisterReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.mogujie.tt.protobuf.IMLogin.IMRegisterReq) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required string user_name = 1;
+      private java.lang.Object userName_ = "";
+      /**
+       * <code>required string user_name = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0110
+       * </pre>
+       */
+      public boolean hasUserName() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string user_name = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0110
+       * </pre>
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          userName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string user_name = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0110
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string user_name = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0110
+       * </pre>
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userName_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required string user_name = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0110
+       * </pre>
+       */
+      public Builder clearUserName() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userName_ = getDefaultInstance().getUserName();
+        
+        return this;
+      }
+      /**
+       * <code>required string user_name = 1;</code>
+       *
+       * <pre>
+       *cmd id:		0x0110
+       * </pre>
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        userName_ = value;
+        
+        return this;
+      }
+
+      // required string password = 2;
+      private java.lang.Object password_ = "";
+      /**
+       * <code>required string password = 2;</code>
+       */
+      public boolean hasPassword() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string password = 2;</code>
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string password = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string password = 2;</code>
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        password_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required string password = 2;</code>
+       */
+      public Builder clearPassword() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        password_ = getDefaultInstance().getPassword();
+        
+        return this;
+      }
+      /**
+       * <code>required string password = 2;</code>
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        password_ = value;
+        
+        return this;
+      }
+
+      // required string nickname = 3;
+      private java.lang.Object nickname_ = "";
+      /**
+       * <code>required string nickname = 3;</code>
+       */
+      public boolean hasNickname() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string nickname = 3;</code>
+       */
+      public java.lang.String getNickname() {
+        java.lang.Object ref = nickname_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          nickname_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string nickname = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNicknameBytes() {
+        java.lang.Object ref = nickname_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nickname_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string nickname = 3;</code>
+       */
+      public Builder setNickname(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        nickname_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required string nickname = 3;</code>
+       */
+      public Builder clearNickname() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        nickname_ = getDefaultInstance().getNickname();
+        
+        return this;
+      }
+      /**
+       * <code>required string nickname = 3;</code>
+       */
+      public Builder setNicknameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        nickname_ = value;
+        
+        return this;
+      }
+
+      // optional uint32 sex = 4;
+      private int sex_ ;
+      /**
+       * <code>optional uint32 sex = 4;</code>
+       */
+      public boolean hasSex() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional uint32 sex = 4;</code>
+       */
+      public int getSex() {
+        return sex_;
+      }
+      /**
+       * <code>optional uint32 sex = 4;</code>
+       */
+      public Builder setSex(int value) {
+        bitField0_ |= 0x00000008;
+        sex_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional uint32 sex = 4;</code>
+       */
+      public Builder clearSex() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        sex_ = 0;
+        
+        return this;
+      }
+
+      // optional string avatar = 5;
+      private java.lang.Object avatar_ = "";
+      /**
+       * <code>optional string avatar = 5;</code>
+       */
+      public boolean hasAvatar() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional string avatar = 5;</code>
+       */
+      public java.lang.String getAvatar() {
+        java.lang.Object ref = avatar_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          avatar_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string avatar = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAvatarBytes() {
+        java.lang.Object ref = avatar_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          avatar_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string avatar = 5;</code>
+       */
+      public Builder setAvatar(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        avatar_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string avatar = 5;</code>
+       */
+      public Builder clearAvatar() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        avatar_ = getDefaultInstance().getAvatar();
+        
+        return this;
+      }
+      /**
+       * <code>optional string avatar = 5;</code>
+       */
+      public Builder setAvatarBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        avatar_ = value;
+        
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:IM.Login.IMRegisterReq)
+    }
+
+    static {
+      defaultInstance = new IMRegisterReq(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:IM.Login.IMRegisterReq)
+  }
+
 
   static {
   }
