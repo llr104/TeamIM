@@ -120,7 +120,7 @@ void CHttpQuery::DispatchQuery(std::string& url, std::string& post_data, CHttpCo
         _QueryChangeMember(strAppKey, value, pHttpConn);
     }
     else if(strcmp(url.c_str(), "/query/register") == 0){
-
+        _QueyRegister(strAppKey, value, pHttpConn);
     }
     else {
         log("url not support ");
