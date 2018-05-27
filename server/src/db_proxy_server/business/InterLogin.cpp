@@ -17,12 +17,12 @@ bool CInterLoginStrategy::doLogin(const std::string &strName, const std::string 
 {
     bool bRet = false;
 
-    if(this._findUser(strName,user) == false)
+    if(this->_findUser(strName,user) == false)
     {
         return bRet;
     }
 
-    string strInPass = strPass + strSalt;
+    string strInPass = strPass + user.salt();
     char szMd5[33];
     CMd5::MD5_Calculate(strInPass.c_str(), strInPass.length(), szMd5);
     string strOutPass(szMd5);
@@ -65,8 +65,8 @@ int32_t CInterLoginStrategy::doRegister(const std::string& strName,
 
         if(CUserModel::getInstance()->insertUser(dbUser))
         {
-            nRet = 0;
-            this._findUser(strName,user);
+            Ret = 0;
+            this->_findUser(strName,user);
         }
         else{
             Ret = 2;
@@ -121,6 +121,7 @@ bool CInterLoginStrategy::_findUser(const std::string &strName,IM::BaseDefine::U
             user.set_status(nStatus);
             user.set_sign_info(strSignInfo);
             user.set_password(strResult);
+            user.set_salt(strSalt);
 
             delete  pResultSet;
         }

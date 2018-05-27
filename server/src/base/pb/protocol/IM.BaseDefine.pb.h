@@ -638,10 +638,34 @@ class UserInfo : public ::google::protobuf::MessageLite {
   inline ::google::protobuf::uint32 status() const;
   inline void set_status(::google::protobuf::uint32 value);
 
-  // optional string sign_info = 11;
+  // optional string password = 11;
+  inline bool has_password() const;
+  inline void clear_password();
+  static const int kPasswordFieldNumber = 11;
+  inline const ::std::string& password() const;
+  inline void set_password(const ::std::string& value);
+  inline void set_password(const char* value);
+  inline void set_password(const char* value, size_t size);
+  inline ::std::string* mutable_password();
+  inline ::std::string* release_password();
+  inline void set_allocated_password(::std::string* password);
+
+  // optional string salt = 12;
+  inline bool has_salt() const;
+  inline void clear_salt();
+  static const int kSaltFieldNumber = 12;
+  inline const ::std::string& salt() const;
+  inline void set_salt(const ::std::string& value);
+  inline void set_salt(const char* value);
+  inline void set_salt(const char* value, size_t size);
+  inline ::std::string* mutable_salt();
+  inline ::std::string* release_salt();
+  inline void set_allocated_salt(::std::string* salt);
+
+  // optional string sign_info = 13;
   inline bool has_sign_info() const;
   inline void clear_sign_info();
-  static const int kSignInfoFieldNumber = 11;
+  static const int kSignInfoFieldNumber = 13;
   inline const ::std::string& sign_info() const;
   inline void set_sign_info(const ::std::string& value);
   inline void set_sign_info(const char* value);
@@ -672,6 +696,10 @@ class UserInfo : public ::google::protobuf::MessageLite {
   inline void clear_has_user_domain();
   inline void set_has_status();
   inline void clear_has_status();
+  inline void set_has_password();
+  inline void clear_has_password();
+  inline void set_has_salt();
+  inline void clear_has_salt();
   inline void set_has_sign_info();
   inline void clear_has_sign_info();
 
@@ -689,6 +717,8 @@ class UserInfo : public ::google::protobuf::MessageLite {
   ::google::protobuf::uint32 status_;
   ::std::string* user_tel_;
   ::std::string* user_domain_;
+  ::std::string* password_;
+  ::std::string* salt_;
   ::std::string* sign_info_;
   #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
   friend void  protobuf_AddDesc_IM_2eBaseDefine_2eproto_impl();
@@ -3030,15 +3060,167 @@ inline void UserInfo::set_status(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:IM.BaseDefine.UserInfo.status)
 }
 
-// optional string sign_info = 11;
-inline bool UserInfo::has_sign_info() const {
+// optional string password = 11;
+inline bool UserInfo::has_password() const {
   return (_has_bits_[0] & 0x00000400u) != 0;
 }
-inline void UserInfo::set_has_sign_info() {
+inline void UserInfo::set_has_password() {
   _has_bits_[0] |= 0x00000400u;
 }
-inline void UserInfo::clear_has_sign_info() {
+inline void UserInfo::clear_has_password() {
   _has_bits_[0] &= ~0x00000400u;
+}
+inline void UserInfo::clear_password() {
+  if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_->clear();
+  }
+  clear_has_password();
+}
+inline const ::std::string& UserInfo::password() const {
+  // @@protoc_insertion_point(field_get:IM.BaseDefine.UserInfo.password)
+  return *password_;
+}
+inline void UserInfo::set_password(const ::std::string& value) {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  password_->assign(value);
+  // @@protoc_insertion_point(field_set:IM.BaseDefine.UserInfo.password)
+}
+inline void UserInfo::set_password(const char* value) {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  password_->assign(value);
+  // @@protoc_insertion_point(field_set_char:IM.BaseDefine.UserInfo.password)
+}
+inline void UserInfo::set_password(const char* value, size_t size) {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  password_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:IM.BaseDefine.UserInfo.password)
+}
+inline ::std::string* UserInfo::mutable_password() {
+  set_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    password_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:IM.BaseDefine.UserInfo.password)
+  return password_;
+}
+inline ::std::string* UserInfo::release_password() {
+  clear_has_password();
+  if (password_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = password_;
+    password_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UserInfo::set_allocated_password(::std::string* password) {
+  if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete password_;
+  }
+  if (password) {
+    set_has_password();
+    password_ = password;
+  } else {
+    clear_has_password();
+    password_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:IM.BaseDefine.UserInfo.password)
+}
+
+// optional string salt = 12;
+inline bool UserInfo::has_salt() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+inline void UserInfo::set_has_salt() {
+  _has_bits_[0] |= 0x00000800u;
+}
+inline void UserInfo::clear_has_salt() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+inline void UserInfo::clear_salt() {
+  if (salt_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    salt_->clear();
+  }
+  clear_has_salt();
+}
+inline const ::std::string& UserInfo::salt() const {
+  // @@protoc_insertion_point(field_get:IM.BaseDefine.UserInfo.salt)
+  return *salt_;
+}
+inline void UserInfo::set_salt(const ::std::string& value) {
+  set_has_salt();
+  if (salt_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    salt_ = new ::std::string;
+  }
+  salt_->assign(value);
+  // @@protoc_insertion_point(field_set:IM.BaseDefine.UserInfo.salt)
+}
+inline void UserInfo::set_salt(const char* value) {
+  set_has_salt();
+  if (salt_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    salt_ = new ::std::string;
+  }
+  salt_->assign(value);
+  // @@protoc_insertion_point(field_set_char:IM.BaseDefine.UserInfo.salt)
+}
+inline void UserInfo::set_salt(const char* value, size_t size) {
+  set_has_salt();
+  if (salt_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    salt_ = new ::std::string;
+  }
+  salt_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:IM.BaseDefine.UserInfo.salt)
+}
+inline ::std::string* UserInfo::mutable_salt() {
+  set_has_salt();
+  if (salt_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    salt_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:IM.BaseDefine.UserInfo.salt)
+  return salt_;
+}
+inline ::std::string* UserInfo::release_salt() {
+  clear_has_salt();
+  if (salt_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = salt_;
+    salt_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void UserInfo::set_allocated_salt(::std::string* salt) {
+  if (salt_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete salt_;
+  }
+  if (salt) {
+    set_has_salt();
+    salt_ = salt;
+  } else {
+    clear_has_salt();
+    salt_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:IM.BaseDefine.UserInfo.salt)
+}
+
+// optional string sign_info = 13;
+inline bool UserInfo::has_sign_info() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void UserInfo::set_has_sign_info() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void UserInfo::clear_has_sign_info() {
+  _has_bits_[0] &= ~0x00001000u;
 }
 inline void UserInfo::clear_sign_info() {
   if (sign_info_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {

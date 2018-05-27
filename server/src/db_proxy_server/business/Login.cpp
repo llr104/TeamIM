@@ -110,7 +110,9 @@ void doLogin(CImPdu* pPdu, uint32_t conn_uuid)
             pUser->set_status(0);
 
             pUser->set_sign_info(cUser.sign_info());
-           
+            pUser->set_password(cUser.password());
+            pUser->set_salt(cUser.salt());
+
             msgResp.set_result_code(0);
             msgResp.set_result_string("成功");
             
@@ -160,7 +162,7 @@ void doRegister(CImPdu* pPdu, uint32_t conn_uuid)
         string strNick = msg.nickname();
 
         IM::BaseDefine::UserInfo cUser;
-        if(g_loginStrategy.doRegister(strDomain,strPass,strNick,sex,strAvatar,strNick,cUser) == 0){
+        if(g_loginStrategy.doRegister(strDomain,strPass,strNick,sex,strAvatar,cUser) == 0){
             log("doRegister----------- success");
         }else{
             log("doRegister----------- fail");
