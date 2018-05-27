@@ -48,6 +48,7 @@ public:
     void OnWriteComlete();
 private:
     void _HandleMsgServRequest(string& url, string& post_data);
+    void _HandleRegisterRequest(string& url, string& post_data);
 
 protected:
 	net_handle_t	m_sock_handle;
