@@ -10,7 +10,6 @@
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
-#include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 
 namespace IM {
@@ -40,7 +39,7 @@ void protobuf_AddDesc_IM_2eOther_2eproto() {
 #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AddDesc_IM_2eOther_2eproto_once_);
 void protobuf_AddDesc_IM_2eOther_2eproto() {
-  ::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_IM_2eOther_2eproto_once_,
+  ::google::protobuf::::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_IM_2eOther_2eproto_once_,
                  &protobuf_AddDesc_IM_2eOther_2eproto_impl);
 }
 #else
@@ -60,7 +59,6 @@ struct StaticDescriptorInitializer_IM_2eOther_2eproto {
 IMHeartBeat::IMHeartBeat()
   : ::google::protobuf::MessageLite() {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:IM.Other.IMHeartBeat)
 }
 
 void IMHeartBeat::InitAsDefaultInstance() {
@@ -70,7 +68,6 @@ IMHeartBeat::IMHeartBeat(const IMHeartBeat& from)
   : ::google::protobuf::MessageLite() {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:IM.Other.IMHeartBeat)
 }
 
 void IMHeartBeat::SharedCtor() {
@@ -79,7 +76,6 @@ void IMHeartBeat::SharedCtor() {
 }
 
 IMHeartBeat::~IMHeartBeat() {
-  // @@protoc_insertion_point(destructor:IM.Other.IMHeartBeat)
   SharedDtor();
 }
 
@@ -114,52 +110,29 @@ IMHeartBeat* IMHeartBeat::New() const {
 
 void IMHeartBeat::Clear() {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->clear();
 }
 
 bool IMHeartBeat::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
   ::google::protobuf::uint32 tag;
-  ::google::protobuf::io::StringOutputStream unknown_fields_string(
-      mutable_unknown_fields());
-  ::google::protobuf::io::CodedOutputStream unknown_fields_stream(
-      &unknown_fields_string);
-  // @@protoc_insertion_point(parse_start:IM.Other.IMHeartBeat)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-  handle_unusual:
-    if (tag == 0 ||
-        ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+  while ((tag = input->ReadTag()) != 0) {
+    if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
         ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-      goto success;
+      return true;
     }
-    DO_(::google::protobuf::internal::WireFormatLite::SkipField(
-        input, tag, &unknown_fields_stream));
+    DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
   }
-success:
-  // @@protoc_insertion_point(parse_success:IM.Other.IMHeartBeat)
   return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:IM.Other.IMHeartBeat)
-  return false;
 #undef DO_
 }
 
 void IMHeartBeat::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:IM.Other.IMHeartBeat)
-  output->WriteRaw(unknown_fields().data(),
-                   unknown_fields().size());
-  // @@protoc_insertion_point(serialize_end:IM.Other.IMHeartBeat)
 }
 
 int IMHeartBeat::ByteSize() const {
   int total_size = 0;
-
-  total_size += unknown_fields().size();
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = total_size;
@@ -174,7 +147,6 @@ void IMHeartBeat::CheckTypeAndMergeFrom(
 
 void IMHeartBeat::MergeFrom(const IMHeartBeat& from) {
   GOOGLE_CHECK_NE(&from, this);
-  mutable_unknown_fields()->append(from.unknown_fields());
 }
 
 void IMHeartBeat::CopyFrom(const IMHeartBeat& from) {
@@ -190,7 +162,6 @@ bool IMHeartBeat::IsInitialized() const {
 
 void IMHeartBeat::Swap(IMHeartBeat* other) {
   if (other != this) {
-    _unknown_fields_.swap(other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
   }
 }

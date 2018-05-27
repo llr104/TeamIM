@@ -110,3 +110,13 @@ message IMQueryPushShieldRsp {
     optional uint32 shield_status = 3;          // 值： 如果result_code值为0(successed)，则shield_status值设置， 1:开启， 0:关闭
     optional bytes attach_data = 20;
 }
+
+message IMRegisterReq{
+	//cmd id:		0x0110
+	required string user_name = 1;
+	required string password = 2;
+	required string nickname = 3;
+	optional sex = 4;
+	optional string avatar = 5;
+}
+

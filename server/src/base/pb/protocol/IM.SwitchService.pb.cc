@@ -10,7 +10,6 @@
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
-#include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 
 namespace IM {
@@ -40,7 +39,7 @@ void protobuf_AddDesc_IM_2eSwitchService_2eproto() {
 #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AddDesc_IM_2eSwitchService_2eproto_once_);
 void protobuf_AddDesc_IM_2eSwitchService_2eproto() {
-  ::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_IM_2eSwitchService_2eproto_once_,
+  ::google::protobuf::::google::protobuf::GoogleOnceInit(&protobuf_AddDesc_IM_2eSwitchService_2eproto_once_,
                  &protobuf_AddDesc_IM_2eSwitchService_2eproto_impl);
 }
 #else
@@ -63,7 +62,6 @@ const int IMP2PCmdMsg::kCmdMsgDataFieldNumber;
 IMP2PCmdMsg::IMP2PCmdMsg()
   : ::google::protobuf::MessageLite() {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:IM.SwitchService.IMP2PCmdMsg)
 }
 
 void IMP2PCmdMsg::InitAsDefaultInstance() {
@@ -73,25 +71,22 @@ IMP2PCmdMsg::IMP2PCmdMsg(const IMP2PCmdMsg& from)
   : ::google::protobuf::MessageLite() {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:IM.SwitchService.IMP2PCmdMsg)
 }
 
 void IMP2PCmdMsg::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   from_user_id_ = 0u;
   to_user_id_ = 0u;
-  cmd_msg_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  cmd_msg_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 IMP2PCmdMsg::~IMP2PCmdMsg() {
-  // @@protoc_insertion_point(destructor:IM.SwitchService.IMP2PCmdMsg)
   SharedDtor();
 }
 
 void IMP2PCmdMsg::SharedDtor() {
-  if (cmd_msg_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+  if (cmd_msg_data_ != &::google::protobuf::internal::kEmptyString) {
     delete cmd_msg_data_;
   }
   #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
@@ -123,55 +118,34 @@ IMP2PCmdMsg* IMP2PCmdMsg::New() const {
 }
 
 void IMP2PCmdMsg::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<IMP2PCmdMsg*>(16)->f) - \
-   reinterpret_cast<char*>(16))
-
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
-
-  if (_has_bits_[0 / 32] & 7) {
-    ZR_(from_user_id_, to_user_id_);
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    from_user_id_ = 0u;
+    to_user_id_ = 0u;
     if (has_cmd_msg_data()) {
-      if (cmd_msg_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+      if (cmd_msg_data_ != &::google::protobuf::internal::kEmptyString) {
         cmd_msg_data_->clear();
       }
     }
   }
-
-#undef OFFSET_OF_FIELD_
-#undef ZR_
-
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->clear();
 }
 
 bool IMP2PCmdMsg::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
   ::google::protobuf::uint32 tag;
-  ::google::protobuf::io::StringOutputStream unknown_fields_string(
-      mutable_unknown_fields());
-  ::google::protobuf::io::CodedOutputStream unknown_fields_stream(
-      &unknown_fields_string);
-  // @@protoc_insertion_point(parse_start:IM.SwitchService.IMP2PCmdMsg)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
+  while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // required uint32 from_user_id = 1;
       case 1: {
-        if (tag == 8) {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &from_user_id_)));
           set_has_from_user_id();
         } else {
-          goto handle_unusual;
+          goto handle_uninterpreted;
         }
         if (input->ExpectTag(16)) goto parse_to_user_id;
         break;
@@ -179,14 +153,15 @@ bool IMP2PCmdMsg::MergePartialFromCodedStream(
 
       // required uint32 to_user_id = 2;
       case 2: {
-        if (tag == 16) {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_to_user_id:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &to_user_id_)));
           set_has_to_user_id();
         } else {
-          goto handle_unusual;
+          goto handle_uninterpreted;
         }
         if (input->ExpectTag(26)) goto parse_cmd_msg_data;
         break;
@@ -194,42 +169,35 @@ bool IMP2PCmdMsg::MergePartialFromCodedStream(
 
       // required string cmd_msg_data = 3;
       case 3: {
-        if (tag == 26) {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_cmd_msg_data:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_cmd_msg_data()));
         } else {
-          goto handle_unusual;
+          goto handle_uninterpreted;
         }
-        if (input->ExpectAtEnd()) goto success;
+        if (input->ExpectAtEnd()) return true;
         break;
       }
 
       default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
+          return true;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(
-            input, tag, &unknown_fields_stream));
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
         break;
       }
     }
   }
-success:
-  // @@protoc_insertion_point(parse_success:IM.SwitchService.IMP2PCmdMsg)
   return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:IM.SwitchService.IMP2PCmdMsg)
-  return false;
 #undef DO_
 }
 
 void IMP2PCmdMsg::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:IM.SwitchService.IMP2PCmdMsg)
   // required uint32 from_user_id = 1;
   if (has_from_user_id()) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->from_user_id(), output);
@@ -242,13 +210,10 @@ void IMP2PCmdMsg::SerializeWithCachedSizes(
 
   // required string cmd_msg_data = 3;
   if (has_cmd_msg_data()) {
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+    ::google::protobuf::internal::WireFormatLite::WriteString(
       3, this->cmd_msg_data(), output);
   }
 
-  output->WriteRaw(unknown_fields().data(),
-                   unknown_fields().size());
-  // @@protoc_insertion_point(serialize_end:IM.SwitchService.IMP2PCmdMsg)
 }
 
 int IMP2PCmdMsg::ByteSize() const {
@@ -277,8 +242,6 @@ int IMP2PCmdMsg::ByteSize() const {
     }
 
   }
-  total_size += unknown_fields().size();
-
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = total_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
@@ -303,7 +266,6 @@ void IMP2PCmdMsg::MergeFrom(const IMP2PCmdMsg& from) {
       set_cmd_msg_data(from.cmd_msg_data());
     }
   }
-  mutable_unknown_fields()->append(from.unknown_fields());
 }
 
 void IMP2PCmdMsg::CopyFrom(const IMP2PCmdMsg& from) {
@@ -324,7 +286,6 @@ void IMP2PCmdMsg::Swap(IMP2PCmdMsg* other) {
     std::swap(to_user_id_, other->to_user_id_);
     std::swap(cmd_msg_data_, other->cmd_msg_data_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.swap(other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
   }
 }
