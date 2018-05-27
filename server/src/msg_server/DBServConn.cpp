@@ -372,8 +372,8 @@ void CDBServConn::_HandleValidateResponse(CImPdu* pPdu)
         user_info_tmp->set_user_tel(user_info.user_tel());
         user_info_tmp->set_user_domain(user_info.user_domain());
         user_info_tmp->set_status(user_info.status());
-        user_info_tmp.set_password(user_info.password());
-        user_info_tmp.set_salt(user_info.salt());
+        user_info_tmp->set_password(user_info.password());
+        user_info_tmp->set_salt(user_info.salt());
 
         CImPdu pdu2;
         pdu2.SetPBMsg(&msg3);
