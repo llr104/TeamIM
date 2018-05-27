@@ -8,8 +8,9 @@ public final class IMOther {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-  public interface IMHeartBeatOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMHeartBeatOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Other.IMHeartBeat)
+      com.google.protobuf.MessageLiteOrBuilder {
   }
   /**
    * Protobuf type {@code IM.Other.IMHeartBeat}
@@ -19,14 +20,15 @@ public final class IMOther {
    * </pre>
    */
   public static final class IMHeartBeat extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMHeartBeatOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Other.IMHeartBeat)
+      IMHeartBeatOrBuilder {
     // Use IMHeartBeat.newBuilder() to construct.
     private IMHeartBeat(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMHeartBeat(boolean noInit) {}
+    private IMHeartBeat(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMHeartBeat defaultInstance;
     public static IMHeartBeat getDefaultInstance() {
@@ -37,11 +39,17 @@ public final class IMOther {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMHeartBeat(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -51,7 +59,7 @@ public final class IMOther {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -65,6 +73,13 @@ public final class IMOther {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -88,7 +103,8 @@ public final class IMOther {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -97,6 +113,7 @@ public final class IMOther {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -105,6 +122,7 @@ public final class IMOther {
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -186,7 +204,9 @@ public final class IMOther {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMOther.IMHeartBeat, Builder>
-        implements com.mogujie.tt.protobuf.IMOther.IMHeartBeatOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Other.IMHeartBeat)
+        com.mogujie.tt.protobuf.IMOther.IMHeartBeatOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMOther.IMHeartBeat.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -226,6 +246,8 @@ public final class IMOther {
 
       public Builder mergeFrom(com.mogujie.tt.protobuf.IMOther.IMHeartBeat other) {
         if (other == com.mogujie.tt.protobuf.IMOther.IMHeartBeat.getDefaultInstance()) return this;
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 

@@ -2603,10 +2603,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(enum_scope:IM.BaseDefine.DepartmentStatusType)
   }
 
-  public interface IpAddrOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IpAddrOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.IpAddr)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required string ip = 1;
     /**
      * <code>required string ip = 1;</code>
      */
@@ -2621,7 +2621,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getIpBytes();
 
-    // required uint32 port = 2;
     /**
      * <code>required uint32 port = 2;</code>
      */
@@ -2635,14 +2634,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.IpAddr}
    */
   public static final class IpAddr extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IpAddrOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.IpAddr)
+      IpAddrOrBuilder {
     // Use IpAddr.newBuilder() to construct.
     private IpAddr(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IpAddr(boolean noInit) {}
+    private IpAddr(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IpAddr defaultInstance;
     public static IpAddr getDefaultInstance() {
@@ -2653,12 +2653,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IpAddr(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -2668,15 +2674,16 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              ip_ = input.readBytes();
+              ip_ = bs;
               break;
             }
             case 16: {
@@ -2692,6 +2699,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -2711,7 +2725,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required string ip = 1;
     public static final int IP_FIELD_NUMBER = 1;
     private java.lang.Object ip_;
     /**
@@ -2754,7 +2767,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required uint32 port = 2;
     public static final int PORT_FIELD_NUMBER = 2;
     private int port_;
     /**
@@ -2777,7 +2789,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasIp()) {
         memoizedIsInitialized = 0;
@@ -2800,6 +2813,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, port_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -2816,6 +2830,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, port_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -2893,7 +2908,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.IpAddr, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.IpAddrOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.IpAddr)
+        com.mogujie.tt.protobuf.IMBaseDefine.IpAddrOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.IpAddr.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -2956,6 +2973,8 @@ public final class IMBaseDefine {
         if (other.hasPort()) {
           setPort(other.getPort());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -2990,7 +3009,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required string ip = 1;
       private java.lang.Object ip_ = "";
       /**
        * <code>required string ip = 1;</code>
@@ -3004,9 +3022,12 @@ public final class IMBaseDefine {
       public java.lang.String getIp() {
         java.lang.Object ref = ip_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          ip_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            ip_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3064,7 +3085,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 port = 2;
       private int port_ ;
       /**
        * <code>required uint32 port = 2;</code>
@@ -3108,10 +3128,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.IpAddr)
   }
 
-  public interface UserInfoOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface UserInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.UserInfo)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      */
@@ -3121,7 +3141,6 @@ public final class IMBaseDefine {
      */
     int getUserId();
 
-    // required uint32 user_gender = 2;
     /**
      * <code>required uint32 user_gender = 2;</code>
      *
@@ -3139,7 +3158,6 @@ public final class IMBaseDefine {
      */
     int getUserGender();
 
-    // required string user_nick_name = 3;
     /**
      * <code>required string user_nick_name = 3;</code>
      *
@@ -3166,7 +3184,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getUserNickNameBytes();
 
-    // required string avatar_url = 4;
     /**
      * <code>required string avatar_url = 4;</code>
      */
@@ -3181,7 +3198,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getAvatarUrlBytes();
 
-    // required uint32 department_id = 5;
     /**
      * <code>required uint32 department_id = 5;</code>
      */
@@ -3191,7 +3207,6 @@ public final class IMBaseDefine {
      */
     int getDepartmentId();
 
-    // required string email = 6;
     /**
      * <code>required string email = 6;</code>
      */
@@ -3206,7 +3221,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getEmailBytes();
 
-    // required string user_real_name = 7;
     /**
      * <code>required string user_real_name = 7;</code>
      *
@@ -3233,7 +3247,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getUserRealNameBytes();
 
-    // required string user_tel = 8;
     /**
      * <code>required string user_tel = 8;</code>
      */
@@ -3248,7 +3261,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getUserTelBytes();
 
-    // required string user_domain = 9;
     /**
      * <code>required string user_domain = 9;</code>
      *
@@ -3275,7 +3287,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getUserDomainBytes();
 
-    // required uint32 status = 10;
     /**
      * <code>required uint32 status = 10;</code>
      *
@@ -3293,7 +3304,6 @@ public final class IMBaseDefine {
      */
     int getStatus();
 
-    // optional string sign_info = 11;
     /**
      * <code>optional string sign_info = 11;</code>
      */
@@ -3312,14 +3322,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.UserInfo}
    */
   public static final class UserInfo extends
-      com.google.protobuf.GeneratedMessageLite
-      implements UserInfoOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.UserInfo)
+      UserInfoOrBuilder {
     // Use UserInfo.newBuilder() to construct.
     private UserInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private UserInfo(boolean noInit) {}
+    private UserInfo(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final UserInfo defaultInstance;
     public static UserInfo getDefaultInstance() {
@@ -3330,12 +3341,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private UserInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -3345,7 +3362,7 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -3362,13 +3379,15 @@ public final class IMBaseDefine {
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              userNickName_ = input.readBytes();
+              userNickName_ = bs;
               break;
             }
             case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              avatarUrl_ = input.readBytes();
+              avatarUrl_ = bs;
               break;
             }
             case 40: {
@@ -3377,23 +3396,27 @@ public final class IMBaseDefine {
               break;
             }
             case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000020;
-              email_ = input.readBytes();
+              email_ = bs;
               break;
             }
             case 58: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000040;
-              userRealName_ = input.readBytes();
+              userRealName_ = bs;
               break;
             }
             case 66: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000080;
-              userTel_ = input.readBytes();
+              userTel_ = bs;
               break;
             }
             case 74: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000100;
-              userDomain_ = input.readBytes();
+              userDomain_ = bs;
               break;
             }
             case 80: {
@@ -3402,8 +3425,9 @@ public final class IMBaseDefine {
               break;
             }
             case 90: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000400;
-              signInfo_ = input.readBytes();
+              signInfo_ = bs;
               break;
             }
           }
@@ -3414,6 +3438,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -3433,7 +3464,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -3449,7 +3479,6 @@ public final class IMBaseDefine {
       return userId_;
     }
 
-    // required uint32 user_gender = 2;
     public static final int USER_GENDER_FIELD_NUMBER = 2;
     private int userGender_;
     /**
@@ -3473,7 +3502,6 @@ public final class IMBaseDefine {
       return userGender_;
     }
 
-    // required string user_nick_name = 3;
     public static final int USER_NICK_NAME_FIELD_NUMBER = 3;
     private java.lang.Object userNickName_;
     /**
@@ -3528,7 +3556,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required string avatar_url = 4;
     public static final int AVATAR_URL_FIELD_NUMBER = 4;
     private java.lang.Object avatarUrl_;
     /**
@@ -3571,7 +3598,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required uint32 department_id = 5;
     public static final int DEPARTMENT_ID_FIELD_NUMBER = 5;
     private int departmentId_;
     /**
@@ -3587,7 +3613,6 @@ public final class IMBaseDefine {
       return departmentId_;
     }
 
-    // required string email = 6;
     public static final int EMAIL_FIELD_NUMBER = 6;
     private java.lang.Object email_;
     /**
@@ -3630,7 +3655,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required string user_real_name = 7;
     public static final int USER_REAL_NAME_FIELD_NUMBER = 7;
     private java.lang.Object userRealName_;
     /**
@@ -3685,7 +3709,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required string user_tel = 8;
     public static final int USER_TEL_FIELD_NUMBER = 8;
     private java.lang.Object userTel_;
     /**
@@ -3728,7 +3751,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required string user_domain = 9;
     public static final int USER_DOMAIN_FIELD_NUMBER = 9;
     private java.lang.Object userDomain_;
     /**
@@ -3783,7 +3805,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required uint32 status = 10;
     public static final int STATUS_FIELD_NUMBER = 10;
     private int status_;
     /**
@@ -3807,7 +3828,6 @@ public final class IMBaseDefine {
       return status_;
     }
 
-    // optional string sign_info = 11;
     public static final int SIGN_INFO_FIELD_NUMBER = 11;
     private java.lang.Object signInfo_;
     /**
@@ -3866,7 +3886,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -3948,6 +3969,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeBytes(11, getSignInfoBytes());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -4000,6 +4022,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(11, getSignInfoBytes());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -4077,7 +4100,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.UserInfo, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.UserInfoOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.UserInfo)
+        com.mogujie.tt.protobuf.IMBaseDefine.UserInfoOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.UserInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -4233,6 +4258,8 @@ public final class IMBaseDefine {
           signInfo_ = other.signInfo_;
           
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -4299,7 +4326,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -4332,7 +4358,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 user_gender = 2;
       private int userGender_ ;
       /**
        * <code>required uint32 user_gender = 2;</code>
@@ -4381,7 +4406,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required string user_nick_name = 3;
       private java.lang.Object userNickName_ = "";
       /**
        * <code>required string user_nick_name = 3;</code>
@@ -4403,9 +4427,12 @@ public final class IMBaseDefine {
       public java.lang.String getUserNickName() {
         java.lang.Object ref = userNickName_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          userNickName_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userNickName_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4479,7 +4506,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required string avatar_url = 4;
       private java.lang.Object avatarUrl_ = "";
       /**
        * <code>required string avatar_url = 4;</code>
@@ -4493,9 +4519,12 @@ public final class IMBaseDefine {
       public java.lang.String getAvatarUrl() {
         java.lang.Object ref = avatarUrl_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          avatarUrl_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            avatarUrl_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4553,7 +4582,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 department_id = 5;
       private int departmentId_ ;
       /**
        * <code>required uint32 department_id = 5;</code>
@@ -4586,7 +4614,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required string email = 6;
       private java.lang.Object email_ = "";
       /**
        * <code>required string email = 6;</code>
@@ -4600,9 +4627,12 @@ public final class IMBaseDefine {
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          email_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            email_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4660,7 +4690,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required string user_real_name = 7;
       private java.lang.Object userRealName_ = "";
       /**
        * <code>required string user_real_name = 7;</code>
@@ -4682,9 +4711,12 @@ public final class IMBaseDefine {
       public java.lang.String getUserRealName() {
         java.lang.Object ref = userRealName_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          userRealName_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userRealName_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4758,7 +4790,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required string user_tel = 8;
       private java.lang.Object userTel_ = "";
       /**
        * <code>required string user_tel = 8;</code>
@@ -4772,9 +4803,12 @@ public final class IMBaseDefine {
       public java.lang.String getUserTel() {
         java.lang.Object ref = userTel_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          userTel_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userTel_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4832,7 +4866,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required string user_domain = 9;
       private java.lang.Object userDomain_ = "";
       /**
        * <code>required string user_domain = 9;</code>
@@ -4854,9 +4887,12 @@ public final class IMBaseDefine {
       public java.lang.String getUserDomain() {
         java.lang.Object ref = userDomain_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          userDomain_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userDomain_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4930,7 +4966,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 status = 10;
       private int status_ ;
       /**
        * <code>required uint32 status = 10;</code>
@@ -4979,7 +5014,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // optional string sign_info = 11;
       private java.lang.Object signInfo_ = "";
       /**
        * <code>optional string sign_info = 11;</code>
@@ -4993,9 +5027,12 @@ public final class IMBaseDefine {
       public java.lang.String getSignInfo() {
         java.lang.Object ref = signInfo_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          signInfo_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            signInfo_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5064,10 +5101,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.UserInfo)
   }
 
-  public interface ContactSessionInfoOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface ContactSessionInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.ContactSessionInfo)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 session_id = 1;
     /**
      * <code>required uint32 session_id = 1;</code>
      */
@@ -5077,7 +5114,6 @@ public final class IMBaseDefine {
      */
     int getSessionId();
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
@@ -5087,7 +5123,6 @@ public final class IMBaseDefine {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.SessionType getSessionType();
 
-    // required .IM.BaseDefine.SessionStatusType session_status = 3;
     /**
      * <code>required .IM.BaseDefine.SessionStatusType session_status = 3;</code>
      */
@@ -5097,7 +5132,6 @@ public final class IMBaseDefine {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.SessionStatusType getSessionStatus();
 
-    // required uint32 updated_time = 4;
     /**
      * <code>required uint32 updated_time = 4;</code>
      */
@@ -5107,7 +5141,6 @@ public final class IMBaseDefine {
      */
     int getUpdatedTime();
 
-    // required uint32 latest_msg_id = 5;
     /**
      * <code>required uint32 latest_msg_id = 5;</code>
      */
@@ -5117,7 +5150,6 @@ public final class IMBaseDefine {
      */
     int getLatestMsgId();
 
-    // required bytes latest_msg_data = 6;
     /**
      * <code>required bytes latest_msg_data = 6;</code>
      */
@@ -5127,7 +5159,6 @@ public final class IMBaseDefine {
      */
     com.google.protobuf.ByteString getLatestMsgData();
 
-    // required .IM.BaseDefine.MsgType latest_msg_type = 7;
     /**
      * <code>required .IM.BaseDefine.MsgType latest_msg_type = 7;</code>
      */
@@ -5137,7 +5168,6 @@ public final class IMBaseDefine {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.MsgType getLatestMsgType();
 
-    // required uint32 latest_msg_from_user_id = 8;
     /**
      * <code>required uint32 latest_msg_from_user_id = 8;</code>
      */
@@ -5151,14 +5181,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.ContactSessionInfo}
    */
   public static final class ContactSessionInfo extends
-      com.google.protobuf.GeneratedMessageLite
-      implements ContactSessionInfoOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.ContactSessionInfo)
+      ContactSessionInfoOrBuilder {
     // Use ContactSessionInfo.newBuilder() to construct.
     private ContactSessionInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private ContactSessionInfo(boolean noInit) {}
+    private ContactSessionInfo(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final ContactSessionInfo defaultInstance;
     public static ContactSessionInfo getDefaultInstance() {
@@ -5169,12 +5200,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private ContactSessionInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -5184,7 +5221,7 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -5198,7 +5235,10 @@ public final class IMBaseDefine {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 sessionType_ = value;
               }
@@ -5207,7 +5247,10 @@ public final class IMBaseDefine {
             case 24: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionStatusType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionStatusType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000004;
                 sessionStatus_ = value;
               }
@@ -5231,7 +5274,10 @@ public final class IMBaseDefine {
             case 56: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.MsgType value = com.mogujie.tt.protobuf.IMBaseDefine.MsgType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000040;
                 latestMsgType_ = value;
               }
@@ -5250,6 +5296,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -5269,7 +5322,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required uint32 session_id = 1;
     public static final int SESSION_ID_FIELD_NUMBER = 1;
     private int sessionId_;
     /**
@@ -5285,7 +5337,6 @@ public final class IMBaseDefine {
       return sessionId_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     public static final int SESSION_TYPE_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -5301,7 +5352,6 @@ public final class IMBaseDefine {
       return sessionType_;
     }
 
-    // required .IM.BaseDefine.SessionStatusType session_status = 3;
     public static final int SESSION_STATUS_FIELD_NUMBER = 3;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionStatusType sessionStatus_;
     /**
@@ -5317,7 +5367,6 @@ public final class IMBaseDefine {
       return sessionStatus_;
     }
 
-    // required uint32 updated_time = 4;
     public static final int UPDATED_TIME_FIELD_NUMBER = 4;
     private int updatedTime_;
     /**
@@ -5333,7 +5382,6 @@ public final class IMBaseDefine {
       return updatedTime_;
     }
 
-    // required uint32 latest_msg_id = 5;
     public static final int LATEST_MSG_ID_FIELD_NUMBER = 5;
     private int latestMsgId_;
     /**
@@ -5349,7 +5397,6 @@ public final class IMBaseDefine {
       return latestMsgId_;
     }
 
-    // required bytes latest_msg_data = 6;
     public static final int LATEST_MSG_DATA_FIELD_NUMBER = 6;
     private com.google.protobuf.ByteString latestMsgData_;
     /**
@@ -5365,7 +5412,6 @@ public final class IMBaseDefine {
       return latestMsgData_;
     }
 
-    // required .IM.BaseDefine.MsgType latest_msg_type = 7;
     public static final int LATEST_MSG_TYPE_FIELD_NUMBER = 7;
     private com.mogujie.tt.protobuf.IMBaseDefine.MsgType latestMsgType_;
     /**
@@ -5381,7 +5427,6 @@ public final class IMBaseDefine {
       return latestMsgType_;
     }
 
-    // required uint32 latest_msg_from_user_id = 8;
     public static final int LATEST_MSG_FROM_USER_ID_FIELD_NUMBER = 8;
     private int latestMsgFromUserId_;
     /**
@@ -5410,7 +5455,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasSessionId()) {
         memoizedIsInitialized = 0;
@@ -5475,6 +5521,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeUInt32(8, latestMsgFromUserId_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -5515,6 +5562,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, latestMsgFromUserId_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -5592,7 +5640,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.ContactSessionInfo, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.ContactSessionInfoOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.ContactSessionInfo)
+        com.mogujie.tt.protobuf.IMBaseDefine.ContactSessionInfoOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.ContactSessionInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -5707,6 +5757,8 @@ public final class IMBaseDefine {
         if (other.hasLatestMsgFromUserId()) {
           setLatestMsgFromUserId(other.getLatestMsgFromUserId());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -5765,7 +5817,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required uint32 session_id = 1;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 1;</code>
@@ -5798,7 +5849,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
@@ -5834,7 +5884,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionStatusType session_status = 3;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionStatusType sessionStatus_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionStatusType.SESSION_STATUS_OK;
       /**
        * <code>required .IM.BaseDefine.SessionStatusType session_status = 3;</code>
@@ -5870,7 +5919,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 updated_time = 4;
       private int updatedTime_ ;
       /**
        * <code>required uint32 updated_time = 4;</code>
@@ -5903,7 +5951,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 latest_msg_id = 5;
       private int latestMsgId_ ;
       /**
        * <code>required uint32 latest_msg_id = 5;</code>
@@ -5936,7 +5983,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required bytes latest_msg_data = 6;
       private com.google.protobuf.ByteString latestMsgData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>required bytes latest_msg_data = 6;</code>
@@ -5972,7 +6018,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required .IM.BaseDefine.MsgType latest_msg_type = 7;
       private com.mogujie.tt.protobuf.IMBaseDefine.MsgType latestMsgType_ = com.mogujie.tt.protobuf.IMBaseDefine.MsgType.MSG_TYPE_SINGLE_TEXT;
       /**
        * <code>required .IM.BaseDefine.MsgType latest_msg_type = 7;</code>
@@ -6008,7 +6053,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 latest_msg_from_user_id = 8;
       private int latestMsgFromUserId_ ;
       /**
        * <code>required uint32 latest_msg_from_user_id = 8;</code>
@@ -6052,10 +6096,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.ContactSessionInfo)
   }
 
-  public interface UserStatOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface UserStatOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.UserStat)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      */
@@ -6065,7 +6109,6 @@ public final class IMBaseDefine {
      */
     int getUserId();
 
-    // required .IM.BaseDefine.UserStatType status = 2;
     /**
      * <code>required .IM.BaseDefine.UserStatType status = 2;</code>
      */
@@ -6079,14 +6122,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.UserStat}
    */
   public static final class UserStat extends
-      com.google.protobuf.GeneratedMessageLite
-      implements UserStatOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.UserStat)
+      UserStatOrBuilder {
     // Use UserStat.newBuilder() to construct.
     private UserStat(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private UserStat(boolean noInit) {}
+    private UserStat(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final UserStat defaultInstance;
     public static UserStat getDefaultInstance() {
@@ -6097,12 +6141,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private UserStat(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -6112,7 +6162,7 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -6126,7 +6176,10 @@ public final class IMBaseDefine {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.UserStatType value = com.mogujie.tt.protobuf.IMBaseDefine.UserStatType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 status_ = value;
               }
@@ -6140,6 +6193,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -6159,7 +6219,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -6175,7 +6234,6 @@ public final class IMBaseDefine {
       return userId_;
     }
 
-    // required .IM.BaseDefine.UserStatType status = 2;
     public static final int STATUS_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.UserStatType status_;
     /**
@@ -6198,7 +6256,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -6221,6 +6280,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeEnum(2, status_.getNumber());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -6237,6 +6297,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, status_.getNumber());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -6314,7 +6375,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.UserStat, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.UserStatOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.UserStat)
+        com.mogujie.tt.protobuf.IMBaseDefine.UserStatOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.UserStat.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -6375,6 +6438,8 @@ public final class IMBaseDefine {
         if (other.hasStatus()) {
           setStatus(other.getStatus());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -6409,7 +6474,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -6442,7 +6506,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required .IM.BaseDefine.UserStatType status = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.UserStatType status_ = com.mogujie.tt.protobuf.IMBaseDefine.UserStatType.USER_STATUS_ONLINE;
       /**
        * <code>required .IM.BaseDefine.UserStatType status = 2;</code>
@@ -6489,10 +6552,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.UserStat)
   }
 
-  public interface ServerUserStatOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface ServerUserStatOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.ServerUserStat)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      */
@@ -6502,7 +6565,6 @@ public final class IMBaseDefine {
      */
     int getUserId();
 
-    // required .IM.BaseDefine.UserStatType status = 2;
     /**
      * <code>required .IM.BaseDefine.UserStatType status = 2;</code>
      */
@@ -6512,7 +6574,6 @@ public final class IMBaseDefine {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.UserStatType getStatus();
 
-    // required .IM.BaseDefine.ClientType client_type = 3;
     /**
      * <code>required .IM.BaseDefine.ClientType client_type = 3;</code>
      */
@@ -6526,14 +6587,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.ServerUserStat}
    */
   public static final class ServerUserStat extends
-      com.google.protobuf.GeneratedMessageLite
-      implements ServerUserStatOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.ServerUserStat)
+      ServerUserStatOrBuilder {
     // Use ServerUserStat.newBuilder() to construct.
     private ServerUserStat(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private ServerUserStat(boolean noInit) {}
+    private ServerUserStat(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final ServerUserStat defaultInstance;
     public static ServerUserStat getDefaultInstance() {
@@ -6544,12 +6606,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private ServerUserStat(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -6559,7 +6627,7 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -6573,7 +6641,10 @@ public final class IMBaseDefine {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.UserStatType value = com.mogujie.tt.protobuf.IMBaseDefine.UserStatType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 status_ = value;
               }
@@ -6582,7 +6653,10 @@ public final class IMBaseDefine {
             case 24: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.ClientType value = com.mogujie.tt.protobuf.IMBaseDefine.ClientType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000004;
                 clientType_ = value;
               }
@@ -6596,6 +6670,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -6615,7 +6696,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -6631,7 +6711,6 @@ public final class IMBaseDefine {
       return userId_;
     }
 
-    // required .IM.BaseDefine.UserStatType status = 2;
     public static final int STATUS_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.UserStatType status_;
     /**
@@ -6647,7 +6726,6 @@ public final class IMBaseDefine {
       return status_;
     }
 
-    // required .IM.BaseDefine.ClientType client_type = 3;
     public static final int CLIENT_TYPE_FIELD_NUMBER = 3;
     private com.mogujie.tt.protobuf.IMBaseDefine.ClientType clientType_;
     /**
@@ -6671,7 +6749,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -6701,6 +6780,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeEnum(3, clientType_.getNumber());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -6721,6 +6801,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, clientType_.getNumber());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -6798,7 +6879,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.ServerUserStat, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.ServerUserStatOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.ServerUserStat)
+        com.mogujie.tt.protobuf.IMBaseDefine.ServerUserStatOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.ServerUserStat.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -6868,6 +6951,8 @@ public final class IMBaseDefine {
         if (other.hasClientType()) {
           setClientType(other.getClientType());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -6906,7 +6991,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -6939,7 +7023,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required .IM.BaseDefine.UserStatType status = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.UserStatType status_ = com.mogujie.tt.protobuf.IMBaseDefine.UserStatType.USER_STATUS_ONLINE;
       /**
        * <code>required .IM.BaseDefine.UserStatType status = 2;</code>
@@ -6975,7 +7058,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required .IM.BaseDefine.ClientType client_type = 3;
       private com.mogujie.tt.protobuf.IMBaseDefine.ClientType clientType_ = com.mogujie.tt.protobuf.IMBaseDefine.ClientType.CLIENT_TYPE_WINDOWS;
       /**
        * <code>required .IM.BaseDefine.ClientType client_type = 3;</code>
@@ -7022,10 +7104,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.ServerUserStat)
   }
 
-  public interface UnreadInfoOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface UnreadInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.UnreadInfo)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 session_id = 1;
     /**
      * <code>required uint32 session_id = 1;</code>
      */
@@ -7035,7 +7117,6 @@ public final class IMBaseDefine {
      */
     int getSessionId();
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
@@ -7045,7 +7126,6 @@ public final class IMBaseDefine {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.SessionType getSessionType();
 
-    // required uint32 unread_cnt = 3;
     /**
      * <code>required uint32 unread_cnt = 3;</code>
      */
@@ -7055,7 +7135,6 @@ public final class IMBaseDefine {
      */
     int getUnreadCnt();
 
-    // required uint32 latest_msg_id = 4;
     /**
      * <code>required uint32 latest_msg_id = 4;</code>
      */
@@ -7065,7 +7144,6 @@ public final class IMBaseDefine {
      */
     int getLatestMsgId();
 
-    // required bytes latest_msg_data = 5;
     /**
      * <code>required bytes latest_msg_data = 5;</code>
      */
@@ -7075,7 +7153,6 @@ public final class IMBaseDefine {
      */
     com.google.protobuf.ByteString getLatestMsgData();
 
-    // required .IM.BaseDefine.MsgType latest_msg_type = 6;
     /**
      * <code>required .IM.BaseDefine.MsgType latest_msg_type = 6;</code>
      */
@@ -7085,7 +7162,6 @@ public final class IMBaseDefine {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.MsgType getLatestMsgType();
 
-    // required uint32 latest_msg_from_user_id = 7;
     /**
      * <code>required uint32 latest_msg_from_user_id = 7;</code>
      *
@@ -7107,14 +7183,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.UnreadInfo}
    */
   public static final class UnreadInfo extends
-      com.google.protobuf.GeneratedMessageLite
-      implements UnreadInfoOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.UnreadInfo)
+      UnreadInfoOrBuilder {
     // Use UnreadInfo.newBuilder() to construct.
     private UnreadInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private UnreadInfo(boolean noInit) {}
+    private UnreadInfo(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final UnreadInfo defaultInstance;
     public static UnreadInfo getDefaultInstance() {
@@ -7125,12 +7202,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private UnreadInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -7140,7 +7223,7 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -7154,7 +7237,10 @@ public final class IMBaseDefine {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 sessionType_ = value;
               }
@@ -7178,7 +7264,10 @@ public final class IMBaseDefine {
             case 48: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.MsgType value = com.mogujie.tt.protobuf.IMBaseDefine.MsgType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000020;
                 latestMsgType_ = value;
               }
@@ -7197,6 +7286,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -7216,7 +7312,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required uint32 session_id = 1;
     public static final int SESSION_ID_FIELD_NUMBER = 1;
     private int sessionId_;
     /**
@@ -7232,7 +7327,6 @@ public final class IMBaseDefine {
       return sessionId_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     public static final int SESSION_TYPE_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -7248,7 +7342,6 @@ public final class IMBaseDefine {
       return sessionType_;
     }
 
-    // required uint32 unread_cnt = 3;
     public static final int UNREAD_CNT_FIELD_NUMBER = 3;
     private int unreadCnt_;
     /**
@@ -7264,7 +7357,6 @@ public final class IMBaseDefine {
       return unreadCnt_;
     }
 
-    // required uint32 latest_msg_id = 4;
     public static final int LATEST_MSG_ID_FIELD_NUMBER = 4;
     private int latestMsgId_;
     /**
@@ -7280,7 +7372,6 @@ public final class IMBaseDefine {
       return latestMsgId_;
     }
 
-    // required bytes latest_msg_data = 5;
     public static final int LATEST_MSG_DATA_FIELD_NUMBER = 5;
     private com.google.protobuf.ByteString latestMsgData_;
     /**
@@ -7296,7 +7387,6 @@ public final class IMBaseDefine {
       return latestMsgData_;
     }
 
-    // required .IM.BaseDefine.MsgType latest_msg_type = 6;
     public static final int LATEST_MSG_TYPE_FIELD_NUMBER = 6;
     private com.mogujie.tt.protobuf.IMBaseDefine.MsgType latestMsgType_;
     /**
@@ -7312,7 +7402,6 @@ public final class IMBaseDefine {
       return latestMsgType_;
     }
 
-    // required uint32 latest_msg_from_user_id = 7;
     public static final int LATEST_MSG_FROM_USER_ID_FIELD_NUMBER = 7;
     private int latestMsgFromUserId_;
     /**
@@ -7348,7 +7437,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasSessionId()) {
         memoizedIsInitialized = 0;
@@ -7406,6 +7496,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeUInt32(7, latestMsgFromUserId_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -7442,6 +7533,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, latestMsgFromUserId_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -7519,7 +7611,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.UnreadInfo, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.UnreadInfoOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.UnreadInfo)
+        com.mogujie.tt.protobuf.IMBaseDefine.UnreadInfoOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.UnreadInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -7625,6 +7719,8 @@ public final class IMBaseDefine {
         if (other.hasLatestMsgFromUserId()) {
           setLatestMsgFromUserId(other.getLatestMsgFromUserId());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -7679,7 +7775,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required uint32 session_id = 1;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 1;</code>
@@ -7712,7 +7807,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
@@ -7748,7 +7842,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 unread_cnt = 3;
       private int unreadCnt_ ;
       /**
        * <code>required uint32 unread_cnt = 3;</code>
@@ -7781,7 +7874,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 latest_msg_id = 4;
       private int latestMsgId_ ;
       /**
        * <code>required uint32 latest_msg_id = 4;</code>
@@ -7814,7 +7906,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required bytes latest_msg_data = 5;
       private com.google.protobuf.ByteString latestMsgData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>required bytes latest_msg_data = 5;</code>
@@ -7850,7 +7941,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required .IM.BaseDefine.MsgType latest_msg_type = 6;
       private com.mogujie.tt.protobuf.IMBaseDefine.MsgType latestMsgType_ = com.mogujie.tt.protobuf.IMBaseDefine.MsgType.MSG_TYPE_SINGLE_TEXT;
       /**
        * <code>required .IM.BaseDefine.MsgType latest_msg_type = 6;</code>
@@ -7886,7 +7976,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 latest_msg_from_user_id = 7;
       private int latestMsgFromUserId_ ;
       /**
        * <code>required uint32 latest_msg_from_user_id = 7;</code>
@@ -7946,10 +8035,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.UnreadInfo)
   }
 
-  public interface MsgInfoOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface MsgInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.MsgInfo)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 msg_id = 1;
     /**
      * <code>required uint32 msg_id = 1;</code>
      */
@@ -7959,7 +8048,6 @@ public final class IMBaseDefine {
      */
     int getMsgId();
 
-    // required uint32 from_session_id = 2;
     /**
      * <code>required uint32 from_session_id = 2;</code>
      *
@@ -7977,7 +8065,6 @@ public final class IMBaseDefine {
      */
     int getFromSessionId();
 
-    // required uint32 create_time = 3;
     /**
      * <code>required uint32 create_time = 3;</code>
      */
@@ -7987,7 +8074,6 @@ public final class IMBaseDefine {
      */
     int getCreateTime();
 
-    // required .IM.BaseDefine.MsgType msg_type = 4;
     /**
      * <code>required .IM.BaseDefine.MsgType msg_type = 4;</code>
      */
@@ -7997,7 +8083,6 @@ public final class IMBaseDefine {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.MsgType getMsgType();
 
-    // required bytes msg_data = 5;
     /**
      * <code>required bytes msg_data = 5;</code>
      */
@@ -8011,14 +8096,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.MsgInfo}
    */
   public static final class MsgInfo extends
-      com.google.protobuf.GeneratedMessageLite
-      implements MsgInfoOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.MsgInfo)
+      MsgInfoOrBuilder {
     // Use MsgInfo.newBuilder() to construct.
     private MsgInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private MsgInfo(boolean noInit) {}
+    private MsgInfo(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final MsgInfo defaultInstance;
     public static MsgInfo getDefaultInstance() {
@@ -8029,12 +8115,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private MsgInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -8044,7 +8136,7 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -8068,7 +8160,10 @@ public final class IMBaseDefine {
             case 32: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.MsgType value = com.mogujie.tt.protobuf.IMBaseDefine.MsgType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000008;
                 msgType_ = value;
               }
@@ -8087,6 +8182,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -8106,7 +8208,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required uint32 msg_id = 1;
     public static final int MSG_ID_FIELD_NUMBER = 1;
     private int msgId_;
     /**
@@ -8122,7 +8223,6 @@ public final class IMBaseDefine {
       return msgId_;
     }
 
-    // required uint32 from_session_id = 2;
     public static final int FROM_SESSION_ID_FIELD_NUMBER = 2;
     private int fromSessionId_;
     /**
@@ -8146,7 +8246,6 @@ public final class IMBaseDefine {
       return fromSessionId_;
     }
 
-    // required uint32 create_time = 3;
     public static final int CREATE_TIME_FIELD_NUMBER = 3;
     private int createTime_;
     /**
@@ -8162,7 +8261,6 @@ public final class IMBaseDefine {
       return createTime_;
     }
 
-    // required .IM.BaseDefine.MsgType msg_type = 4;
     public static final int MSG_TYPE_FIELD_NUMBER = 4;
     private com.mogujie.tt.protobuf.IMBaseDefine.MsgType msgType_;
     /**
@@ -8178,7 +8276,6 @@ public final class IMBaseDefine {
       return msgType_;
     }
 
-    // required bytes msg_data = 5;
     public static final int MSG_DATA_FIELD_NUMBER = 5;
     private com.google.protobuf.ByteString msgData_;
     /**
@@ -8204,7 +8301,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasMsgId()) {
         memoizedIsInitialized = 0;
@@ -8248,6 +8346,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(5, msgData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -8276,6 +8375,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(5, msgData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -8353,7 +8453,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.MsgInfo, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.MsgInfoOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.MsgInfo)
+        com.mogujie.tt.protobuf.IMBaseDefine.MsgInfoOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.MsgInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -8441,6 +8543,8 @@ public final class IMBaseDefine {
         if (other.hasMsgData()) {
           setMsgData(other.getMsgData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -8487,7 +8591,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required uint32 msg_id = 1;
       private int msgId_ ;
       /**
        * <code>required uint32 msg_id = 1;</code>
@@ -8520,7 +8623,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 from_session_id = 2;
       private int fromSessionId_ ;
       /**
        * <code>required uint32 from_session_id = 2;</code>
@@ -8569,7 +8671,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 create_time = 3;
       private int createTime_ ;
       /**
        * <code>required uint32 create_time = 3;</code>
@@ -8602,7 +8703,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required .IM.BaseDefine.MsgType msg_type = 4;
       private com.mogujie.tt.protobuf.IMBaseDefine.MsgType msgType_ = com.mogujie.tt.protobuf.IMBaseDefine.MsgType.MSG_TYPE_SINGLE_TEXT;
       /**
        * <code>required .IM.BaseDefine.MsgType msg_type = 4;</code>
@@ -8638,7 +8738,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required bytes msg_data = 5;
       private com.google.protobuf.ByteString msgData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>required bytes msg_data = 5;</code>
@@ -8685,10 +8784,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.MsgInfo)
   }
 
-  public interface GroupVersionInfoOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface GroupVersionInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.GroupVersionInfo)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 group_id = 1;
     /**
      * <code>required uint32 group_id = 1;</code>
      */
@@ -8698,7 +8797,6 @@ public final class IMBaseDefine {
      */
     int getGroupId();
 
-    // required uint32 version = 2;
     /**
      * <code>required uint32 version = 2;</code>
      */
@@ -8712,14 +8810,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.GroupVersionInfo}
    */
   public static final class GroupVersionInfo extends
-      com.google.protobuf.GeneratedMessageLite
-      implements GroupVersionInfoOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.GroupVersionInfo)
+      GroupVersionInfoOrBuilder {
     // Use GroupVersionInfo.newBuilder() to construct.
     private GroupVersionInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private GroupVersionInfo(boolean noInit) {}
+    private GroupVersionInfo(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final GroupVersionInfo defaultInstance;
     public static GroupVersionInfo getDefaultInstance() {
@@ -8730,12 +8829,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private GroupVersionInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -8745,7 +8850,7 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -8769,6 +8874,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -8788,7 +8900,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required uint32 group_id = 1;
     public static final int GROUP_ID_FIELD_NUMBER = 1;
     private int groupId_;
     /**
@@ -8804,7 +8915,6 @@ public final class IMBaseDefine {
       return groupId_;
     }
 
-    // required uint32 version = 2;
     public static final int VERSION_FIELD_NUMBER = 2;
     private int version_;
     /**
@@ -8827,7 +8937,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasGroupId()) {
         memoizedIsInitialized = 0;
@@ -8850,6 +8961,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, version_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -8866,6 +8978,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, version_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -8943,7 +9056,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.GroupVersionInfo, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.GroupVersionInfoOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.GroupVersionInfo)
+        com.mogujie.tt.protobuf.IMBaseDefine.GroupVersionInfoOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.GroupVersionInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -9004,6 +9119,8 @@ public final class IMBaseDefine {
         if (other.hasVersion()) {
           setVersion(other.getVersion());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -9038,7 +9155,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required uint32 group_id = 1;
       private int groupId_ ;
       /**
        * <code>required uint32 group_id = 1;</code>
@@ -9071,7 +9187,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 version = 2;
       private int version_ ;
       /**
        * <code>required uint32 version = 2;</code>
@@ -9115,10 +9230,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.GroupVersionInfo)
   }
 
-  public interface GroupInfoOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface GroupInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.GroupInfo)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 group_id = 1;
     /**
      * <code>required uint32 group_id = 1;</code>
      */
@@ -9128,7 +9243,6 @@ public final class IMBaseDefine {
      */
     int getGroupId();
 
-    // required uint32 version = 2;
     /**
      * <code>required uint32 version = 2;</code>
      */
@@ -9138,7 +9252,6 @@ public final class IMBaseDefine {
      */
     int getVersion();
 
-    // required string group_name = 3;
     /**
      * <code>required string group_name = 3;</code>
      */
@@ -9153,7 +9266,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getGroupNameBytes();
 
-    // required string group_avatar = 4;
     /**
      * <code>required string group_avatar = 4;</code>
      */
@@ -9168,7 +9280,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getGroupAvatarBytes();
 
-    // required uint32 group_creator_id = 5;
     /**
      * <code>required uint32 group_creator_id = 5;</code>
      */
@@ -9178,7 +9289,6 @@ public final class IMBaseDefine {
      */
     int getGroupCreatorId();
 
-    // required .IM.BaseDefine.GroupType group_type = 6;
     /**
      * <code>required .IM.BaseDefine.GroupType group_type = 6;</code>
      */
@@ -9188,7 +9298,6 @@ public final class IMBaseDefine {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.GroupType getGroupType();
 
-    // required uint32 shield_status = 7;
     /**
      * <code>required uint32 shield_status = 7;</code>
      *
@@ -9206,7 +9315,6 @@ public final class IMBaseDefine {
      */
     int getShieldStatus();
 
-    // repeated uint32 group_member_list = 8;
     /**
      * <code>repeated uint32 group_member_list = 8;</code>
      */
@@ -9224,14 +9332,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.GroupInfo}
    */
   public static final class GroupInfo extends
-      com.google.protobuf.GeneratedMessageLite
-      implements GroupInfoOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.GroupInfo)
+      GroupInfoOrBuilder {
     // Use GroupInfo.newBuilder() to construct.
     private GroupInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private GroupInfo(boolean noInit) {}
+    private GroupInfo(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final GroupInfo defaultInstance;
     public static GroupInfo getDefaultInstance() {
@@ -9242,12 +9351,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private GroupInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -9257,7 +9372,7 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -9274,13 +9389,15 @@ public final class IMBaseDefine {
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              groupName_ = input.readBytes();
+              groupName_ = bs;
               break;
             }
             case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              groupAvatar_ = input.readBytes();
+              groupAvatar_ = bs;
               break;
             }
             case 40: {
@@ -9291,7 +9408,10 @@ public final class IMBaseDefine {
             case 48: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.GroupType value = com.mogujie.tt.protobuf.IMBaseDefine.GroupType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000020;
                 groupType_ = value;
               }
@@ -9334,6 +9454,13 @@ public final class IMBaseDefine {
         if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
           groupMemberList_ = java.util.Collections.unmodifiableList(groupMemberList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -9353,7 +9480,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required uint32 group_id = 1;
     public static final int GROUP_ID_FIELD_NUMBER = 1;
     private int groupId_;
     /**
@@ -9369,7 +9495,6 @@ public final class IMBaseDefine {
       return groupId_;
     }
 
-    // required uint32 version = 2;
     public static final int VERSION_FIELD_NUMBER = 2;
     private int version_;
     /**
@@ -9385,7 +9510,6 @@ public final class IMBaseDefine {
       return version_;
     }
 
-    // required string group_name = 3;
     public static final int GROUP_NAME_FIELD_NUMBER = 3;
     private java.lang.Object groupName_;
     /**
@@ -9428,7 +9552,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required string group_avatar = 4;
     public static final int GROUP_AVATAR_FIELD_NUMBER = 4;
     private java.lang.Object groupAvatar_;
     /**
@@ -9471,7 +9594,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required uint32 group_creator_id = 5;
     public static final int GROUP_CREATOR_ID_FIELD_NUMBER = 5;
     private int groupCreatorId_;
     /**
@@ -9487,7 +9609,6 @@ public final class IMBaseDefine {
       return groupCreatorId_;
     }
 
-    // required .IM.BaseDefine.GroupType group_type = 6;
     public static final int GROUP_TYPE_FIELD_NUMBER = 6;
     private com.mogujie.tt.protobuf.IMBaseDefine.GroupType groupType_;
     /**
@@ -9503,7 +9624,6 @@ public final class IMBaseDefine {
       return groupType_;
     }
 
-    // required uint32 shield_status = 7;
     public static final int SHIELD_STATUS_FIELD_NUMBER = 7;
     private int shieldStatus_;
     /**
@@ -9527,7 +9647,6 @@ public final class IMBaseDefine {
       return shieldStatus_;
     }
 
-    // repeated uint32 group_member_list = 8;
     public static final int GROUP_MEMBER_LIST_FIELD_NUMBER = 8;
     private java.util.List<java.lang.Integer> groupMemberList_;
     /**
@@ -9563,7 +9682,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasGroupId()) {
         memoizedIsInitialized = 0;
@@ -9624,6 +9744,7 @@ public final class IMBaseDefine {
       for (int i = 0; i < groupMemberList_.size(); i++) {
         output.writeUInt32(8, groupMemberList_.get(i));
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -9669,6 +9790,7 @@ public final class IMBaseDefine {
         size += dataSize;
         size += 1 * getGroupMemberListList().size();
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -9746,7 +9868,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.GroupInfo, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.GroupInfoOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.GroupInfo)
+        com.mogujie.tt.protobuf.IMBaseDefine.GroupInfoOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.GroupInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -9873,6 +9997,8 @@ public final class IMBaseDefine {
           }
           
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -9927,7 +10053,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required uint32 group_id = 1;
       private int groupId_ ;
       /**
        * <code>required uint32 group_id = 1;</code>
@@ -9960,7 +10085,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 version = 2;
       private int version_ ;
       /**
        * <code>required uint32 version = 2;</code>
@@ -9993,7 +10117,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required string group_name = 3;
       private java.lang.Object groupName_ = "";
       /**
        * <code>required string group_name = 3;</code>
@@ -10007,9 +10130,12 @@ public final class IMBaseDefine {
       public java.lang.String getGroupName() {
         java.lang.Object ref = groupName_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          groupName_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            groupName_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -10067,7 +10193,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required string group_avatar = 4;
       private java.lang.Object groupAvatar_ = "";
       /**
        * <code>required string group_avatar = 4;</code>
@@ -10081,9 +10206,12 @@ public final class IMBaseDefine {
       public java.lang.String getGroupAvatar() {
         java.lang.Object ref = groupAvatar_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          groupAvatar_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            groupAvatar_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -10141,7 +10269,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 group_creator_id = 5;
       private int groupCreatorId_ ;
       /**
        * <code>required uint32 group_creator_id = 5;</code>
@@ -10174,7 +10301,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required .IM.BaseDefine.GroupType group_type = 6;
       private com.mogujie.tt.protobuf.IMBaseDefine.GroupType groupType_ = com.mogujie.tt.protobuf.IMBaseDefine.GroupType.GROUP_TYPE_NORMAL;
       /**
        * <code>required .IM.BaseDefine.GroupType group_type = 6;</code>
@@ -10210,7 +10336,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 shield_status = 7;
       private int shieldStatus_ ;
       /**
        * <code>required uint32 shield_status = 7;</code>
@@ -10259,7 +10384,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // repeated uint32 group_member_list = 8;
       private java.util.List<java.lang.Integer> groupMemberList_ = java.util.Collections.emptyList();
       private void ensureGroupMemberListIsMutable() {
         if (!((bitField0_ & 0x00000080) == 0x00000080)) {
@@ -10311,7 +10435,8 @@ public final class IMBaseDefine {
       public Builder addAllGroupMemberList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureGroupMemberListIsMutable();
-        super.addAll(values, groupMemberList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, groupMemberList_);
         
         return this;
       }
@@ -10336,10 +10461,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.GroupInfo)
   }
 
-  public interface UserTokenInfoOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface UserTokenInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.UserTokenInfo)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      */
@@ -10349,7 +10474,6 @@ public final class IMBaseDefine {
      */
     int getUserId();
 
-    // required .IM.BaseDefine.ClientType user_type = 2;
     /**
      * <code>required .IM.BaseDefine.ClientType user_type = 2;</code>
      */
@@ -10359,7 +10483,6 @@ public final class IMBaseDefine {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.ClientType getUserType();
 
-    // required string token = 3;
     /**
      * <code>required string token = 3;</code>
      */
@@ -10374,7 +10497,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getTokenBytes();
 
-    // required uint32 push_count = 4;
     /**
      * <code>required uint32 push_count = 4;</code>
      */
@@ -10384,7 +10506,6 @@ public final class IMBaseDefine {
      */
     int getPushCount();
 
-    // required uint32 push_type = 5;
     /**
      * <code>required uint32 push_type = 5;</code>
      *
@@ -10406,14 +10527,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.UserTokenInfo}
    */
   public static final class UserTokenInfo extends
-      com.google.protobuf.GeneratedMessageLite
-      implements UserTokenInfoOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.UserTokenInfo)
+      UserTokenInfoOrBuilder {
     // Use UserTokenInfo.newBuilder() to construct.
     private UserTokenInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private UserTokenInfo(boolean noInit) {}
+    private UserTokenInfo(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final UserTokenInfo defaultInstance;
     public static UserTokenInfo getDefaultInstance() {
@@ -10424,12 +10546,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private UserTokenInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -10439,7 +10567,7 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -10453,15 +10581,19 @@ public final class IMBaseDefine {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.ClientType value = com.mogujie.tt.protobuf.IMBaseDefine.ClientType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 userType_ = value;
               }
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              token_ = input.readBytes();
+              token_ = bs;
               break;
             }
             case 32: {
@@ -10482,6 +10614,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -10501,7 +10640,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -10517,7 +10655,6 @@ public final class IMBaseDefine {
       return userId_;
     }
 
-    // required .IM.BaseDefine.ClientType user_type = 2;
     public static final int USER_TYPE_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.ClientType userType_;
     /**
@@ -10533,7 +10670,6 @@ public final class IMBaseDefine {
       return userType_;
     }
 
-    // required string token = 3;
     public static final int TOKEN_FIELD_NUMBER = 3;
     private java.lang.Object token_;
     /**
@@ -10576,7 +10712,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required uint32 push_count = 4;
     public static final int PUSH_COUNT_FIELD_NUMBER = 4;
     private int pushCount_;
     /**
@@ -10592,7 +10727,6 @@ public final class IMBaseDefine {
       return pushCount_;
     }
 
-    // required uint32 push_type = 5;
     public static final int PUSH_TYPE_FIELD_NUMBER = 5;
     private int pushType_;
     /**
@@ -10626,7 +10760,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -10670,6 +10805,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeUInt32(5, pushType_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -10698,6 +10834,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, pushType_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -10775,7 +10912,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.UserTokenInfo, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.UserTokenInfoOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.UserTokenInfo)
+        com.mogujie.tt.protobuf.IMBaseDefine.UserTokenInfoOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.UserTokenInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -10865,6 +11004,8 @@ public final class IMBaseDefine {
         if (other.hasPushType()) {
           setPushType(other.getPushType());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -10911,7 +11052,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -10944,7 +11084,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required .IM.BaseDefine.ClientType user_type = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.ClientType userType_ = com.mogujie.tt.protobuf.IMBaseDefine.ClientType.CLIENT_TYPE_WINDOWS;
       /**
        * <code>required .IM.BaseDefine.ClientType user_type = 2;</code>
@@ -10980,7 +11119,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required string token = 3;
       private java.lang.Object token_ = "";
       /**
        * <code>required string token = 3;</code>
@@ -10994,9 +11132,12 @@ public final class IMBaseDefine {
       public java.lang.String getToken() {
         java.lang.Object ref = token_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          token_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            token_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11054,7 +11195,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 push_count = 4;
       private int pushCount_ ;
       /**
        * <code>required uint32 push_count = 4;</code>
@@ -11087,7 +11227,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 push_type = 5;
       private int pushType_ ;
       /**
        * <code>required uint32 push_type = 5;</code>
@@ -11147,10 +11286,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.UserTokenInfo)
   }
 
-  public interface PushResultOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface PushResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.PushResult)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required string user_token = 1;
     /**
      * <code>required string user_token = 1;</code>
      */
@@ -11165,7 +11304,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getUserTokenBytes();
 
-    // required uint32 result_code = 2;
     /**
      * <code>required uint32 result_code = 2;</code>
      */
@@ -11179,14 +11317,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.PushResult}
    */
   public static final class PushResult extends
-      com.google.protobuf.GeneratedMessageLite
-      implements PushResultOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.PushResult)
+      PushResultOrBuilder {
     // Use PushResult.newBuilder() to construct.
     private PushResult(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private PushResult(boolean noInit) {}
+    private PushResult(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final PushResult defaultInstance;
     public static PushResult getDefaultInstance() {
@@ -11197,12 +11336,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private PushResult(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -11212,15 +11357,16 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              userToken_ = input.readBytes();
+              userToken_ = bs;
               break;
             }
             case 16: {
@@ -11236,6 +11382,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -11255,7 +11408,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required string user_token = 1;
     public static final int USER_TOKEN_FIELD_NUMBER = 1;
     private java.lang.Object userToken_;
     /**
@@ -11298,7 +11450,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required uint32 result_code = 2;
     public static final int RESULT_CODE_FIELD_NUMBER = 2;
     private int resultCode_;
     /**
@@ -11321,7 +11472,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserToken()) {
         memoizedIsInitialized = 0;
@@ -11344,6 +11496,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, resultCode_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -11360,6 +11513,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, resultCode_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -11437,7 +11591,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.PushResult, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.PushResultOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.PushResult)
+        com.mogujie.tt.protobuf.IMBaseDefine.PushResultOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.PushResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -11500,6 +11656,8 @@ public final class IMBaseDefine {
         if (other.hasResultCode()) {
           setResultCode(other.getResultCode());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -11534,7 +11692,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required string user_token = 1;
       private java.lang.Object userToken_ = "";
       /**
        * <code>required string user_token = 1;</code>
@@ -11548,9 +11705,12 @@ public final class IMBaseDefine {
       public java.lang.String getUserToken() {
         java.lang.Object ref = userToken_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          userToken_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            userToken_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11608,7 +11768,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 result_code = 2;
       private int resultCode_ ;
       /**
        * <code>required uint32 result_code = 2;</code>
@@ -11652,10 +11811,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.PushResult)
   }
 
-  public interface ShieldStatusOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface ShieldStatusOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.ShieldStatus)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      */
@@ -11665,7 +11824,6 @@ public final class IMBaseDefine {
      */
     int getUserId();
 
-    // required uint32 group_id = 2;
     /**
      * <code>required uint32 group_id = 2;</code>
      */
@@ -11675,7 +11833,6 @@ public final class IMBaseDefine {
      */
     int getGroupId();
 
-    // required uint32 shield_status = 3;
     /**
      * <code>required uint32 shield_status = 3;</code>
      *
@@ -11697,14 +11854,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.ShieldStatus}
    */
   public static final class ShieldStatus extends
-      com.google.protobuf.GeneratedMessageLite
-      implements ShieldStatusOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.ShieldStatus)
+      ShieldStatusOrBuilder {
     // Use ShieldStatus.newBuilder() to construct.
     private ShieldStatus(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private ShieldStatus(boolean noInit) {}
+    private ShieldStatus(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final ShieldStatus defaultInstance;
     public static ShieldStatus getDefaultInstance() {
@@ -11715,12 +11873,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private ShieldStatus(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -11730,7 +11894,7 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -11759,6 +11923,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -11778,7 +11949,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -11794,7 +11964,6 @@ public final class IMBaseDefine {
       return userId_;
     }
 
-    // required uint32 group_id = 2;
     public static final int GROUP_ID_FIELD_NUMBER = 2;
     private int groupId_;
     /**
@@ -11810,7 +11979,6 @@ public final class IMBaseDefine {
       return groupId_;
     }
 
-    // required uint32 shield_status = 3;
     public static final int SHIELD_STATUS_FIELD_NUMBER = 3;
     private int shieldStatus_;
     /**
@@ -11842,7 +12010,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -11872,6 +12041,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeUInt32(3, shieldStatus_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -11892,6 +12062,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, shieldStatus_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -11969,7 +12140,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.ShieldStatus, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.ShieldStatusOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.ShieldStatus)
+        com.mogujie.tt.protobuf.IMBaseDefine.ShieldStatusOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.ShieldStatus.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -12039,6 +12212,8 @@ public final class IMBaseDefine {
         if (other.hasShieldStatus()) {
           setShieldStatus(other.getShieldStatus());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -12077,7 +12252,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -12110,7 +12284,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 group_id = 2;
       private int groupId_ ;
       /**
        * <code>required uint32 group_id = 2;</code>
@@ -12143,7 +12316,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 shield_status = 3;
       private int shieldStatus_ ;
       /**
        * <code>required uint32 shield_status = 3;</code>
@@ -12203,10 +12375,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.ShieldStatus)
   }
 
-  public interface OfflineFileInfoOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface OfflineFileInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.OfflineFileInfo)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 from_user_id = 1;
     /**
      * <code>required uint32 from_user_id = 1;</code>
      */
@@ -12216,7 +12388,6 @@ public final class IMBaseDefine {
      */
     int getFromUserId();
 
-    // required string task_id = 2;
     /**
      * <code>required string task_id = 2;</code>
      */
@@ -12231,7 +12402,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getTaskIdBytes();
 
-    // required string file_name = 3;
     /**
      * <code>required string file_name = 3;</code>
      */
@@ -12246,7 +12416,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getFileNameBytes();
 
-    // required uint32 file_size = 4;
     /**
      * <code>required uint32 file_size = 4;</code>
      */
@@ -12260,14 +12429,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.OfflineFileInfo}
    */
   public static final class OfflineFileInfo extends
-      com.google.protobuf.GeneratedMessageLite
-      implements OfflineFileInfoOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.OfflineFileInfo)
+      OfflineFileInfoOrBuilder {
     // Use OfflineFileInfo.newBuilder() to construct.
     private OfflineFileInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private OfflineFileInfo(boolean noInit) {}
+    private OfflineFileInfo(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final OfflineFileInfo defaultInstance;
     public static OfflineFileInfo getDefaultInstance() {
@@ -12278,12 +12448,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private OfflineFileInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -12293,7 +12469,7 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -12305,13 +12481,15 @@ public final class IMBaseDefine {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              taskId_ = input.readBytes();
+              taskId_ = bs;
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              fileName_ = input.readBytes();
+              fileName_ = bs;
               break;
             }
             case 32: {
@@ -12327,6 +12505,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -12346,7 +12531,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required uint32 from_user_id = 1;
     public static final int FROM_USER_ID_FIELD_NUMBER = 1;
     private int fromUserId_;
     /**
@@ -12362,7 +12546,6 @@ public final class IMBaseDefine {
       return fromUserId_;
     }
 
-    // required string task_id = 2;
     public static final int TASK_ID_FIELD_NUMBER = 2;
     private java.lang.Object taskId_;
     /**
@@ -12405,7 +12588,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required string file_name = 3;
     public static final int FILE_NAME_FIELD_NUMBER = 3;
     private java.lang.Object fileName_;
     /**
@@ -12448,7 +12630,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required uint32 file_size = 4;
     public static final int FILE_SIZE_FIELD_NUMBER = 4;
     private int fileSize_;
     /**
@@ -12473,7 +12654,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasFromUserId()) {
         memoizedIsInitialized = 0;
@@ -12510,6 +12692,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeUInt32(4, fileSize_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -12534,6 +12717,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, fileSize_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -12611,7 +12795,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.OfflineFileInfo, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.OfflineFileInfoOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.OfflineFileInfo)
+        com.mogujie.tt.protobuf.IMBaseDefine.OfflineFileInfoOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.OfflineFileInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -12694,6 +12880,8 @@ public final class IMBaseDefine {
         if (other.hasFileSize()) {
           setFileSize(other.getFileSize());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -12736,7 +12924,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required uint32 from_user_id = 1;
       private int fromUserId_ ;
       /**
        * <code>required uint32 from_user_id = 1;</code>
@@ -12769,7 +12956,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required string task_id = 2;
       private java.lang.Object taskId_ = "";
       /**
        * <code>required string task_id = 2;</code>
@@ -12783,9 +12969,12 @@ public final class IMBaseDefine {
       public java.lang.String getTaskId() {
         java.lang.Object ref = taskId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          taskId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            taskId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -12843,7 +13032,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required string file_name = 3;
       private java.lang.Object fileName_ = "";
       /**
        * <code>required string file_name = 3;</code>
@@ -12857,9 +13045,12 @@ public final class IMBaseDefine {
       public java.lang.String getFileName() {
         java.lang.Object ref = fileName_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          fileName_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            fileName_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -12917,7 +13108,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 file_size = 4;
       private int fileSize_ ;
       /**
        * <code>required uint32 file_size = 4;</code>
@@ -12961,10 +13151,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.OfflineFileInfo)
   }
 
-  public interface DepartInfoOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface DepartInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.DepartInfo)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 dept_id = 1;
     /**
      * <code>required uint32 dept_id = 1;</code>
      */
@@ -12974,7 +13164,6 @@ public final class IMBaseDefine {
      */
     int getDeptId();
 
-    // required uint32 priority = 2;
     /**
      * <code>required uint32 priority = 2;</code>
      */
@@ -12984,7 +13173,6 @@ public final class IMBaseDefine {
      */
     int getPriority();
 
-    // required string dept_name = 3;
     /**
      * <code>required string dept_name = 3;</code>
      */
@@ -12999,7 +13187,6 @@ public final class IMBaseDefine {
     com.google.protobuf.ByteString
         getDeptNameBytes();
 
-    // required uint32 parent_dept_id = 4;
     /**
      * <code>required uint32 parent_dept_id = 4;</code>
      */
@@ -13009,7 +13196,6 @@ public final class IMBaseDefine {
      */
     int getParentDeptId();
 
-    // required .IM.BaseDefine.DepartmentStatusType dept_status = 5;
     /**
      * <code>required .IM.BaseDefine.DepartmentStatusType dept_status = 5;</code>
      */
@@ -13023,14 +13209,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.DepartInfo}
    */
   public static final class DepartInfo extends
-      com.google.protobuf.GeneratedMessageLite
-      implements DepartInfoOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.DepartInfo)
+      DepartInfoOrBuilder {
     // Use DepartInfo.newBuilder() to construct.
     private DepartInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private DepartInfo(boolean noInit) {}
+    private DepartInfo(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final DepartInfo defaultInstance;
     public static DepartInfo getDefaultInstance() {
@@ -13041,12 +13228,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private DepartInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -13056,7 +13249,7 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -13073,8 +13266,9 @@ public final class IMBaseDefine {
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              deptName_ = input.readBytes();
+              deptName_ = bs;
               break;
             }
             case 32: {
@@ -13085,7 +13279,10 @@ public final class IMBaseDefine {
             case 40: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.DepartmentStatusType value = com.mogujie.tt.protobuf.IMBaseDefine.DepartmentStatusType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000010;
                 deptStatus_ = value;
               }
@@ -13099,6 +13296,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -13118,7 +13322,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required uint32 dept_id = 1;
     public static final int DEPT_ID_FIELD_NUMBER = 1;
     private int deptId_;
     /**
@@ -13134,7 +13337,6 @@ public final class IMBaseDefine {
       return deptId_;
     }
 
-    // required uint32 priority = 2;
     public static final int PRIORITY_FIELD_NUMBER = 2;
     private int priority_;
     /**
@@ -13150,7 +13352,6 @@ public final class IMBaseDefine {
       return priority_;
     }
 
-    // required string dept_name = 3;
     public static final int DEPT_NAME_FIELD_NUMBER = 3;
     private java.lang.Object deptName_;
     /**
@@ -13193,7 +13394,6 @@ public final class IMBaseDefine {
       }
     }
 
-    // required uint32 parent_dept_id = 4;
     public static final int PARENT_DEPT_ID_FIELD_NUMBER = 4;
     private int parentDeptId_;
     /**
@@ -13209,7 +13409,6 @@ public final class IMBaseDefine {
       return parentDeptId_;
     }
 
-    // required .IM.BaseDefine.DepartmentStatusType dept_status = 5;
     public static final int DEPT_STATUS_FIELD_NUMBER = 5;
     private com.mogujie.tt.protobuf.IMBaseDefine.DepartmentStatusType deptStatus_;
     /**
@@ -13235,7 +13434,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasDeptId()) {
         memoizedIsInitialized = 0;
@@ -13279,6 +13479,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeEnum(5, deptStatus_.getNumber());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -13307,6 +13508,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, deptStatus_.getNumber());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -13384,7 +13586,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.DepartInfo, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.DepartInfoOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.DepartInfo)
+        com.mogujie.tt.protobuf.IMBaseDefine.DepartInfoOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.DepartInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -13474,6 +13678,8 @@ public final class IMBaseDefine {
         if (other.hasDeptStatus()) {
           setDeptStatus(other.getDeptStatus());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -13520,7 +13726,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required uint32 dept_id = 1;
       private int deptId_ ;
       /**
        * <code>required uint32 dept_id = 1;</code>
@@ -13553,7 +13758,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 priority = 2;
       private int priority_ ;
       /**
        * <code>required uint32 priority = 2;</code>
@@ -13586,7 +13790,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required string dept_name = 3;
       private java.lang.Object deptName_ = "";
       /**
        * <code>required string dept_name = 3;</code>
@@ -13600,9 +13803,12 @@ public final class IMBaseDefine {
       public java.lang.String getDeptName() {
         java.lang.Object ref = deptName_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          deptName_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            deptName_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -13660,7 +13866,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 parent_dept_id = 4;
       private int parentDeptId_ ;
       /**
        * <code>required uint32 parent_dept_id = 4;</code>
@@ -13693,7 +13898,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required .IM.BaseDefine.DepartmentStatusType dept_status = 5;
       private com.mogujie.tt.protobuf.IMBaseDefine.DepartmentStatusType deptStatus_ = com.mogujie.tt.protobuf.IMBaseDefine.DepartmentStatusType.DEPT_STATUS_OK;
       /**
        * <code>required .IM.BaseDefine.DepartmentStatusType dept_status = 5;</code>
@@ -13740,10 +13944,10 @@ public final class IMBaseDefine {
     // @@protoc_insertion_point(class_scope:IM.BaseDefine.DepartInfo)
   }
 
-  public interface PushShieldStatusOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface PushShieldStatusOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.BaseDefine.PushShieldStatus)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      */
@@ -13753,7 +13957,6 @@ public final class IMBaseDefine {
      */
     int getUserId();
 
-    // required uint32 shield_status = 2;
     /**
      * <code>required uint32 shield_status = 2;</code>
      *
@@ -13775,14 +13978,15 @@ public final class IMBaseDefine {
    * Protobuf type {@code IM.BaseDefine.PushShieldStatus}
    */
   public static final class PushShieldStatus extends
-      com.google.protobuf.GeneratedMessageLite
-      implements PushShieldStatusOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.BaseDefine.PushShieldStatus)
+      PushShieldStatusOrBuilder {
     // Use PushShieldStatus.newBuilder() to construct.
     private PushShieldStatus(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private PushShieldStatus(boolean noInit) {}
+    private PushShieldStatus(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final PushShieldStatus defaultInstance;
     public static PushShieldStatus getDefaultInstance() {
@@ -13793,12 +13997,18 @@ public final class IMBaseDefine {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private PushShieldStatus(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -13808,7 +14018,7 @@ public final class IMBaseDefine {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -13832,6 +14042,13 @@ public final class IMBaseDefine {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -13851,7 +14068,6 @@ public final class IMBaseDefine {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -13867,7 +14083,6 @@ public final class IMBaseDefine {
       return userId_;
     }
 
-    // required uint32 shield_status = 2;
     public static final int SHIELD_STATUS_FIELD_NUMBER = 2;
     private int shieldStatus_;
     /**
@@ -13898,7 +14113,8 @@ public final class IMBaseDefine {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -13921,6 +14137,7 @@ public final class IMBaseDefine {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, shieldStatus_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -13937,6 +14154,7 @@ public final class IMBaseDefine {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, shieldStatus_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -14014,7 +14232,9 @@ public final class IMBaseDefine {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBaseDefine.PushShieldStatus, Builder>
-        implements com.mogujie.tt.protobuf.IMBaseDefine.PushShieldStatusOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.BaseDefine.PushShieldStatus)
+        com.mogujie.tt.protobuf.IMBaseDefine.PushShieldStatusOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBaseDefine.PushShieldStatus.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -14075,6 +14295,8 @@ public final class IMBaseDefine {
         if (other.hasShieldStatus()) {
           setShieldStatus(other.getShieldStatus());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -14109,7 +14331,6 @@ public final class IMBaseDefine {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -14142,7 +14363,6 @@ public final class IMBaseDefine {
         return this;
       }
 
-      // required uint32 shield_status = 2;
       private int shieldStatus_ ;
       /**
        * <code>required uint32 shield_status = 2;</code>

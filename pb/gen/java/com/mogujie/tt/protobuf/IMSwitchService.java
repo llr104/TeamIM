@@ -8,10 +8,10 @@ public final class IMSwitchService {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-  public interface IMP2PCmdMsgOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMP2PCmdMsgOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.SwitchService.IMP2PCmdMsg)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 from_user_id = 1;
     /**
      * <code>required uint32 from_user_id = 1;</code>
      *
@@ -29,7 +29,6 @@ public final class IMSwitchService {
      */
     int getFromUserId();
 
-    // required uint32 to_user_id = 2;
     /**
      * <code>required uint32 to_user_id = 2;</code>
      */
@@ -39,7 +38,6 @@ public final class IMSwitchService {
      */
     int getToUserId();
 
-    // required string cmd_msg_data = 3;
     /**
      * <code>required string cmd_msg_data = 3;</code>
      */
@@ -58,14 +56,15 @@ public final class IMSwitchService {
    * Protobuf type {@code IM.SwitchService.IMP2PCmdMsg}
    */
   public static final class IMP2PCmdMsg extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMP2PCmdMsgOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.SwitchService.IMP2PCmdMsg)
+      IMP2PCmdMsgOrBuilder {
     // Use IMP2PCmdMsg.newBuilder() to construct.
     private IMP2PCmdMsg(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMP2PCmdMsg(boolean noInit) {}
+    private IMP2PCmdMsg(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMP2PCmdMsg defaultInstance;
     public static IMP2PCmdMsg getDefaultInstance() {
@@ -76,12 +75,18 @@ public final class IMSwitchService {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMP2PCmdMsg(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -91,7 +96,7 @@ public final class IMSwitchService {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -108,8 +113,9 @@ public final class IMSwitchService {
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              cmdMsgData_ = input.readBytes();
+              cmdMsgData_ = bs;
               break;
             }
           }
@@ -120,6 +126,13 @@ public final class IMSwitchService {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -139,7 +152,6 @@ public final class IMSwitchService {
     }
 
     private int bitField0_;
-    // required uint32 from_user_id = 1;
     public static final int FROM_USER_ID_FIELD_NUMBER = 1;
     private int fromUserId_;
     /**
@@ -163,7 +175,6 @@ public final class IMSwitchService {
       return fromUserId_;
     }
 
-    // required uint32 to_user_id = 2;
     public static final int TO_USER_ID_FIELD_NUMBER = 2;
     private int toUserId_;
     /**
@@ -179,7 +190,6 @@ public final class IMSwitchService {
       return toUserId_;
     }
 
-    // required string cmd_msg_data = 3;
     public static final int CMD_MSG_DATA_FIELD_NUMBER = 3;
     private java.lang.Object cmdMsgData_;
     /**
@@ -230,7 +240,8 @@ public final class IMSwitchService {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasFromUserId()) {
         memoizedIsInitialized = 0;
@@ -260,6 +271,7 @@ public final class IMSwitchService {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(3, getCmdMsgDataBytes());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -280,6 +292,7 @@ public final class IMSwitchService {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, getCmdMsgDataBytes());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -357,7 +370,9 @@ public final class IMSwitchService {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMSwitchService.IMP2PCmdMsg, Builder>
-        implements com.mogujie.tt.protobuf.IMSwitchService.IMP2PCmdMsgOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.SwitchService.IMP2PCmdMsg)
+        com.mogujie.tt.protobuf.IMSwitchService.IMP2PCmdMsgOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMSwitchService.IMP2PCmdMsg.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -429,6 +444,8 @@ public final class IMSwitchService {
           cmdMsgData_ = other.cmdMsgData_;
           
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -467,7 +484,6 @@ public final class IMSwitchService {
       }
       private int bitField0_;
 
-      // required uint32 from_user_id = 1;
       private int fromUserId_ ;
       /**
        * <code>required uint32 from_user_id = 1;</code>
@@ -516,7 +532,6 @@ public final class IMSwitchService {
         return this;
       }
 
-      // required uint32 to_user_id = 2;
       private int toUserId_ ;
       /**
        * <code>required uint32 to_user_id = 2;</code>
@@ -549,7 +564,6 @@ public final class IMSwitchService {
         return this;
       }
 
-      // required string cmd_msg_data = 3;
       private java.lang.Object cmdMsgData_ = "";
       /**
        * <code>required string cmd_msg_data = 3;</code>
@@ -563,9 +577,12 @@ public final class IMSwitchService {
       public java.lang.String getCmdMsgData() {
         java.lang.Object ref = cmdMsgData_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          cmdMsgData_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            cmdMsgData_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;

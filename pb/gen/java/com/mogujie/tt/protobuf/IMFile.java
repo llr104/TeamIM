@@ -8,10 +8,10 @@ public final class IMFile {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-  public interface IMFileLoginReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMFileLoginReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.File.IMFileLoginReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -29,7 +29,6 @@ public final class IMFile {
      */
     int getUserId();
 
-    // required string task_id = 2;
     /**
      * <code>required string task_id = 2;</code>
      */
@@ -44,7 +43,6 @@ public final class IMFile {
     com.google.protobuf.ByteString
         getTaskIdBytes();
 
-    // required .IM.BaseDefine.ClientFileRole file_role = 3;
     /**
      * <code>required .IM.BaseDefine.ClientFileRole file_role = 3;</code>
      */
@@ -58,14 +56,15 @@ public final class IMFile {
    * Protobuf type {@code IM.File.IMFileLoginReq}
    */
   public static final class IMFileLoginReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMFileLoginReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.File.IMFileLoginReq)
+      IMFileLoginReqOrBuilder {
     // Use IMFileLoginReq.newBuilder() to construct.
     private IMFileLoginReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMFileLoginReq(boolean noInit) {}
+    private IMFileLoginReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMFileLoginReq defaultInstance;
     public static IMFileLoginReq getDefaultInstance() {
@@ -76,12 +75,18 @@ public final class IMFile {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMFileLoginReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -91,7 +96,7 @@ public final class IMFile {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -103,14 +108,18 @@ public final class IMFile {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              taskId_ = input.readBytes();
+              taskId_ = bs;
               break;
             }
             case 24: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.ClientFileRole value = com.mogujie.tt.protobuf.IMBaseDefine.ClientFileRole.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000004;
                 fileRole_ = value;
               }
@@ -124,6 +133,13 @@ public final class IMFile {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -143,7 +159,6 @@ public final class IMFile {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -167,7 +182,6 @@ public final class IMFile {
       return userId_;
     }
 
-    // required string task_id = 2;
     public static final int TASK_ID_FIELD_NUMBER = 2;
     private java.lang.Object taskId_;
     /**
@@ -210,7 +224,6 @@ public final class IMFile {
       }
     }
 
-    // required .IM.BaseDefine.ClientFileRole file_role = 3;
     public static final int FILE_ROLE_FIELD_NUMBER = 3;
     private com.mogujie.tt.protobuf.IMBaseDefine.ClientFileRole fileRole_;
     /**
@@ -234,7 +247,8 @@ public final class IMFile {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -264,6 +278,7 @@ public final class IMFile {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeEnum(3, fileRole_.getNumber());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -284,6 +299,7 @@ public final class IMFile {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, fileRole_.getNumber());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -361,7 +377,9 @@ public final class IMFile {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMFile.IMFileLoginReq, Builder>
-        implements com.mogujie.tt.protobuf.IMFile.IMFileLoginReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.File.IMFileLoginReq)
+        com.mogujie.tt.protobuf.IMFile.IMFileLoginReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMFile.IMFileLoginReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -433,6 +451,8 @@ public final class IMFile {
         if (other.hasFileRole()) {
           setFileRole(other.getFileRole());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -471,7 +491,6 @@ public final class IMFile {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -520,7 +539,6 @@ public final class IMFile {
         return this;
       }
 
-      // required string task_id = 2;
       private java.lang.Object taskId_ = "";
       /**
        * <code>required string task_id = 2;</code>
@@ -534,9 +552,12 @@ public final class IMFile {
       public java.lang.String getTaskId() {
         java.lang.Object ref = taskId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          taskId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            taskId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -594,7 +615,6 @@ public final class IMFile {
         return this;
       }
 
-      // required .IM.BaseDefine.ClientFileRole file_role = 3;
       private com.mogujie.tt.protobuf.IMBaseDefine.ClientFileRole fileRole_ = com.mogujie.tt.protobuf.IMBaseDefine.ClientFileRole.CLIENT_REALTIME_SENDER;
       /**
        * <code>required .IM.BaseDefine.ClientFileRole file_role = 3;</code>
@@ -641,10 +661,10 @@ public final class IMFile {
     // @@protoc_insertion_point(class_scope:IM.File.IMFileLoginReq)
   }
 
-  public interface IMFileLoginRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMFileLoginRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.File.IMFileLoginRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 result_code = 1;
     /**
      * <code>required uint32 result_code = 1;</code>
      *
@@ -662,7 +682,6 @@ public final class IMFile {
      */
     int getResultCode();
 
-    // required string task_id = 2;
     /**
      * <code>required string task_id = 2;</code>
      */
@@ -681,14 +700,15 @@ public final class IMFile {
    * Protobuf type {@code IM.File.IMFileLoginRsp}
    */
   public static final class IMFileLoginRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMFileLoginRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.File.IMFileLoginRsp)
+      IMFileLoginRspOrBuilder {
     // Use IMFileLoginRsp.newBuilder() to construct.
     private IMFileLoginRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMFileLoginRsp(boolean noInit) {}
+    private IMFileLoginRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMFileLoginRsp defaultInstance;
     public static IMFileLoginRsp getDefaultInstance() {
@@ -699,12 +719,18 @@ public final class IMFile {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMFileLoginRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -714,7 +740,7 @@ public final class IMFile {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -726,8 +752,9 @@ public final class IMFile {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              taskId_ = input.readBytes();
+              taskId_ = bs;
               break;
             }
           }
@@ -738,6 +765,13 @@ public final class IMFile {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -757,7 +791,6 @@ public final class IMFile {
     }
 
     private int bitField0_;
-    // required uint32 result_code = 1;
     public static final int RESULT_CODE_FIELD_NUMBER = 1;
     private int resultCode_;
     /**
@@ -781,7 +814,6 @@ public final class IMFile {
       return resultCode_;
     }
 
-    // required string task_id = 2;
     public static final int TASK_ID_FIELD_NUMBER = 2;
     private java.lang.Object taskId_;
     /**
@@ -831,7 +863,8 @@ public final class IMFile {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
@@ -854,6 +887,7 @@ public final class IMFile {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getTaskIdBytes());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -870,6 +904,7 @@ public final class IMFile {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, getTaskIdBytes());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -947,7 +982,9 @@ public final class IMFile {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMFile.IMFileLoginRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMFile.IMFileLoginRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.File.IMFileLoginRsp)
+        com.mogujie.tt.protobuf.IMFile.IMFileLoginRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMFile.IMFileLoginRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -1010,6 +1047,8 @@ public final class IMFile {
           taskId_ = other.taskId_;
           
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -1044,7 +1083,6 @@ public final class IMFile {
       }
       private int bitField0_;
 
-      // required uint32 result_code = 1;
       private int resultCode_ ;
       /**
        * <code>required uint32 result_code = 1;</code>
@@ -1093,7 +1131,6 @@ public final class IMFile {
         return this;
       }
 
-      // required string task_id = 2;
       private java.lang.Object taskId_ = "";
       /**
        * <code>required string task_id = 2;</code>
@@ -1107,9 +1144,12 @@ public final class IMFile {
       public java.lang.String getTaskId() {
         java.lang.Object ref = taskId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          taskId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            taskId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1178,10 +1218,10 @@ public final class IMFile {
     // @@protoc_insertion_point(class_scope:IM.File.IMFileLoginRsp)
   }
 
-  public interface IMFileStateOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMFileStateOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.File.IMFileState)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required .IM.BaseDefine.ClientFileState state = 1;
     /**
      * <code>required .IM.BaseDefine.ClientFileState state = 1;</code>
      *
@@ -1199,7 +1239,6 @@ public final class IMFile {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.ClientFileState getState();
 
-    // required string task_id = 2;
     /**
      * <code>required string task_id = 2;</code>
      */
@@ -1214,7 +1253,6 @@ public final class IMFile {
     com.google.protobuf.ByteString
         getTaskIdBytes();
 
-    // required uint32 user_id = 3;
     /**
      * <code>required uint32 user_id = 3;</code>
      */
@@ -1228,14 +1266,15 @@ public final class IMFile {
    * Protobuf type {@code IM.File.IMFileState}
    */
   public static final class IMFileState extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMFileStateOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.File.IMFileState)
+      IMFileStateOrBuilder {
     // Use IMFileState.newBuilder() to construct.
     private IMFileState(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMFileState(boolean noInit) {}
+    private IMFileState(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMFileState defaultInstance;
     public static IMFileState getDefaultInstance() {
@@ -1246,12 +1285,18 @@ public final class IMFile {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMFileState(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -1261,7 +1306,7 @@ public final class IMFile {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -1270,15 +1315,19 @@ public final class IMFile {
             case 8: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.ClientFileState value = com.mogujie.tt.protobuf.IMBaseDefine.ClientFileState.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000001;
                 state_ = value;
               }
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              taskId_ = input.readBytes();
+              taskId_ = bs;
               break;
             }
             case 24: {
@@ -1294,6 +1343,13 @@ public final class IMFile {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -1313,7 +1369,6 @@ public final class IMFile {
     }
 
     private int bitField0_;
-    // required .IM.BaseDefine.ClientFileState state = 1;
     public static final int STATE_FIELD_NUMBER = 1;
     private com.mogujie.tt.protobuf.IMBaseDefine.ClientFileState state_;
     /**
@@ -1337,7 +1392,6 @@ public final class IMFile {
       return state_;
     }
 
-    // required string task_id = 2;
     public static final int TASK_ID_FIELD_NUMBER = 2;
     private java.lang.Object taskId_;
     /**
@@ -1380,7 +1434,6 @@ public final class IMFile {
       }
     }
 
-    // required uint32 user_id = 3;
     public static final int USER_ID_FIELD_NUMBER = 3;
     private int userId_;
     /**
@@ -1404,7 +1457,8 @@ public final class IMFile {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasState()) {
         memoizedIsInitialized = 0;
@@ -1434,6 +1488,7 @@ public final class IMFile {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeUInt32(3, userId_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -1454,6 +1509,7 @@ public final class IMFile {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, userId_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -1531,7 +1587,9 @@ public final class IMFile {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMFile.IMFileState, Builder>
-        implements com.mogujie.tt.protobuf.IMFile.IMFileStateOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.File.IMFileState)
+        com.mogujie.tt.protobuf.IMFile.IMFileStateOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMFile.IMFileState.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -1603,6 +1661,8 @@ public final class IMFile {
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -1641,7 +1701,6 @@ public final class IMFile {
       }
       private int bitField0_;
 
-      // required .IM.BaseDefine.ClientFileState state = 1;
       private com.mogujie.tt.protobuf.IMBaseDefine.ClientFileState state_ = com.mogujie.tt.protobuf.IMBaseDefine.ClientFileState.CLIENT_FILE_PEER_READY;
       /**
        * <code>required .IM.BaseDefine.ClientFileState state = 1;</code>
@@ -1693,7 +1752,6 @@ public final class IMFile {
         return this;
       }
 
-      // required string task_id = 2;
       private java.lang.Object taskId_ = "";
       /**
        * <code>required string task_id = 2;</code>
@@ -1707,9 +1765,12 @@ public final class IMFile {
       public java.lang.String getTaskId() {
         java.lang.Object ref = taskId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          taskId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            taskId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1767,7 +1828,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 user_id = 3;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 3;</code>
@@ -1811,10 +1871,10 @@ public final class IMFile {
     // @@protoc_insertion_point(class_scope:IM.File.IMFileState)
   }
 
-  public interface IMFilePullDataReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMFilePullDataReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.File.IMFilePullDataReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required string task_id = 1;
     /**
      * <code>required string task_id = 1;</code>
      *
@@ -1841,7 +1901,6 @@ public final class IMFile {
     com.google.protobuf.ByteString
         getTaskIdBytes();
 
-    // required uint32 user_id = 2;
     /**
      * <code>required uint32 user_id = 2;</code>
      */
@@ -1851,7 +1910,6 @@ public final class IMFile {
      */
     int getUserId();
 
-    // required .IM.BaseDefine.TransferFileType trans_mode = 3;
     /**
      * <code>required .IM.BaseDefine.TransferFileType trans_mode = 3;</code>
      */
@@ -1861,7 +1919,6 @@ public final class IMFile {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType getTransMode();
 
-    // required uint32 offset = 4;
     /**
      * <code>required uint32 offset = 4;</code>
      */
@@ -1871,7 +1928,6 @@ public final class IMFile {
      */
     int getOffset();
 
-    // required uint32 data_size = 5;
     /**
      * <code>required uint32 data_size = 5;</code>
      */
@@ -1885,14 +1941,15 @@ public final class IMFile {
    * Protobuf type {@code IM.File.IMFilePullDataReq}
    */
   public static final class IMFilePullDataReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMFilePullDataReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.File.IMFilePullDataReq)
+      IMFilePullDataReqOrBuilder {
     // Use IMFilePullDataReq.newBuilder() to construct.
     private IMFilePullDataReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMFilePullDataReq(boolean noInit) {}
+    private IMFilePullDataReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMFilePullDataReq defaultInstance;
     public static IMFilePullDataReq getDefaultInstance() {
@@ -1903,12 +1960,18 @@ public final class IMFile {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMFilePullDataReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -1918,15 +1981,16 @@ public final class IMFile {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              taskId_ = input.readBytes();
+              taskId_ = bs;
               break;
             }
             case 16: {
@@ -1937,7 +2001,10 @@ public final class IMFile {
             case 24: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType value = com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000004;
                 transMode_ = value;
               }
@@ -1961,6 +2028,13 @@ public final class IMFile {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -1980,7 +2054,6 @@ public final class IMFile {
     }
 
     private int bitField0_;
-    // required string task_id = 1;
     public static final int TASK_ID_FIELD_NUMBER = 1;
     private java.lang.Object taskId_;
     /**
@@ -2035,7 +2108,6 @@ public final class IMFile {
       }
     }
 
-    // required uint32 user_id = 2;
     public static final int USER_ID_FIELD_NUMBER = 2;
     private int userId_;
     /**
@@ -2051,7 +2123,6 @@ public final class IMFile {
       return userId_;
     }
 
-    // required .IM.BaseDefine.TransferFileType trans_mode = 3;
     public static final int TRANS_MODE_FIELD_NUMBER = 3;
     private com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType transMode_;
     /**
@@ -2067,7 +2138,6 @@ public final class IMFile {
       return transMode_;
     }
 
-    // required uint32 offset = 4;
     public static final int OFFSET_FIELD_NUMBER = 4;
     private int offset_;
     /**
@@ -2083,7 +2153,6 @@ public final class IMFile {
       return offset_;
     }
 
-    // required uint32 data_size = 5;
     public static final int DATA_SIZE_FIELD_NUMBER = 5;
     private int dataSize_;
     /**
@@ -2109,7 +2178,8 @@ public final class IMFile {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasTaskId()) {
         memoizedIsInitialized = 0;
@@ -2153,6 +2223,7 @@ public final class IMFile {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeUInt32(5, dataSize_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -2181,6 +2252,7 @@ public final class IMFile {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, dataSize_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -2258,7 +2330,9 @@ public final class IMFile {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMFile.IMFilePullDataReq, Builder>
-        implements com.mogujie.tt.protobuf.IMFile.IMFilePullDataReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.File.IMFilePullDataReq)
+        com.mogujie.tt.protobuf.IMFile.IMFilePullDataReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMFile.IMFilePullDataReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -2348,6 +2422,8 @@ public final class IMFile {
         if (other.hasDataSize()) {
           setDataSize(other.getDataSize());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -2394,7 +2470,6 @@ public final class IMFile {
       }
       private int bitField0_;
 
-      // required string task_id = 1;
       private java.lang.Object taskId_ = "";
       /**
        * <code>required string task_id = 1;</code>
@@ -2416,9 +2491,12 @@ public final class IMFile {
       public java.lang.String getTaskId() {
         java.lang.Object ref = taskId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          taskId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            taskId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2492,7 +2570,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 user_id = 2;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 2;</code>
@@ -2525,7 +2602,6 @@ public final class IMFile {
         return this;
       }
 
-      // required .IM.BaseDefine.TransferFileType trans_mode = 3;
       private com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType transMode_ = com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType.FILE_TYPE_ONLINE;
       /**
        * <code>required .IM.BaseDefine.TransferFileType trans_mode = 3;</code>
@@ -2561,7 +2637,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 offset = 4;
       private int offset_ ;
       /**
        * <code>required uint32 offset = 4;</code>
@@ -2594,7 +2669,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 data_size = 5;
       private int dataSize_ ;
       /**
        * <code>required uint32 data_size = 5;</code>
@@ -2638,10 +2712,10 @@ public final class IMFile {
     // @@protoc_insertion_point(class_scope:IM.File.IMFilePullDataReq)
   }
 
-  public interface IMFilePullDataRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMFilePullDataRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.File.IMFilePullDataRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 result_code = 1;
     /**
      * <code>required uint32 result_code = 1;</code>
      *
@@ -2659,7 +2733,6 @@ public final class IMFile {
      */
     int getResultCode();
 
-    // required string task_id = 2;
     /**
      * <code>required string task_id = 2;</code>
      */
@@ -2674,7 +2747,6 @@ public final class IMFile {
     com.google.protobuf.ByteString
         getTaskIdBytes();
 
-    // required uint32 user_id = 3;
     /**
      * <code>required uint32 user_id = 3;</code>
      */
@@ -2684,7 +2756,6 @@ public final class IMFile {
      */
     int getUserId();
 
-    // required uint32 offset = 4;
     /**
      * <code>required uint32 offset = 4;</code>
      */
@@ -2694,7 +2765,6 @@ public final class IMFile {
      */
     int getOffset();
 
-    // required bytes file_data = 5;
     /**
      * <code>required bytes file_data = 5;</code>
      */
@@ -2708,14 +2778,15 @@ public final class IMFile {
    * Protobuf type {@code IM.File.IMFilePullDataRsp}
    */
   public static final class IMFilePullDataRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMFilePullDataRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.File.IMFilePullDataRsp)
+      IMFilePullDataRspOrBuilder {
     // Use IMFilePullDataRsp.newBuilder() to construct.
     private IMFilePullDataRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMFilePullDataRsp(boolean noInit) {}
+    private IMFilePullDataRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMFilePullDataRsp defaultInstance;
     public static IMFilePullDataRsp getDefaultInstance() {
@@ -2726,12 +2797,18 @@ public final class IMFile {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMFilePullDataRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -2741,7 +2818,7 @@ public final class IMFile {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -2753,8 +2830,9 @@ public final class IMFile {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              taskId_ = input.readBytes();
+              taskId_ = bs;
               break;
             }
             case 24: {
@@ -2780,6 +2858,13 @@ public final class IMFile {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -2799,7 +2884,6 @@ public final class IMFile {
     }
 
     private int bitField0_;
-    // required uint32 result_code = 1;
     public static final int RESULT_CODE_FIELD_NUMBER = 1;
     private int resultCode_;
     /**
@@ -2823,7 +2907,6 @@ public final class IMFile {
       return resultCode_;
     }
 
-    // required string task_id = 2;
     public static final int TASK_ID_FIELD_NUMBER = 2;
     private java.lang.Object taskId_;
     /**
@@ -2866,7 +2949,6 @@ public final class IMFile {
       }
     }
 
-    // required uint32 user_id = 3;
     public static final int USER_ID_FIELD_NUMBER = 3;
     private int userId_;
     /**
@@ -2882,7 +2964,6 @@ public final class IMFile {
       return userId_;
     }
 
-    // required uint32 offset = 4;
     public static final int OFFSET_FIELD_NUMBER = 4;
     private int offset_;
     /**
@@ -2898,7 +2979,6 @@ public final class IMFile {
       return offset_;
     }
 
-    // required bytes file_data = 5;
     public static final int FILE_DATA_FIELD_NUMBER = 5;
     private com.google.protobuf.ByteString fileData_;
     /**
@@ -2924,7 +3004,8 @@ public final class IMFile {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
@@ -2968,6 +3049,7 @@ public final class IMFile {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(5, fileData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -2996,6 +3078,7 @@ public final class IMFile {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(5, fileData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -3073,7 +3156,9 @@ public final class IMFile {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMFile.IMFilePullDataRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMFile.IMFilePullDataRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.File.IMFilePullDataRsp)
+        com.mogujie.tt.protobuf.IMFile.IMFilePullDataRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMFile.IMFilePullDataRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -3163,6 +3248,8 @@ public final class IMFile {
         if (other.hasFileData()) {
           setFileData(other.getFileData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -3209,7 +3296,6 @@ public final class IMFile {
       }
       private int bitField0_;
 
-      // required uint32 result_code = 1;
       private int resultCode_ ;
       /**
        * <code>required uint32 result_code = 1;</code>
@@ -3258,7 +3344,6 @@ public final class IMFile {
         return this;
       }
 
-      // required string task_id = 2;
       private java.lang.Object taskId_ = "";
       /**
        * <code>required string task_id = 2;</code>
@@ -3272,9 +3357,12 @@ public final class IMFile {
       public java.lang.String getTaskId() {
         java.lang.Object ref = taskId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          taskId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            taskId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3332,7 +3420,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 user_id = 3;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 3;</code>
@@ -3365,7 +3452,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 offset = 4;
       private int offset_ ;
       /**
        * <code>required uint32 offset = 4;</code>
@@ -3398,7 +3484,6 @@ public final class IMFile {
         return this;
       }
 
-      // required bytes file_data = 5;
       private com.google.protobuf.ByteString fileData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>required bytes file_data = 5;</code>
@@ -3445,10 +3530,10 @@ public final class IMFile {
     // @@protoc_insertion_point(class_scope:IM.File.IMFilePullDataRsp)
   }
 
-  public interface IMFileReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMFileReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.File.IMFileReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 from_user_id = 1;
     /**
      * <code>required uint32 from_user_id = 1;</code>
      *
@@ -3466,7 +3551,6 @@ public final class IMFile {
      */
     int getFromUserId();
 
-    // required uint32 to_user_id = 2;
     /**
      * <code>required uint32 to_user_id = 2;</code>
      */
@@ -3476,7 +3560,6 @@ public final class IMFile {
      */
     int getToUserId();
 
-    // required string file_name = 3;
     /**
      * <code>required string file_name = 3;</code>
      */
@@ -3491,7 +3574,6 @@ public final class IMFile {
     com.google.protobuf.ByteString
         getFileNameBytes();
 
-    // required uint32 file_size = 4;
     /**
      * <code>required uint32 file_size = 4;</code>
      */
@@ -3501,7 +3583,6 @@ public final class IMFile {
      */
     int getFileSize();
 
-    // required .IM.BaseDefine.TransferFileType trans_mode = 5;
     /**
      * <code>required .IM.BaseDefine.TransferFileType trans_mode = 5;</code>
      */
@@ -3515,14 +3596,15 @@ public final class IMFile {
    * Protobuf type {@code IM.File.IMFileReq}
    */
   public static final class IMFileReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMFileReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.File.IMFileReq)
+      IMFileReqOrBuilder {
     // Use IMFileReq.newBuilder() to construct.
     private IMFileReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMFileReq(boolean noInit) {}
+    private IMFileReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMFileReq defaultInstance;
     public static IMFileReq getDefaultInstance() {
@@ -3533,12 +3615,18 @@ public final class IMFile {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMFileReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -3548,7 +3636,7 @@ public final class IMFile {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -3565,8 +3653,9 @@ public final class IMFile {
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              fileName_ = input.readBytes();
+              fileName_ = bs;
               break;
             }
             case 32: {
@@ -3577,7 +3666,10 @@ public final class IMFile {
             case 40: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType value = com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000010;
                 transMode_ = value;
               }
@@ -3591,6 +3683,13 @@ public final class IMFile {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -3610,7 +3709,6 @@ public final class IMFile {
     }
 
     private int bitField0_;
-    // required uint32 from_user_id = 1;
     public static final int FROM_USER_ID_FIELD_NUMBER = 1;
     private int fromUserId_;
     /**
@@ -3634,7 +3732,6 @@ public final class IMFile {
       return fromUserId_;
     }
 
-    // required uint32 to_user_id = 2;
     public static final int TO_USER_ID_FIELD_NUMBER = 2;
     private int toUserId_;
     /**
@@ -3650,7 +3747,6 @@ public final class IMFile {
       return toUserId_;
     }
 
-    // required string file_name = 3;
     public static final int FILE_NAME_FIELD_NUMBER = 3;
     private java.lang.Object fileName_;
     /**
@@ -3693,7 +3789,6 @@ public final class IMFile {
       }
     }
 
-    // required uint32 file_size = 4;
     public static final int FILE_SIZE_FIELD_NUMBER = 4;
     private int fileSize_;
     /**
@@ -3709,7 +3804,6 @@ public final class IMFile {
       return fileSize_;
     }
 
-    // required .IM.BaseDefine.TransferFileType trans_mode = 5;
     public static final int TRANS_MODE_FIELD_NUMBER = 5;
     private com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType transMode_;
     /**
@@ -3735,7 +3829,8 @@ public final class IMFile {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasFromUserId()) {
         memoizedIsInitialized = 0;
@@ -3779,6 +3874,7 @@ public final class IMFile {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeEnum(5, transMode_.getNumber());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -3807,6 +3903,7 @@ public final class IMFile {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, transMode_.getNumber());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -3884,7 +3981,9 @@ public final class IMFile {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMFile.IMFileReq, Builder>
-        implements com.mogujie.tt.protobuf.IMFile.IMFileReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.File.IMFileReq)
+        com.mogujie.tt.protobuf.IMFile.IMFileReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMFile.IMFileReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -3974,6 +4073,8 @@ public final class IMFile {
         if (other.hasTransMode()) {
           setTransMode(other.getTransMode());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -4020,7 +4121,6 @@ public final class IMFile {
       }
       private int bitField0_;
 
-      // required uint32 from_user_id = 1;
       private int fromUserId_ ;
       /**
        * <code>required uint32 from_user_id = 1;</code>
@@ -4069,7 +4169,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 to_user_id = 2;
       private int toUserId_ ;
       /**
        * <code>required uint32 to_user_id = 2;</code>
@@ -4102,7 +4201,6 @@ public final class IMFile {
         return this;
       }
 
-      // required string file_name = 3;
       private java.lang.Object fileName_ = "";
       /**
        * <code>required string file_name = 3;</code>
@@ -4116,9 +4214,12 @@ public final class IMFile {
       public java.lang.String getFileName() {
         java.lang.Object ref = fileName_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          fileName_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            fileName_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4176,7 +4277,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 file_size = 4;
       private int fileSize_ ;
       /**
        * <code>required uint32 file_size = 4;</code>
@@ -4209,7 +4309,6 @@ public final class IMFile {
         return this;
       }
 
-      // required .IM.BaseDefine.TransferFileType trans_mode = 5;
       private com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType transMode_ = com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType.FILE_TYPE_ONLINE;
       /**
        * <code>required .IM.BaseDefine.TransferFileType trans_mode = 5;</code>
@@ -4256,10 +4355,10 @@ public final class IMFile {
     // @@protoc_insertion_point(class_scope:IM.File.IMFileReq)
   }
 
-  public interface IMFileRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMFileRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.File.IMFileRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 result_code = 1;
     /**
      * <code>required uint32 result_code = 1;</code>
      *
@@ -4277,7 +4376,6 @@ public final class IMFile {
      */
     int getResultCode();
 
-    // required uint32 from_user_id = 2;
     /**
      * <code>required uint32 from_user_id = 2;</code>
      */
@@ -4287,7 +4385,6 @@ public final class IMFile {
      */
     int getFromUserId();
 
-    // required uint32 to_user_id = 3;
     /**
      * <code>required uint32 to_user_id = 3;</code>
      */
@@ -4297,7 +4394,6 @@ public final class IMFile {
      */
     int getToUserId();
 
-    // required string file_name = 4;
     /**
      * <code>required string file_name = 4;</code>
      */
@@ -4312,7 +4408,6 @@ public final class IMFile {
     com.google.protobuf.ByteString
         getFileNameBytes();
 
-    // required string task_id = 5;
     /**
      * <code>required string task_id = 5;</code>
      */
@@ -4327,7 +4422,6 @@ public final class IMFile {
     com.google.protobuf.ByteString
         getTaskIdBytes();
 
-    // repeated .IM.BaseDefine.IpAddr ip_addr_list = 6;
     /**
      * <code>repeated .IM.BaseDefine.IpAddr ip_addr_list = 6;</code>
      */
@@ -4342,7 +4436,6 @@ public final class IMFile {
      */
     int getIpAddrListCount();
 
-    // required .IM.BaseDefine.TransferFileType trans_mode = 7;
     /**
      * <code>required .IM.BaseDefine.TransferFileType trans_mode = 7;</code>
      */
@@ -4356,14 +4449,15 @@ public final class IMFile {
    * Protobuf type {@code IM.File.IMFileRsp}
    */
   public static final class IMFileRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMFileRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.File.IMFileRsp)
+      IMFileRspOrBuilder {
     // Use IMFileRsp.newBuilder() to construct.
     private IMFileRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMFileRsp(boolean noInit) {}
+    private IMFileRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMFileRsp defaultInstance;
     public static IMFileRsp getDefaultInstance() {
@@ -4374,12 +4468,18 @@ public final class IMFile {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMFileRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -4389,7 +4489,7 @@ public final class IMFile {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -4411,13 +4511,15 @@ public final class IMFile {
               break;
             }
             case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              fileName_ = input.readBytes();
+              fileName_ = bs;
               break;
             }
             case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000010;
-              taskId_ = input.readBytes();
+              taskId_ = bs;
               break;
             }
             case 50: {
@@ -4431,7 +4533,10 @@ public final class IMFile {
             case 56: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType value = com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000020;
                 transMode_ = value;
               }
@@ -4447,6 +4552,13 @@ public final class IMFile {
       } finally {
         if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
           ipAddrList_ = java.util.Collections.unmodifiableList(ipAddrList_);
+        }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
         }
         makeExtensionsImmutable();
       }
@@ -4467,7 +4579,6 @@ public final class IMFile {
     }
 
     private int bitField0_;
-    // required uint32 result_code = 1;
     public static final int RESULT_CODE_FIELD_NUMBER = 1;
     private int resultCode_;
     /**
@@ -4491,7 +4602,6 @@ public final class IMFile {
       return resultCode_;
     }
 
-    // required uint32 from_user_id = 2;
     public static final int FROM_USER_ID_FIELD_NUMBER = 2;
     private int fromUserId_;
     /**
@@ -4507,7 +4617,6 @@ public final class IMFile {
       return fromUserId_;
     }
 
-    // required uint32 to_user_id = 3;
     public static final int TO_USER_ID_FIELD_NUMBER = 3;
     private int toUserId_;
     /**
@@ -4523,7 +4632,6 @@ public final class IMFile {
       return toUserId_;
     }
 
-    // required string file_name = 4;
     public static final int FILE_NAME_FIELD_NUMBER = 4;
     private java.lang.Object fileName_;
     /**
@@ -4566,7 +4674,6 @@ public final class IMFile {
       }
     }
 
-    // required string task_id = 5;
     public static final int TASK_ID_FIELD_NUMBER = 5;
     private java.lang.Object taskId_;
     /**
@@ -4609,7 +4716,6 @@ public final class IMFile {
       }
     }
 
-    // repeated .IM.BaseDefine.IpAddr ip_addr_list = 6;
     public static final int IP_ADDR_LIST_FIELD_NUMBER = 6;
     private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.IpAddr> ipAddrList_;
     /**
@@ -4645,7 +4751,6 @@ public final class IMFile {
       return ipAddrList_.get(index);
     }
 
-    // required .IM.BaseDefine.TransferFileType trans_mode = 7;
     public static final int TRANS_MODE_FIELD_NUMBER = 7;
     private com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType transMode_;
     /**
@@ -4673,7 +4778,8 @@ public final class IMFile {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasResultCode()) {
         memoizedIsInitialized = 0;
@@ -4733,6 +4839,7 @@ public final class IMFile {
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeEnum(7, transMode_.getNumber());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -4769,6 +4876,7 @@ public final class IMFile {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, transMode_.getNumber());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -4846,7 +4954,9 @@ public final class IMFile {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMFile.IMFileRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMFile.IMFileRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.File.IMFileRsp)
+        com.mogujie.tt.protobuf.IMFile.IMFileRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMFile.IMFileRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -4964,6 +5074,8 @@ public final class IMFile {
         if (other.hasTransMode()) {
           setTransMode(other.getTransMode());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -5020,7 +5132,6 @@ public final class IMFile {
       }
       private int bitField0_;
 
-      // required uint32 result_code = 1;
       private int resultCode_ ;
       /**
        * <code>required uint32 result_code = 1;</code>
@@ -5069,7 +5180,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 from_user_id = 2;
       private int fromUserId_ ;
       /**
        * <code>required uint32 from_user_id = 2;</code>
@@ -5102,7 +5212,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 to_user_id = 3;
       private int toUserId_ ;
       /**
        * <code>required uint32 to_user_id = 3;</code>
@@ -5135,7 +5244,6 @@ public final class IMFile {
         return this;
       }
 
-      // required string file_name = 4;
       private java.lang.Object fileName_ = "";
       /**
        * <code>required string file_name = 4;</code>
@@ -5149,9 +5257,12 @@ public final class IMFile {
       public java.lang.String getFileName() {
         java.lang.Object ref = fileName_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          fileName_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            fileName_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5209,7 +5320,6 @@ public final class IMFile {
         return this;
       }
 
-      // required string task_id = 5;
       private java.lang.Object taskId_ = "";
       /**
        * <code>required string task_id = 5;</code>
@@ -5223,9 +5333,12 @@ public final class IMFile {
       public java.lang.String getTaskId() {
         java.lang.Object ref = taskId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          taskId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            taskId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5283,7 +5396,6 @@ public final class IMFile {
         return this;
       }
 
-      // repeated .IM.BaseDefine.IpAddr ip_addr_list = 6;
       private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.IpAddr> ipAddrList_ =
         java.util.Collections.emptyList();
       private void ensureIpAddrListIsMutable() {
@@ -5385,7 +5497,8 @@ public final class IMFile {
       public Builder addAllIpAddrList(
           java.lang.Iterable<? extends com.mogujie.tt.protobuf.IMBaseDefine.IpAddr> values) {
         ensureIpAddrListIsMutable();
-        super.addAll(values, ipAddrList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, ipAddrList_);
 
         return this;
       }
@@ -5408,7 +5521,6 @@ public final class IMFile {
         return this;
       }
 
-      // required .IM.BaseDefine.TransferFileType trans_mode = 7;
       private com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType transMode_ = com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType.FILE_TYPE_ONLINE;
       /**
        * <code>required .IM.BaseDefine.TransferFileType trans_mode = 7;</code>
@@ -5455,10 +5567,10 @@ public final class IMFile {
     // @@protoc_insertion_point(class_scope:IM.File.IMFileRsp)
   }
 
-  public interface IMFileNotifyOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMFileNotifyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.File.IMFileNotify)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 from_user_id = 1;
     /**
      * <code>required uint32 from_user_id = 1;</code>
      *
@@ -5476,7 +5588,6 @@ public final class IMFile {
      */
     int getFromUserId();
 
-    // required uint32 to_user_id = 2;
     /**
      * <code>required uint32 to_user_id = 2;</code>
      */
@@ -5486,7 +5597,6 @@ public final class IMFile {
      */
     int getToUserId();
 
-    // required string file_name = 3;
     /**
      * <code>required string file_name = 3;</code>
      */
@@ -5501,7 +5611,6 @@ public final class IMFile {
     com.google.protobuf.ByteString
         getFileNameBytes();
 
-    // required uint32 file_size = 4;
     /**
      * <code>required uint32 file_size = 4;</code>
      */
@@ -5511,7 +5620,6 @@ public final class IMFile {
      */
     int getFileSize();
 
-    // required string task_id = 5;
     /**
      * <code>required string task_id = 5;</code>
      */
@@ -5526,7 +5634,6 @@ public final class IMFile {
     com.google.protobuf.ByteString
         getTaskIdBytes();
 
-    // repeated .IM.BaseDefine.IpAddr ip_addr_list = 6;
     /**
      * <code>repeated .IM.BaseDefine.IpAddr ip_addr_list = 6;</code>
      */
@@ -5541,7 +5648,6 @@ public final class IMFile {
      */
     int getIpAddrListCount();
 
-    // required .IM.BaseDefine.TransferFileType trans_mode = 7;
     /**
      * <code>required .IM.BaseDefine.TransferFileType trans_mode = 7;</code>
      */
@@ -5551,7 +5657,6 @@ public final class IMFile {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType getTransMode();
 
-    // required uint32 offline_ready = 8;
     /**
      * <code>required uint32 offline_ready = 8;</code>
      *
@@ -5573,14 +5678,15 @@ public final class IMFile {
    * Protobuf type {@code IM.File.IMFileNotify}
    */
   public static final class IMFileNotify extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMFileNotifyOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.File.IMFileNotify)
+      IMFileNotifyOrBuilder {
     // Use IMFileNotify.newBuilder() to construct.
     private IMFileNotify(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMFileNotify(boolean noInit) {}
+    private IMFileNotify(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMFileNotify defaultInstance;
     public static IMFileNotify getDefaultInstance() {
@@ -5591,12 +5697,18 @@ public final class IMFile {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMFileNotify(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -5606,7 +5718,7 @@ public final class IMFile {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -5623,8 +5735,9 @@ public final class IMFile {
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              fileName_ = input.readBytes();
+              fileName_ = bs;
               break;
             }
             case 32: {
@@ -5633,8 +5746,9 @@ public final class IMFile {
               break;
             }
             case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000010;
-              taskId_ = input.readBytes();
+              taskId_ = bs;
               break;
             }
             case 50: {
@@ -5648,7 +5762,10 @@ public final class IMFile {
             case 56: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType value = com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000020;
                 transMode_ = value;
               }
@@ -5670,6 +5787,13 @@ public final class IMFile {
         if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
           ipAddrList_ = java.util.Collections.unmodifiableList(ipAddrList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -5689,7 +5813,6 @@ public final class IMFile {
     }
 
     private int bitField0_;
-    // required uint32 from_user_id = 1;
     public static final int FROM_USER_ID_FIELD_NUMBER = 1;
     private int fromUserId_;
     /**
@@ -5713,7 +5836,6 @@ public final class IMFile {
       return fromUserId_;
     }
 
-    // required uint32 to_user_id = 2;
     public static final int TO_USER_ID_FIELD_NUMBER = 2;
     private int toUserId_;
     /**
@@ -5729,7 +5851,6 @@ public final class IMFile {
       return toUserId_;
     }
 
-    // required string file_name = 3;
     public static final int FILE_NAME_FIELD_NUMBER = 3;
     private java.lang.Object fileName_;
     /**
@@ -5772,7 +5893,6 @@ public final class IMFile {
       }
     }
 
-    // required uint32 file_size = 4;
     public static final int FILE_SIZE_FIELD_NUMBER = 4;
     private int fileSize_;
     /**
@@ -5788,7 +5908,6 @@ public final class IMFile {
       return fileSize_;
     }
 
-    // required string task_id = 5;
     public static final int TASK_ID_FIELD_NUMBER = 5;
     private java.lang.Object taskId_;
     /**
@@ -5831,7 +5950,6 @@ public final class IMFile {
       }
     }
 
-    // repeated .IM.BaseDefine.IpAddr ip_addr_list = 6;
     public static final int IP_ADDR_LIST_FIELD_NUMBER = 6;
     private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.IpAddr> ipAddrList_;
     /**
@@ -5867,7 +5985,6 @@ public final class IMFile {
       return ipAddrList_.get(index);
     }
 
-    // required .IM.BaseDefine.TransferFileType trans_mode = 7;
     public static final int TRANS_MODE_FIELD_NUMBER = 7;
     private com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType transMode_;
     /**
@@ -5883,7 +6000,6 @@ public final class IMFile {
       return transMode_;
     }
 
-    // required uint32 offline_ready = 8;
     public static final int OFFLINE_READY_FIELD_NUMBER = 8;
     private int offlineReady_;
     /**
@@ -5920,7 +6036,8 @@ public final class IMFile {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasFromUserId()) {
         memoizedIsInitialized = 0;
@@ -5987,6 +6104,7 @@ public final class IMFile {
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeUInt32(8, offlineReady_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -6027,6 +6145,7 @@ public final class IMFile {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, offlineReady_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -6104,7 +6223,9 @@ public final class IMFile {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMFile.IMFileNotify, Builder>
-        implements com.mogujie.tt.protobuf.IMFile.IMFileNotifyOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.File.IMFileNotify)
+        com.mogujie.tt.protobuf.IMFile.IMFileNotifyOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMFile.IMFileNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -6231,6 +6352,8 @@ public final class IMFile {
         if (other.hasOfflineReady()) {
           setOfflineReady(other.getOfflineReady());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -6291,7 +6414,6 @@ public final class IMFile {
       }
       private int bitField0_;
 
-      // required uint32 from_user_id = 1;
       private int fromUserId_ ;
       /**
        * <code>required uint32 from_user_id = 1;</code>
@@ -6340,7 +6462,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 to_user_id = 2;
       private int toUserId_ ;
       /**
        * <code>required uint32 to_user_id = 2;</code>
@@ -6373,7 +6494,6 @@ public final class IMFile {
         return this;
       }
 
-      // required string file_name = 3;
       private java.lang.Object fileName_ = "";
       /**
        * <code>required string file_name = 3;</code>
@@ -6387,9 +6507,12 @@ public final class IMFile {
       public java.lang.String getFileName() {
         java.lang.Object ref = fileName_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          fileName_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            fileName_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -6447,7 +6570,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 file_size = 4;
       private int fileSize_ ;
       /**
        * <code>required uint32 file_size = 4;</code>
@@ -6480,7 +6602,6 @@ public final class IMFile {
         return this;
       }
 
-      // required string task_id = 5;
       private java.lang.Object taskId_ = "";
       /**
        * <code>required string task_id = 5;</code>
@@ -6494,9 +6615,12 @@ public final class IMFile {
       public java.lang.String getTaskId() {
         java.lang.Object ref = taskId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          taskId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            taskId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -6554,7 +6678,6 @@ public final class IMFile {
         return this;
       }
 
-      // repeated .IM.BaseDefine.IpAddr ip_addr_list = 6;
       private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.IpAddr> ipAddrList_ =
         java.util.Collections.emptyList();
       private void ensureIpAddrListIsMutable() {
@@ -6656,7 +6779,8 @@ public final class IMFile {
       public Builder addAllIpAddrList(
           java.lang.Iterable<? extends com.mogujie.tt.protobuf.IMBaseDefine.IpAddr> values) {
         ensureIpAddrListIsMutable();
-        super.addAll(values, ipAddrList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, ipAddrList_);
 
         return this;
       }
@@ -6679,7 +6803,6 @@ public final class IMFile {
         return this;
       }
 
-      // required .IM.BaseDefine.TransferFileType trans_mode = 7;
       private com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType transMode_ = com.mogujie.tt.protobuf.IMBaseDefine.TransferFileType.FILE_TYPE_ONLINE;
       /**
        * <code>required .IM.BaseDefine.TransferFileType trans_mode = 7;</code>
@@ -6715,7 +6838,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 offline_ready = 8;
       private int offlineReady_ ;
       /**
        * <code>required uint32 offline_ready = 8;</code>
@@ -6775,10 +6897,10 @@ public final class IMFile {
     // @@protoc_insertion_point(class_scope:IM.File.IMFileNotify)
   }
 
-  public interface IMFileHasOfflineReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMFileHasOfflineReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.File.IMFileHasOfflineReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -6796,7 +6918,6 @@ public final class IMFile {
      */
     int getUserId();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -6810,14 +6931,15 @@ public final class IMFile {
    * Protobuf type {@code IM.File.IMFileHasOfflineReq}
    */
   public static final class IMFileHasOfflineReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMFileHasOfflineReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.File.IMFileHasOfflineReq)
+      IMFileHasOfflineReqOrBuilder {
     // Use IMFileHasOfflineReq.newBuilder() to construct.
     private IMFileHasOfflineReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMFileHasOfflineReq(boolean noInit) {}
+    private IMFileHasOfflineReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMFileHasOfflineReq defaultInstance;
     public static IMFileHasOfflineReq getDefaultInstance() {
@@ -6828,12 +6950,18 @@ public final class IMFile {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMFileHasOfflineReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -6843,7 +6971,7 @@ public final class IMFile {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -6867,6 +6995,13 @@ public final class IMFile {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -6886,7 +7021,6 @@ public final class IMFile {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -6910,7 +7044,6 @@ public final class IMFile {
       return userId_;
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -6933,7 +7066,8 @@ public final class IMFile {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -6952,6 +7086,7 @@ public final class IMFile {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -6968,6 +7103,7 @@ public final class IMFile {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -7045,7 +7181,9 @@ public final class IMFile {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMFile.IMFileHasOfflineReq, Builder>
-        implements com.mogujie.tt.protobuf.IMFile.IMFileHasOfflineReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.File.IMFileHasOfflineReq)
+        com.mogujie.tt.protobuf.IMFile.IMFileHasOfflineReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMFile.IMFileHasOfflineReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -7106,6 +7244,8 @@ public final class IMFile {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -7136,7 +7276,6 @@ public final class IMFile {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -7185,7 +7324,6 @@ public final class IMFile {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -7232,10 +7370,10 @@ public final class IMFile {
     // @@protoc_insertion_point(class_scope:IM.File.IMFileHasOfflineReq)
   }
 
-  public interface IMFileHasOfflineRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMFileHasOfflineRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.File.IMFileHasOfflineRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -7253,7 +7391,6 @@ public final class IMFile {
      */
     int getUserId();
 
-    // repeated .IM.BaseDefine.OfflineFileInfo offline_file_list = 2;
     /**
      * <code>repeated .IM.BaseDefine.OfflineFileInfo offline_file_list = 2;</code>
      */
@@ -7268,7 +7405,6 @@ public final class IMFile {
      */
     int getOfflineFileListCount();
 
-    // repeated .IM.BaseDefine.IpAddr ip_addr_list = 3;
     /**
      * <code>repeated .IM.BaseDefine.IpAddr ip_addr_list = 3;</code>
      */
@@ -7283,7 +7419,6 @@ public final class IMFile {
      */
     int getIpAddrListCount();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -7297,14 +7432,15 @@ public final class IMFile {
    * Protobuf type {@code IM.File.IMFileHasOfflineRsp}
    */
   public static final class IMFileHasOfflineRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMFileHasOfflineRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.File.IMFileHasOfflineRsp)
+      IMFileHasOfflineRspOrBuilder {
     // Use IMFileHasOfflineRsp.newBuilder() to construct.
     private IMFileHasOfflineRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMFileHasOfflineRsp(boolean noInit) {}
+    private IMFileHasOfflineRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMFileHasOfflineRsp defaultInstance;
     public static IMFileHasOfflineRsp getDefaultInstance() {
@@ -7315,12 +7451,18 @@ public final class IMFile {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMFileHasOfflineRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -7330,7 +7472,7 @@ public final class IMFile {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -7376,6 +7518,13 @@ public final class IMFile {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           ipAddrList_ = java.util.Collections.unmodifiableList(ipAddrList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -7395,7 +7544,6 @@ public final class IMFile {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -7419,7 +7567,6 @@ public final class IMFile {
       return userId_;
     }
 
-    // repeated .IM.BaseDefine.OfflineFileInfo offline_file_list = 2;
     public static final int OFFLINE_FILE_LIST_FIELD_NUMBER = 2;
     private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.OfflineFileInfo> offlineFileList_;
     /**
@@ -7455,7 +7602,6 @@ public final class IMFile {
       return offlineFileList_.get(index);
     }
 
-    // repeated .IM.BaseDefine.IpAddr ip_addr_list = 3;
     public static final int IP_ADDR_LIST_FIELD_NUMBER = 3;
     private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.IpAddr> ipAddrList_;
     /**
@@ -7491,7 +7637,6 @@ public final class IMFile {
       return ipAddrList_.get(index);
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -7516,7 +7661,8 @@ public final class IMFile {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -7553,6 +7699,7 @@ public final class IMFile {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -7577,6 +7724,7 @@ public final class IMFile {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -7654,7 +7802,9 @@ public final class IMFile {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMFile.IMFileHasOfflineRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMFile.IMFileHasOfflineRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.File.IMFileHasOfflineRsp)
+        com.mogujie.tt.protobuf.IMFile.IMFileHasOfflineRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMFile.IMFileHasOfflineRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -7749,6 +7899,8 @@ public final class IMFile {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -7791,7 +7943,6 @@ public final class IMFile {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -7840,7 +7991,6 @@ public final class IMFile {
         return this;
       }
 
-      // repeated .IM.BaseDefine.OfflineFileInfo offline_file_list = 2;
       private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.OfflineFileInfo> offlineFileList_ =
         java.util.Collections.emptyList();
       private void ensureOfflineFileListIsMutable() {
@@ -7942,7 +8092,8 @@ public final class IMFile {
       public Builder addAllOfflineFileList(
           java.lang.Iterable<? extends com.mogujie.tt.protobuf.IMBaseDefine.OfflineFileInfo> values) {
         ensureOfflineFileListIsMutable();
-        super.addAll(values, offlineFileList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, offlineFileList_);
 
         return this;
       }
@@ -7965,7 +8116,6 @@ public final class IMFile {
         return this;
       }
 
-      // repeated .IM.BaseDefine.IpAddr ip_addr_list = 3;
       private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.IpAddr> ipAddrList_ =
         java.util.Collections.emptyList();
       private void ensureIpAddrListIsMutable() {
@@ -8067,7 +8217,8 @@ public final class IMFile {
       public Builder addAllIpAddrList(
           java.lang.Iterable<? extends com.mogujie.tt.protobuf.IMBaseDefine.IpAddr> values) {
         ensureIpAddrListIsMutable();
-        super.addAll(values, ipAddrList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, ipAddrList_);
 
         return this;
       }
@@ -8090,7 +8241,6 @@ public final class IMFile {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -8137,10 +8287,10 @@ public final class IMFile {
     // @@protoc_insertion_point(class_scope:IM.File.IMFileHasOfflineRsp)
   }
 
-  public interface IMFileAddOfflineReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMFileAddOfflineReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.File.IMFileAddOfflineReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 from_user_id = 1;
     /**
      * <code>required uint32 from_user_id = 1;</code>
      *
@@ -8158,7 +8308,6 @@ public final class IMFile {
      */
     int getFromUserId();
 
-    // required uint32 to_user_id = 2;
     /**
      * <code>required uint32 to_user_id = 2;</code>
      */
@@ -8168,7 +8317,6 @@ public final class IMFile {
      */
     int getToUserId();
 
-    // required string task_id = 3;
     /**
      * <code>required string task_id = 3;</code>
      */
@@ -8183,7 +8331,6 @@ public final class IMFile {
     com.google.protobuf.ByteString
         getTaskIdBytes();
 
-    // required string file_name = 4;
     /**
      * <code>required string file_name = 4;</code>
      */
@@ -8198,7 +8345,6 @@ public final class IMFile {
     com.google.protobuf.ByteString
         getFileNameBytes();
 
-    // required uint32 file_size = 5;
     /**
      * <code>required uint32 file_size = 5;</code>
      */
@@ -8212,14 +8358,15 @@ public final class IMFile {
    * Protobuf type {@code IM.File.IMFileAddOfflineReq}
    */
   public static final class IMFileAddOfflineReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMFileAddOfflineReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.File.IMFileAddOfflineReq)
+      IMFileAddOfflineReqOrBuilder {
     // Use IMFileAddOfflineReq.newBuilder() to construct.
     private IMFileAddOfflineReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMFileAddOfflineReq(boolean noInit) {}
+    private IMFileAddOfflineReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMFileAddOfflineReq defaultInstance;
     public static IMFileAddOfflineReq getDefaultInstance() {
@@ -8230,12 +8377,18 @@ public final class IMFile {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMFileAddOfflineReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -8245,7 +8398,7 @@ public final class IMFile {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -8262,13 +8415,15 @@ public final class IMFile {
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              taskId_ = input.readBytes();
+              taskId_ = bs;
               break;
             }
             case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              fileName_ = input.readBytes();
+              fileName_ = bs;
               break;
             }
             case 40: {
@@ -8284,6 +8439,13 @@ public final class IMFile {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -8303,7 +8465,6 @@ public final class IMFile {
     }
 
     private int bitField0_;
-    // required uint32 from_user_id = 1;
     public static final int FROM_USER_ID_FIELD_NUMBER = 1;
     private int fromUserId_;
     /**
@@ -8327,7 +8488,6 @@ public final class IMFile {
       return fromUserId_;
     }
 
-    // required uint32 to_user_id = 2;
     public static final int TO_USER_ID_FIELD_NUMBER = 2;
     private int toUserId_;
     /**
@@ -8343,7 +8503,6 @@ public final class IMFile {
       return toUserId_;
     }
 
-    // required string task_id = 3;
     public static final int TASK_ID_FIELD_NUMBER = 3;
     private java.lang.Object taskId_;
     /**
@@ -8386,7 +8545,6 @@ public final class IMFile {
       }
     }
 
-    // required string file_name = 4;
     public static final int FILE_NAME_FIELD_NUMBER = 4;
     private java.lang.Object fileName_;
     /**
@@ -8429,7 +8587,6 @@ public final class IMFile {
       }
     }
 
-    // required uint32 file_size = 5;
     public static final int FILE_SIZE_FIELD_NUMBER = 5;
     private int fileSize_;
     /**
@@ -8455,7 +8612,8 @@ public final class IMFile {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasFromUserId()) {
         memoizedIsInitialized = 0;
@@ -8499,6 +8657,7 @@ public final class IMFile {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeUInt32(5, fileSize_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -8527,6 +8686,7 @@ public final class IMFile {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, fileSize_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -8604,7 +8764,9 @@ public final class IMFile {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMFile.IMFileAddOfflineReq, Builder>
-        implements com.mogujie.tt.protobuf.IMFile.IMFileAddOfflineReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.File.IMFileAddOfflineReq)
+        com.mogujie.tt.protobuf.IMFile.IMFileAddOfflineReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMFile.IMFileAddOfflineReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -8696,6 +8858,8 @@ public final class IMFile {
         if (other.hasFileSize()) {
           setFileSize(other.getFileSize());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -8742,7 +8906,6 @@ public final class IMFile {
       }
       private int bitField0_;
 
-      // required uint32 from_user_id = 1;
       private int fromUserId_ ;
       /**
        * <code>required uint32 from_user_id = 1;</code>
@@ -8791,7 +8954,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 to_user_id = 2;
       private int toUserId_ ;
       /**
        * <code>required uint32 to_user_id = 2;</code>
@@ -8824,7 +8986,6 @@ public final class IMFile {
         return this;
       }
 
-      // required string task_id = 3;
       private java.lang.Object taskId_ = "";
       /**
        * <code>required string task_id = 3;</code>
@@ -8838,9 +8999,12 @@ public final class IMFile {
       public java.lang.String getTaskId() {
         java.lang.Object ref = taskId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          taskId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            taskId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8898,7 +9062,6 @@ public final class IMFile {
         return this;
       }
 
-      // required string file_name = 4;
       private java.lang.Object fileName_ = "";
       /**
        * <code>required string file_name = 4;</code>
@@ -8912,9 +9075,12 @@ public final class IMFile {
       public java.lang.String getFileName() {
         java.lang.Object ref = fileName_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          fileName_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            fileName_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8972,7 +9138,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 file_size = 5;
       private int fileSize_ ;
       /**
        * <code>required uint32 file_size = 5;</code>
@@ -9016,10 +9181,10 @@ public final class IMFile {
     // @@protoc_insertion_point(class_scope:IM.File.IMFileAddOfflineReq)
   }
 
-  public interface IMFileDelOfflineReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMFileDelOfflineReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.File.IMFileDelOfflineReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 from_user_id = 1;
     /**
      * <code>required uint32 from_user_id = 1;</code>
      *
@@ -9037,7 +9202,6 @@ public final class IMFile {
      */
     int getFromUserId();
 
-    // required uint32 to_user_id = 2;
     /**
      * <code>required uint32 to_user_id = 2;</code>
      */
@@ -9047,7 +9211,6 @@ public final class IMFile {
      */
     int getToUserId();
 
-    // required string task_id = 3;
     /**
      * <code>required string task_id = 3;</code>
      */
@@ -9066,14 +9229,15 @@ public final class IMFile {
    * Protobuf type {@code IM.File.IMFileDelOfflineReq}
    */
   public static final class IMFileDelOfflineReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMFileDelOfflineReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.File.IMFileDelOfflineReq)
+      IMFileDelOfflineReqOrBuilder {
     // Use IMFileDelOfflineReq.newBuilder() to construct.
     private IMFileDelOfflineReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMFileDelOfflineReq(boolean noInit) {}
+    private IMFileDelOfflineReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMFileDelOfflineReq defaultInstance;
     public static IMFileDelOfflineReq getDefaultInstance() {
@@ -9084,12 +9248,18 @@ public final class IMFile {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMFileDelOfflineReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -9099,7 +9269,7 @@ public final class IMFile {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -9116,8 +9286,9 @@ public final class IMFile {
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              taskId_ = input.readBytes();
+              taskId_ = bs;
               break;
             }
           }
@@ -9128,6 +9299,13 @@ public final class IMFile {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -9147,7 +9325,6 @@ public final class IMFile {
     }
 
     private int bitField0_;
-    // required uint32 from_user_id = 1;
     public static final int FROM_USER_ID_FIELD_NUMBER = 1;
     private int fromUserId_;
     /**
@@ -9171,7 +9348,6 @@ public final class IMFile {
       return fromUserId_;
     }
 
-    // required uint32 to_user_id = 2;
     public static final int TO_USER_ID_FIELD_NUMBER = 2;
     private int toUserId_;
     /**
@@ -9187,7 +9363,6 @@ public final class IMFile {
       return toUserId_;
     }
 
-    // required string task_id = 3;
     public static final int TASK_ID_FIELD_NUMBER = 3;
     private java.lang.Object taskId_;
     /**
@@ -9238,7 +9413,8 @@ public final class IMFile {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasFromUserId()) {
         memoizedIsInitialized = 0;
@@ -9268,6 +9444,7 @@ public final class IMFile {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(3, getTaskIdBytes());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -9288,6 +9465,7 @@ public final class IMFile {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, getTaskIdBytes());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -9365,7 +9543,9 @@ public final class IMFile {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMFile.IMFileDelOfflineReq, Builder>
-        implements com.mogujie.tt.protobuf.IMFile.IMFileDelOfflineReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.File.IMFileDelOfflineReq)
+        com.mogujie.tt.protobuf.IMFile.IMFileDelOfflineReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMFile.IMFileDelOfflineReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -9437,6 +9617,8 @@ public final class IMFile {
           taskId_ = other.taskId_;
           
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -9475,7 +9657,6 @@ public final class IMFile {
       }
       private int bitField0_;
 
-      // required uint32 from_user_id = 1;
       private int fromUserId_ ;
       /**
        * <code>required uint32 from_user_id = 1;</code>
@@ -9524,7 +9705,6 @@ public final class IMFile {
         return this;
       }
 
-      // required uint32 to_user_id = 2;
       private int toUserId_ ;
       /**
        * <code>required uint32 to_user_id = 2;</code>
@@ -9557,7 +9737,6 @@ public final class IMFile {
         return this;
       }
 
-      // required string task_id = 3;
       private java.lang.Object taskId_ = "";
       /**
        * <code>required string task_id = 3;</code>
@@ -9571,9 +9750,12 @@ public final class IMFile {
       public java.lang.String getTaskId() {
         java.lang.Object ref = taskId_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          taskId_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            taskId_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;

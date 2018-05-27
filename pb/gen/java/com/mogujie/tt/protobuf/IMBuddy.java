@@ -8,10 +8,10 @@ public final class IMBuddy {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-  public interface IMRecentContactSessionReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMRecentContactSessionReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMRecentContactSessionReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -29,7 +29,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // required uint32 latest_update_time = 2;
     /**
      * <code>required uint32 latest_update_time = 2;</code>
      */
@@ -39,7 +38,6 @@ public final class IMBuddy {
      */
     int getLatestUpdateTime();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -53,14 +51,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMRecentContactSessionReq}
    */
   public static final class IMRecentContactSessionReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMRecentContactSessionReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMRecentContactSessionReq)
+      IMRecentContactSessionReqOrBuilder {
     // Use IMRecentContactSessionReq.newBuilder() to construct.
     private IMRecentContactSessionReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMRecentContactSessionReq(boolean noInit) {}
+    private IMRecentContactSessionReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMRecentContactSessionReq defaultInstance;
     public static IMRecentContactSessionReq getDefaultInstance() {
@@ -71,12 +70,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMRecentContactSessionReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -86,7 +91,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -115,6 +120,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -134,7 +146,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -158,7 +169,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // required uint32 latest_update_time = 2;
     public static final int LATEST_UPDATE_TIME_FIELD_NUMBER = 2;
     private int latestUpdateTime_;
     /**
@@ -174,7 +184,6 @@ public final class IMBuddy {
       return latestUpdateTime_;
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -198,7 +207,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -224,6 +234,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -244,6 +255,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -321,7 +333,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMRecentContactSessionReq, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMRecentContactSessionReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRecentContactSessionReq)
+        com.mogujie.tt.protobuf.IMBuddy.IMRecentContactSessionReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMRecentContactSessionReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -391,6 +405,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -425,7 +441,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -474,7 +489,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required uint32 latest_update_time = 2;
       private int latestUpdateTime_ ;
       /**
        * <code>required uint32 latest_update_time = 2;</code>
@@ -507,7 +521,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -554,10 +567,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMRecentContactSessionReq)
   }
 
-  public interface IMRecentContactSessionRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMRecentContactSessionRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMRecentContactSessionRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -575,7 +588,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;
     /**
      * <code>repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;</code>
      */
@@ -590,7 +602,6 @@ public final class IMBuddy {
      */
     int getContactSessionListCount();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -604,14 +615,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMRecentContactSessionRsp}
    */
   public static final class IMRecentContactSessionRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMRecentContactSessionRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMRecentContactSessionRsp)
+      IMRecentContactSessionRspOrBuilder {
     // Use IMRecentContactSessionRsp.newBuilder() to construct.
     private IMRecentContactSessionRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMRecentContactSessionRsp(boolean noInit) {}
+    private IMRecentContactSessionRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMRecentContactSessionRsp defaultInstance;
     public static IMRecentContactSessionRsp getDefaultInstance() {
@@ -622,12 +634,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMRecentContactSessionRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -637,7 +655,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -672,6 +690,13 @@ public final class IMBuddy {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           contactSessionList_ = java.util.Collections.unmodifiableList(contactSessionList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -691,7 +716,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -715,7 +739,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;
     public static final int CONTACT_SESSION_LIST_FIELD_NUMBER = 2;
     private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.ContactSessionInfo> contactSessionList_;
     /**
@@ -751,7 +774,6 @@ public final class IMBuddy {
       return contactSessionList_.get(index);
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -775,7 +797,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -803,6 +826,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -823,6 +847,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -900,7 +925,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMRecentContactSessionRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMRecentContactSessionRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRecentContactSessionRsp)
+        com.mogujie.tt.protobuf.IMBuddy.IMRecentContactSessionRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMRecentContactSessionRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -978,6 +1005,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -1014,7 +1043,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -1063,7 +1091,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // repeated .IM.BaseDefine.ContactSessionInfo contact_session_list = 2;
       private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.ContactSessionInfo> contactSessionList_ =
         java.util.Collections.emptyList();
       private void ensureContactSessionListIsMutable() {
@@ -1165,7 +1192,8 @@ public final class IMBuddy {
       public Builder addAllContactSessionList(
           java.lang.Iterable<? extends com.mogujie.tt.protobuf.IMBaseDefine.ContactSessionInfo> values) {
         ensureContactSessionListIsMutable();
-        super.addAll(values, contactSessionList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, contactSessionList_);
 
         return this;
       }
@@ -1188,7 +1216,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -1235,10 +1262,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMRecentContactSessionRsp)
   }
 
-  public interface IMUserStatNotifyOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMUserStatNotifyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMUserStatNotify)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required .IM.BaseDefine.UserStat user_stat = 1;
     /**
      * <code>required .IM.BaseDefine.UserStat user_stat = 1;</code>
      *
@@ -1260,14 +1287,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMUserStatNotify}
    */
   public static final class IMUserStatNotify extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMUserStatNotifyOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMUserStatNotify)
+      IMUserStatNotifyOrBuilder {
     // Use IMUserStatNotify.newBuilder() to construct.
     private IMUserStatNotify(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMUserStatNotify(boolean noInit) {}
+    private IMUserStatNotify(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMUserStatNotify defaultInstance;
     public static IMUserStatNotify getDefaultInstance() {
@@ -1278,12 +1306,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMUserStatNotify(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -1293,7 +1327,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -1320,6 +1354,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -1339,7 +1380,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required .IM.BaseDefine.UserStat user_stat = 1;
     public static final int USER_STAT_FIELD_NUMBER = 1;
     private com.mogujie.tt.protobuf.IMBaseDefine.UserStat userStat_;
     /**
@@ -1369,7 +1409,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserStat()) {
         memoizedIsInitialized = 0;
@@ -1389,6 +1430,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, userStat_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -1401,6 +1443,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, userStat_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -1478,7 +1521,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMUserStatNotify, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMUserStatNotifyOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMUserStatNotify)
+        com.mogujie.tt.protobuf.IMBuddy.IMUserStatNotifyOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMUserStatNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -1530,6 +1575,8 @@ public final class IMBuddy {
         if (other.hasUserStat()) {
           mergeUserStat(other.getUserStat());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -1564,7 +1611,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required .IM.BaseDefine.UserStat user_stat = 1;
       private com.mogujie.tt.protobuf.IMBaseDefine.UserStat userStat_ = com.mogujie.tt.protobuf.IMBaseDefine.UserStat.getDefaultInstance();
       /**
        * <code>required .IM.BaseDefine.UserStat user_stat = 1;</code>
@@ -1660,10 +1706,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMUserStatNotify)
   }
 
-  public interface IMUsersInfoReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMUsersInfoReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMUsersInfoReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -1681,7 +1727,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // repeated uint32 user_id_list = 2;
     /**
      * <code>repeated uint32 user_id_list = 2;</code>
      */
@@ -1695,7 +1740,6 @@ public final class IMBuddy {
      */
     int getUserIdList(int index);
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -1709,14 +1753,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMUsersInfoReq}
    */
   public static final class IMUsersInfoReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMUsersInfoReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMUsersInfoReq)
+      IMUsersInfoReqOrBuilder {
     // Use IMUsersInfoReq.newBuilder() to construct.
     private IMUsersInfoReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMUsersInfoReq(boolean noInit) {}
+    private IMUsersInfoReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMUsersInfoReq defaultInstance;
     public static IMUsersInfoReq getDefaultInstance() {
@@ -1727,12 +1772,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMUsersInfoReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -1742,7 +1793,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -1790,6 +1841,13 @@ public final class IMBuddy {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           userIdList_ = java.util.Collections.unmodifiableList(userIdList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -1809,7 +1867,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -1833,7 +1890,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // repeated uint32 user_id_list = 2;
     public static final int USER_ID_LIST_FIELD_NUMBER = 2;
     private java.util.List<java.lang.Integer> userIdList_;
     /**
@@ -1856,7 +1912,6 @@ public final class IMBuddy {
       return userIdList_.get(index);
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -1880,7 +1935,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -1902,6 +1958,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -1927,6 +1984,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -2004,7 +2062,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMUsersInfoReq, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMUsersInfoReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMUsersInfoReq)
+        com.mogujie.tt.protobuf.IMBuddy.IMUsersInfoReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMUsersInfoReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -2082,6 +2142,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -2112,7 +2174,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -2161,7 +2222,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // repeated uint32 user_id_list = 2;
       private java.util.List<java.lang.Integer> userIdList_ = java.util.Collections.emptyList();
       private void ensureUserIdListIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
@@ -2213,7 +2273,8 @@ public final class IMBuddy {
       public Builder addAllUserIdList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureUserIdListIsMutable();
-        super.addAll(values, userIdList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, userIdList_);
         
         return this;
       }
@@ -2227,7 +2288,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -2274,10 +2334,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMUsersInfoReq)
   }
 
-  public interface IMUsersInfoRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMUsersInfoRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMUsersInfoRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -2295,7 +2355,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // repeated .IM.BaseDefine.UserInfo user_info_list = 2;
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_info_list = 2;</code>
      */
@@ -2310,7 +2369,6 @@ public final class IMBuddy {
      */
     int getUserInfoListCount();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -2324,14 +2382,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMUsersInfoRsp}
    */
   public static final class IMUsersInfoRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMUsersInfoRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMUsersInfoRsp)
+      IMUsersInfoRspOrBuilder {
     // Use IMUsersInfoRsp.newBuilder() to construct.
     private IMUsersInfoRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMUsersInfoRsp(boolean noInit) {}
+    private IMUsersInfoRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMUsersInfoRsp defaultInstance;
     public static IMUsersInfoRsp getDefaultInstance() {
@@ -2342,12 +2401,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMUsersInfoRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -2357,7 +2422,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -2392,6 +2457,13 @@ public final class IMBuddy {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           userInfoList_ = java.util.Collections.unmodifiableList(userInfoList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -2411,7 +2483,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -2435,7 +2506,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // repeated .IM.BaseDefine.UserInfo user_info_list = 2;
     public static final int USER_INFO_LIST_FIELD_NUMBER = 2;
     private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.UserInfo> userInfoList_;
     /**
@@ -2471,7 +2541,6 @@ public final class IMBuddy {
       return userInfoList_.get(index);
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -2495,7 +2564,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -2523,6 +2593,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -2543,6 +2614,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -2620,7 +2692,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMUsersInfoRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMUsersInfoRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMUsersInfoRsp)
+        com.mogujie.tt.protobuf.IMBuddy.IMUsersInfoRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMUsersInfoRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -2698,6 +2772,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -2734,7 +2810,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -2783,7 +2858,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // repeated .IM.BaseDefine.UserInfo user_info_list = 2;
       private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.UserInfo> userInfoList_ =
         java.util.Collections.emptyList();
       private void ensureUserInfoListIsMutable() {
@@ -2885,7 +2959,8 @@ public final class IMBuddy {
       public Builder addAllUserInfoList(
           java.lang.Iterable<? extends com.mogujie.tt.protobuf.IMBaseDefine.UserInfo> values) {
         ensureUserInfoListIsMutable();
-        super.addAll(values, userInfoList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, userInfoList_);
 
         return this;
       }
@@ -2908,7 +2983,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -2955,10 +3029,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMUsersInfoRsp)
   }
 
-  public interface IMRemoveSessionReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMRemoveSessionReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMRemoveSessionReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -2976,7 +3050,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
@@ -2986,7 +3059,6 @@ public final class IMBuddy {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.SessionType getSessionType();
 
-    // required uint32 session_id = 3;
     /**
      * <code>required uint32 session_id = 3;</code>
      */
@@ -2996,7 +3068,6 @@ public final class IMBuddy {
      */
     int getSessionId();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -3010,14 +3081,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMRemoveSessionReq}
    */
   public static final class IMRemoveSessionReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMRemoveSessionReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMRemoveSessionReq)
+      IMRemoveSessionReqOrBuilder {
     // Use IMRemoveSessionReq.newBuilder() to construct.
     private IMRemoveSessionReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMRemoveSessionReq(boolean noInit) {}
+    private IMRemoveSessionReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMRemoveSessionReq defaultInstance;
     public static IMRemoveSessionReq getDefaultInstance() {
@@ -3028,12 +3100,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMRemoveSessionReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -3043,7 +3121,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -3057,7 +3135,10 @@ public final class IMBuddy {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 sessionType_ = value;
               }
@@ -3081,6 +3162,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -3100,7 +3188,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -3124,7 +3211,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     public static final int SESSION_TYPE_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -3140,7 +3226,6 @@ public final class IMBuddy {
       return sessionType_;
     }
 
-    // required uint32 session_id = 3;
     public static final int SESSION_ID_FIELD_NUMBER = 3;
     private int sessionId_;
     /**
@@ -3156,7 +3241,6 @@ public final class IMBuddy {
       return sessionId_;
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -3181,7 +3265,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -3214,6 +3299,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -3238,6 +3324,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -3315,7 +3402,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMRemoveSessionReq, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMRemoveSessionReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRemoveSessionReq)
+        com.mogujie.tt.protobuf.IMBuddy.IMRemoveSessionReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMRemoveSessionReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -3394,6 +3483,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -3432,7 +3523,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -3481,7 +3571,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
@@ -3517,7 +3606,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required uint32 session_id = 3;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 3;</code>
@@ -3550,7 +3638,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -3597,10 +3684,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMRemoveSessionReq)
   }
 
-  public interface IMRemoveSessionRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMRemoveSessionRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMRemoveSessionRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -3618,7 +3705,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // required uint32 result_code = 2;
     /**
      * <code>required uint32 result_code = 2;</code>
      */
@@ -3628,7 +3714,6 @@ public final class IMBuddy {
      */
     int getResultCode();
 
-    // required .IM.BaseDefine.SessionType session_type = 3;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 3;</code>
      */
@@ -3638,7 +3723,6 @@ public final class IMBuddy {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.SessionType getSessionType();
 
-    // required uint32 session_id = 4;
     /**
      * <code>required uint32 session_id = 4;</code>
      */
@@ -3648,7 +3732,6 @@ public final class IMBuddy {
      */
     int getSessionId();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -3662,14 +3745,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMRemoveSessionRsp}
    */
   public static final class IMRemoveSessionRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMRemoveSessionRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMRemoveSessionRsp)
+      IMRemoveSessionRspOrBuilder {
     // Use IMRemoveSessionRsp.newBuilder() to construct.
     private IMRemoveSessionRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMRemoveSessionRsp(boolean noInit) {}
+    private IMRemoveSessionRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMRemoveSessionRsp defaultInstance;
     public static IMRemoveSessionRsp getDefaultInstance() {
@@ -3680,12 +3764,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMRemoveSessionRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -3695,7 +3785,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -3714,7 +3804,10 @@ public final class IMBuddy {
             case 24: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000004;
                 sessionType_ = value;
               }
@@ -3738,6 +3831,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -3757,7 +3857,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -3781,7 +3880,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // required uint32 result_code = 2;
     public static final int RESULT_CODE_FIELD_NUMBER = 2;
     private int resultCode_;
     /**
@@ -3797,7 +3895,6 @@ public final class IMBuddy {
       return resultCode_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 3;
     public static final int SESSION_TYPE_FIELD_NUMBER = 3;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -3813,7 +3910,6 @@ public final class IMBuddy {
       return sessionType_;
     }
 
-    // required uint32 session_id = 4;
     public static final int SESSION_ID_FIELD_NUMBER = 4;
     private int sessionId_;
     /**
@@ -3829,7 +3925,6 @@ public final class IMBuddy {
       return sessionId_;
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -3855,7 +3950,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -3895,6 +3991,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -3923,6 +4020,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -4000,7 +4098,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMRemoveSessionRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMRemoveSessionRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRemoveSessionRsp)
+        com.mogujie.tt.protobuf.IMBuddy.IMRemoveSessionRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMRemoveSessionRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -4088,6 +4188,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -4130,7 +4232,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -4179,7 +4280,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required uint32 result_code = 2;
       private int resultCode_ ;
       /**
        * <code>required uint32 result_code = 2;</code>
@@ -4212,7 +4312,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 3;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 3;</code>
@@ -4248,7 +4347,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required uint32 session_id = 4;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 4;</code>
@@ -4281,7 +4379,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -4328,10 +4425,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMRemoveSessionRsp)
   }
 
-  public interface IMAllUserReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMAllUserReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMAllUserReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -4349,7 +4446,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // required uint32 latest_update_time = 2;
     /**
      * <code>required uint32 latest_update_time = 2;</code>
      */
@@ -4359,7 +4455,6 @@ public final class IMBuddy {
      */
     int getLatestUpdateTime();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -4373,14 +4468,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMAllUserReq}
    */
   public static final class IMAllUserReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMAllUserReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMAllUserReq)
+      IMAllUserReqOrBuilder {
     // Use IMAllUserReq.newBuilder() to construct.
     private IMAllUserReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMAllUserReq(boolean noInit) {}
+    private IMAllUserReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMAllUserReq defaultInstance;
     public static IMAllUserReq getDefaultInstance() {
@@ -4391,12 +4487,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMAllUserReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -4406,7 +4508,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -4435,6 +4537,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -4454,7 +4563,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -4478,7 +4586,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // required uint32 latest_update_time = 2;
     public static final int LATEST_UPDATE_TIME_FIELD_NUMBER = 2;
     private int latestUpdateTime_;
     /**
@@ -4494,7 +4601,6 @@ public final class IMBuddy {
       return latestUpdateTime_;
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -4518,7 +4624,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -4544,6 +4651,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -4564,6 +4672,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -4641,7 +4750,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMAllUserReq, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMAllUserReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAllUserReq)
+        com.mogujie.tt.protobuf.IMBuddy.IMAllUserReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMAllUserReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -4711,6 +4822,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -4745,7 +4858,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -4794,7 +4906,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required uint32 latest_update_time = 2;
       private int latestUpdateTime_ ;
       /**
        * <code>required uint32 latest_update_time = 2;</code>
@@ -4827,7 +4938,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -4874,10 +4984,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMAllUserReq)
   }
 
-  public interface IMAllUserRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMAllUserRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMAllUserRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -4895,7 +5005,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // required uint32 latest_update_time = 2;
     /**
      * <code>required uint32 latest_update_time = 2;</code>
      */
@@ -4905,7 +5014,6 @@ public final class IMBuddy {
      */
     int getLatestUpdateTime();
 
-    // repeated .IM.BaseDefine.UserInfo user_list = 3;
     /**
      * <code>repeated .IM.BaseDefine.UserInfo user_list = 3;</code>
      */
@@ -4920,7 +5028,6 @@ public final class IMBuddy {
      */
     int getUserListCount();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -4934,14 +5041,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMAllUserRsp}
    */
   public static final class IMAllUserRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMAllUserRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMAllUserRsp)
+      IMAllUserRspOrBuilder {
     // Use IMAllUserRsp.newBuilder() to construct.
     private IMAllUserRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMAllUserRsp(boolean noInit) {}
+    private IMAllUserRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMAllUserRsp defaultInstance;
     public static IMAllUserRsp getDefaultInstance() {
@@ -4952,12 +5060,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMAllUserRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -4967,7 +5081,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -5007,6 +5121,13 @@ public final class IMBuddy {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           userList_ = java.util.Collections.unmodifiableList(userList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -5026,7 +5147,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -5050,7 +5170,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // required uint32 latest_update_time = 2;
     public static final int LATEST_UPDATE_TIME_FIELD_NUMBER = 2;
     private int latestUpdateTime_;
     /**
@@ -5066,7 +5185,6 @@ public final class IMBuddy {
       return latestUpdateTime_;
     }
 
-    // repeated .IM.BaseDefine.UserInfo user_list = 3;
     public static final int USER_LIST_FIELD_NUMBER = 3;
     private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.UserInfo> userList_;
     /**
@@ -5102,7 +5220,6 @@ public final class IMBuddy {
       return userList_.get(index);
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -5127,7 +5244,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -5162,6 +5280,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -5186,6 +5305,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -5263,7 +5383,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMAllUserRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMAllUserRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAllUserRsp)
+        com.mogujie.tt.protobuf.IMBuddy.IMAllUserRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMAllUserRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -5350,6 +5472,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -5390,7 +5514,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -5439,7 +5562,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required uint32 latest_update_time = 2;
       private int latestUpdateTime_ ;
       /**
        * <code>required uint32 latest_update_time = 2;</code>
@@ -5472,7 +5594,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // repeated .IM.BaseDefine.UserInfo user_list = 3;
       private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.UserInfo> userList_ =
         java.util.Collections.emptyList();
       private void ensureUserListIsMutable() {
@@ -5574,7 +5695,8 @@ public final class IMBuddy {
       public Builder addAllUserList(
           java.lang.Iterable<? extends com.mogujie.tt.protobuf.IMBaseDefine.UserInfo> values) {
         ensureUserListIsMutable();
-        super.addAll(values, userList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, userList_);
 
         return this;
       }
@@ -5597,7 +5719,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -5644,10 +5765,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMAllUserRsp)
   }
 
-  public interface IMUsersStatReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMUsersStatReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMUsersStatReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -5665,7 +5786,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // repeated uint32 user_id_list = 2;
     /**
      * <code>repeated uint32 user_id_list = 2;</code>
      */
@@ -5679,7 +5799,6 @@ public final class IMBuddy {
      */
     int getUserIdList(int index);
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -5693,14 +5812,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMUsersStatReq}
    */
   public static final class IMUsersStatReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMUsersStatReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMUsersStatReq)
+      IMUsersStatReqOrBuilder {
     // Use IMUsersStatReq.newBuilder() to construct.
     private IMUsersStatReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMUsersStatReq(boolean noInit) {}
+    private IMUsersStatReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMUsersStatReq defaultInstance;
     public static IMUsersStatReq getDefaultInstance() {
@@ -5711,12 +5831,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMUsersStatReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -5726,7 +5852,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -5774,6 +5900,13 @@ public final class IMBuddy {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           userIdList_ = java.util.Collections.unmodifiableList(userIdList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -5793,7 +5926,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -5817,7 +5949,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // repeated uint32 user_id_list = 2;
     public static final int USER_ID_LIST_FIELD_NUMBER = 2;
     private java.util.List<java.lang.Integer> userIdList_;
     /**
@@ -5840,7 +5971,6 @@ public final class IMBuddy {
       return userIdList_.get(index);
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -5864,7 +5994,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -5886,6 +6017,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -5911,6 +6043,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -5988,7 +6121,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMUsersStatReq, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMUsersStatReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMUsersStatReq)
+        com.mogujie.tt.protobuf.IMBuddy.IMUsersStatReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMUsersStatReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -6066,6 +6201,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -6096,7 +6233,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -6145,7 +6281,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // repeated uint32 user_id_list = 2;
       private java.util.List<java.lang.Integer> userIdList_ = java.util.Collections.emptyList();
       private void ensureUserIdListIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
@@ -6197,7 +6332,8 @@ public final class IMBuddy {
       public Builder addAllUserIdList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureUserIdListIsMutable();
-        super.addAll(values, userIdList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, userIdList_);
         
         return this;
       }
@@ -6211,7 +6347,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -6258,10 +6393,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMUsersStatReq)
   }
 
-  public interface IMUsersStatRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMUsersStatRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMUsersStatRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -6279,7 +6414,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // repeated .IM.BaseDefine.UserStat user_stat_list = 2;
     /**
      * <code>repeated .IM.BaseDefine.UserStat user_stat_list = 2;</code>
      */
@@ -6294,7 +6428,6 @@ public final class IMBuddy {
      */
     int getUserStatListCount();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -6308,14 +6441,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMUsersStatRsp}
    */
   public static final class IMUsersStatRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMUsersStatRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMUsersStatRsp)
+      IMUsersStatRspOrBuilder {
     // Use IMUsersStatRsp.newBuilder() to construct.
     private IMUsersStatRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMUsersStatRsp(boolean noInit) {}
+    private IMUsersStatRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMUsersStatRsp defaultInstance;
     public static IMUsersStatRsp getDefaultInstance() {
@@ -6326,12 +6460,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMUsersStatRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -6341,7 +6481,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -6376,6 +6516,13 @@ public final class IMBuddy {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           userStatList_ = java.util.Collections.unmodifiableList(userStatList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -6395,7 +6542,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -6419,7 +6565,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // repeated .IM.BaseDefine.UserStat user_stat_list = 2;
     public static final int USER_STAT_LIST_FIELD_NUMBER = 2;
     private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.UserStat> userStatList_;
     /**
@@ -6455,7 +6600,6 @@ public final class IMBuddy {
       return userStatList_.get(index);
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -6479,7 +6623,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -6507,6 +6652,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -6527,6 +6673,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -6604,7 +6751,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMUsersStatRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMUsersStatRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMUsersStatRsp)
+        com.mogujie.tt.protobuf.IMBuddy.IMUsersStatRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMUsersStatRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -6682,6 +6831,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -6718,7 +6869,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -6767,7 +6917,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // repeated .IM.BaseDefine.UserStat user_stat_list = 2;
       private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.UserStat> userStatList_ =
         java.util.Collections.emptyList();
       private void ensureUserStatListIsMutable() {
@@ -6869,7 +7018,8 @@ public final class IMBuddy {
       public Builder addAllUserStatList(
           java.lang.Iterable<? extends com.mogujie.tt.protobuf.IMBaseDefine.UserStat> values) {
         ensureUserStatListIsMutable();
-        super.addAll(values, userStatList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, userStatList_);
 
         return this;
       }
@@ -6892,7 +7042,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -6939,10 +7088,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMUsersStatRsp)
   }
 
-  public interface IMChangeAvatarReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMChangeAvatarReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMChangeAvatarReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -6960,7 +7109,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // required string avatar_url = 2;
     /**
      * <code>required string avatar_url = 2;</code>
      */
@@ -6975,7 +7123,6 @@ public final class IMBuddy {
     com.google.protobuf.ByteString
         getAvatarUrlBytes();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -6989,14 +7136,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMChangeAvatarReq}
    */
   public static final class IMChangeAvatarReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMChangeAvatarReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMChangeAvatarReq)
+      IMChangeAvatarReqOrBuilder {
     // Use IMChangeAvatarReq.newBuilder() to construct.
     private IMChangeAvatarReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMChangeAvatarReq(boolean noInit) {}
+    private IMChangeAvatarReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMChangeAvatarReq defaultInstance;
     public static IMChangeAvatarReq getDefaultInstance() {
@@ -7007,12 +7155,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMChangeAvatarReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -7022,7 +7176,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -7034,8 +7188,9 @@ public final class IMBuddy {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              avatarUrl_ = input.readBytes();
+              avatarUrl_ = bs;
               break;
             }
             case 162: {
@@ -7051,6 +7206,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -7070,7 +7232,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -7094,7 +7255,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // required string avatar_url = 2;
     public static final int AVATAR_URL_FIELD_NUMBER = 2;
     private java.lang.Object avatarUrl_;
     /**
@@ -7137,7 +7297,6 @@ public final class IMBuddy {
       }
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -7161,7 +7320,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -7187,6 +7347,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -7207,6 +7368,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -7284,7 +7446,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMChangeAvatarReq, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMChangeAvatarReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMChangeAvatarReq)
+        com.mogujie.tt.protobuf.IMBuddy.IMChangeAvatarReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMChangeAvatarReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -7356,6 +7520,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -7390,7 +7556,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -7439,7 +7604,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required string avatar_url = 2;
       private java.lang.Object avatarUrl_ = "";
       /**
        * <code>required string avatar_url = 2;</code>
@@ -7453,9 +7617,12 @@ public final class IMBuddy {
       public java.lang.String getAvatarUrl() {
         java.lang.Object ref = avatarUrl_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          avatarUrl_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            avatarUrl_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7513,7 +7680,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -7560,10 +7726,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMChangeAvatarReq)
   }
 
-  public interface IMChangeAvatarRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMChangeAvatarRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMChangeAvatarRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -7581,7 +7747,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // required uint32 result_code = 2;
     /**
      * <code>required uint32 result_code = 2;</code>
      */
@@ -7591,7 +7756,6 @@ public final class IMBuddy {
      */
     int getResultCode();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -7605,14 +7769,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMChangeAvatarRsp}
    */
   public static final class IMChangeAvatarRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMChangeAvatarRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMChangeAvatarRsp)
+      IMChangeAvatarRspOrBuilder {
     // Use IMChangeAvatarRsp.newBuilder() to construct.
     private IMChangeAvatarRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMChangeAvatarRsp(boolean noInit) {}
+    private IMChangeAvatarRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMChangeAvatarRsp defaultInstance;
     public static IMChangeAvatarRsp getDefaultInstance() {
@@ -7623,12 +7788,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMChangeAvatarRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -7638,7 +7809,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -7667,6 +7838,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -7686,7 +7864,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -7710,7 +7887,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // required uint32 result_code = 2;
     public static final int RESULT_CODE_FIELD_NUMBER = 2;
     private int resultCode_;
     /**
@@ -7726,7 +7902,6 @@ public final class IMBuddy {
       return resultCode_;
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -7750,7 +7925,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -7776,6 +7952,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -7796,6 +7973,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -7873,7 +8051,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMChangeAvatarRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMChangeAvatarRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMChangeAvatarRsp)
+        com.mogujie.tt.protobuf.IMBuddy.IMChangeAvatarRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMChangeAvatarRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -7943,6 +8123,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -7977,7 +8159,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -8026,7 +8207,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required uint32 result_code = 2;
       private int resultCode_ ;
       /**
        * <code>required uint32 result_code = 2;</code>
@@ -8059,7 +8239,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -8106,10 +8285,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMChangeAvatarRsp)
   }
 
-  public interface IMPCLoginStatusNotifyOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMPCLoginStatusNotifyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMPCLoginStatusNotify)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -8127,7 +8306,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // required .IM.BaseDefine.UserStatType login_stat = 2;
     /**
      * <code>required .IM.BaseDefine.UserStatType login_stat = 2;</code>
      */
@@ -8145,14 +8323,15 @@ public final class IMBuddy {
    * </pre>
    */
   public static final class IMPCLoginStatusNotify extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMPCLoginStatusNotifyOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMPCLoginStatusNotify)
+      IMPCLoginStatusNotifyOrBuilder {
     // Use IMPCLoginStatusNotify.newBuilder() to construct.
     private IMPCLoginStatusNotify(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMPCLoginStatusNotify(boolean noInit) {}
+    private IMPCLoginStatusNotify(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMPCLoginStatusNotify defaultInstance;
     public static IMPCLoginStatusNotify getDefaultInstance() {
@@ -8163,12 +8342,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMPCLoginStatusNotify(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -8178,7 +8363,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -8192,7 +8377,10 @@ public final class IMBuddy {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.UserStatType value = com.mogujie.tt.protobuf.IMBaseDefine.UserStatType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 loginStat_ = value;
               }
@@ -8206,6 +8394,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -8225,7 +8420,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -8249,7 +8443,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // required .IM.BaseDefine.UserStatType login_stat = 2;
     public static final int LOGIN_STAT_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.UserStatType loginStat_;
     /**
@@ -8272,7 +8465,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -8295,6 +8489,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeEnum(2, loginStat_.getNumber());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -8311,6 +8506,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, loginStat_.getNumber());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -8392,7 +8588,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMPCLoginStatusNotify, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMPCLoginStatusNotifyOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMPCLoginStatusNotify)
+        com.mogujie.tt.protobuf.IMBuddy.IMPCLoginStatusNotifyOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMPCLoginStatusNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -8453,6 +8651,8 @@ public final class IMBuddy {
         if (other.hasLoginStat()) {
           setLoginStat(other.getLoginStat());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -8487,7 +8687,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -8536,7 +8735,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required .IM.BaseDefine.UserStatType login_stat = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.UserStatType loginStat_ = com.mogujie.tt.protobuf.IMBaseDefine.UserStatType.USER_STATUS_ONLINE;
       /**
        * <code>required .IM.BaseDefine.UserStatType login_stat = 2;</code>
@@ -8583,10 +8781,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMPCLoginStatusNotify)
   }
 
-  public interface IMRemoveSessionNotifyOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMRemoveSessionNotifyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMRemoveSessionNotify)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -8604,7 +8802,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
@@ -8614,7 +8811,6 @@ public final class IMBuddy {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.SessionType getSessionType();
 
-    // required uint32 session_id = 3;
     /**
      * <code>required uint32 session_id = 3;</code>
      */
@@ -8628,14 +8824,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMRemoveSessionNotify}
    */
   public static final class IMRemoveSessionNotify extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMRemoveSessionNotifyOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMRemoveSessionNotify)
+      IMRemoveSessionNotifyOrBuilder {
     // Use IMRemoveSessionNotify.newBuilder() to construct.
     private IMRemoveSessionNotify(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMRemoveSessionNotify(boolean noInit) {}
+    private IMRemoveSessionNotify(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMRemoveSessionNotify defaultInstance;
     public static IMRemoveSessionNotify getDefaultInstance() {
@@ -8646,12 +8843,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMRemoveSessionNotify(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -8661,7 +8864,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -8675,7 +8878,10 @@ public final class IMBuddy {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 sessionType_ = value;
               }
@@ -8694,6 +8900,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -8713,7 +8926,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -8737,7 +8949,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     public static final int SESSION_TYPE_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -8753,7 +8964,6 @@ public final class IMBuddy {
       return sessionType_;
     }
 
-    // required uint32 session_id = 3;
     public static final int SESSION_ID_FIELD_NUMBER = 3;
     private int sessionId_;
     /**
@@ -8777,7 +8987,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -8807,6 +9018,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeUInt32(3, sessionId_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -8827,6 +9039,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, sessionId_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -8904,7 +9117,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMRemoveSessionNotify, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMRemoveSessionNotifyOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMRemoveSessionNotify)
+        com.mogujie.tt.protobuf.IMBuddy.IMRemoveSessionNotifyOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMRemoveSessionNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -8974,6 +9189,8 @@ public final class IMBuddy {
         if (other.hasSessionId()) {
           setSessionId(other.getSessionId());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -9012,7 +9229,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -9061,7 +9277,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
@@ -9097,7 +9312,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required uint32 session_id = 3;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 3;</code>
@@ -9141,10 +9355,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMRemoveSessionNotify)
   }
 
-  public interface IMDepartmentReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMDepartmentReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMDepartmentReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -9162,7 +9376,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // required uint32 latest_update_time = 2;
     /**
      * <code>required uint32 latest_update_time = 2;</code>
      */
@@ -9172,7 +9385,6 @@ public final class IMBuddy {
      */
     int getLatestUpdateTime();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -9186,14 +9398,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMDepartmentReq}
    */
   public static final class IMDepartmentReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMDepartmentReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMDepartmentReq)
+      IMDepartmentReqOrBuilder {
     // Use IMDepartmentReq.newBuilder() to construct.
     private IMDepartmentReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMDepartmentReq(boolean noInit) {}
+    private IMDepartmentReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMDepartmentReq defaultInstance;
     public static IMDepartmentReq getDefaultInstance() {
@@ -9204,12 +9417,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMDepartmentReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -9219,7 +9438,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -9248,6 +9467,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -9267,7 +9493,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -9291,7 +9516,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // required uint32 latest_update_time = 2;
     public static final int LATEST_UPDATE_TIME_FIELD_NUMBER = 2;
     private int latestUpdateTime_;
     /**
@@ -9307,7 +9531,6 @@ public final class IMBuddy {
       return latestUpdateTime_;
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -9331,7 +9554,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -9357,6 +9581,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -9377,6 +9602,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -9454,7 +9680,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMDepartmentReq, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMDepartmentReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMDepartmentReq)
+        com.mogujie.tt.protobuf.IMBuddy.IMDepartmentReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMDepartmentReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -9524,6 +9752,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -9558,7 +9788,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -9607,7 +9836,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required uint32 latest_update_time = 2;
       private int latestUpdateTime_ ;
       /**
        * <code>required uint32 latest_update_time = 2;</code>
@@ -9640,7 +9868,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -9687,10 +9914,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMDepartmentReq)
   }
 
-  public interface IMDepartmentRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMDepartmentRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMDepartmentRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -9708,7 +9935,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // required uint32 latest_update_time = 2;
     /**
      * <code>required uint32 latest_update_time = 2;</code>
      */
@@ -9718,7 +9944,6 @@ public final class IMBuddy {
      */
     int getLatestUpdateTime();
 
-    // repeated .IM.BaseDefine.DepartInfo dept_list = 3;
     /**
      * <code>repeated .IM.BaseDefine.DepartInfo dept_list = 3;</code>
      */
@@ -9733,7 +9958,6 @@ public final class IMBuddy {
      */
     int getDeptListCount();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -9747,14 +9971,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMDepartmentRsp}
    */
   public static final class IMDepartmentRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMDepartmentRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMDepartmentRsp)
+      IMDepartmentRspOrBuilder {
     // Use IMDepartmentRsp.newBuilder() to construct.
     private IMDepartmentRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMDepartmentRsp(boolean noInit) {}
+    private IMDepartmentRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMDepartmentRsp defaultInstance;
     public static IMDepartmentRsp getDefaultInstance() {
@@ -9765,12 +9990,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMDepartmentRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -9780,7 +10011,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -9820,6 +10051,13 @@ public final class IMBuddy {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           deptList_ = java.util.Collections.unmodifiableList(deptList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -9839,7 +10077,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -9863,7 +10100,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // required uint32 latest_update_time = 2;
     public static final int LATEST_UPDATE_TIME_FIELD_NUMBER = 2;
     private int latestUpdateTime_;
     /**
@@ -9879,7 +10115,6 @@ public final class IMBuddy {
       return latestUpdateTime_;
     }
 
-    // repeated .IM.BaseDefine.DepartInfo dept_list = 3;
     public static final int DEPT_LIST_FIELD_NUMBER = 3;
     private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.DepartInfo> deptList_;
     /**
@@ -9915,7 +10150,6 @@ public final class IMBuddy {
       return deptList_.get(index);
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -9940,7 +10174,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -9975,6 +10210,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -9999,6 +10235,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -10076,7 +10313,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMDepartmentRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMDepartmentRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMDepartmentRsp)
+        com.mogujie.tt.protobuf.IMBuddy.IMDepartmentRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMDepartmentRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -10163,6 +10402,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -10203,7 +10444,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -10252,7 +10492,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required uint32 latest_update_time = 2;
       private int latestUpdateTime_ ;
       /**
        * <code>required uint32 latest_update_time = 2;</code>
@@ -10285,7 +10524,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // repeated .IM.BaseDefine.DepartInfo dept_list = 3;
       private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.DepartInfo> deptList_ =
         java.util.Collections.emptyList();
       private void ensureDeptListIsMutable() {
@@ -10387,7 +10625,8 @@ public final class IMBuddy {
       public Builder addAllDeptList(
           java.lang.Iterable<? extends com.mogujie.tt.protobuf.IMBaseDefine.DepartInfo> values) {
         ensureDeptListIsMutable();
-        super.addAll(values, deptList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, deptList_);
 
         return this;
       }
@@ -10410,7 +10649,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -10457,10 +10695,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMDepartmentRsp)
   }
 
-  public interface IMAvatarChangedNotifyOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMAvatarChangedNotifyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMAvatarChangedNotify)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 changed_user_id = 1;
     /**
      * <code>required uint32 changed_user_id = 1;</code>
      *
@@ -10478,7 +10716,6 @@ public final class IMBuddy {
      */
     int getChangedUserId();
 
-    // required string avatar_url = 2;
     /**
      * <code>required string avatar_url = 2;</code>
      *
@@ -10506,14 +10743,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMAvatarChangedNotify}
    */
   public static final class IMAvatarChangedNotify extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMAvatarChangedNotifyOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMAvatarChangedNotify)
+      IMAvatarChangedNotifyOrBuilder {
     // Use IMAvatarChangedNotify.newBuilder() to construct.
     private IMAvatarChangedNotify(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMAvatarChangedNotify(boolean noInit) {}
+    private IMAvatarChangedNotify(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMAvatarChangedNotify defaultInstance;
     public static IMAvatarChangedNotify getDefaultInstance() {
@@ -10524,12 +10762,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMAvatarChangedNotify(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -10539,7 +10783,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -10551,8 +10795,9 @@ public final class IMBuddy {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              avatarUrl_ = input.readBytes();
+              avatarUrl_ = bs;
               break;
             }
           }
@@ -10563,6 +10808,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -10582,7 +10834,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 changed_user_id = 1;
     public static final int CHANGED_USER_ID_FIELD_NUMBER = 1;
     private int changedUserId_;
     /**
@@ -10606,7 +10857,6 @@ public final class IMBuddy {
       return changedUserId_;
     }
 
-    // required string avatar_url = 2;
     public static final int AVATAR_URL_FIELD_NUMBER = 2;
     private java.lang.Object avatarUrl_;
     /**
@@ -10665,7 +10915,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasChangedUserId()) {
         memoizedIsInitialized = 0;
@@ -10688,6 +10939,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getAvatarUrlBytes());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -10704,6 +10956,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, getAvatarUrlBytes());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -10781,7 +11034,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMAvatarChangedNotify, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMAvatarChangedNotifyOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMAvatarChangedNotify)
+        com.mogujie.tt.protobuf.IMBuddy.IMAvatarChangedNotifyOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMAvatarChangedNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -10844,6 +11099,8 @@ public final class IMBuddy {
           avatarUrl_ = other.avatarUrl_;
           
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -10878,7 +11135,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 changed_user_id = 1;
       private int changedUserId_ ;
       /**
        * <code>required uint32 changed_user_id = 1;</code>
@@ -10927,7 +11183,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required string avatar_url = 2;
       private java.lang.Object avatarUrl_ = "";
       /**
        * <code>required string avatar_url = 2;</code>
@@ -10947,9 +11202,12 @@ public final class IMBuddy {
       public java.lang.String getAvatarUrl() {
         java.lang.Object ref = avatarUrl_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          avatarUrl_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            avatarUrl_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11030,10 +11288,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMAvatarChangedNotify)
   }
 
-  public interface IMChangeSignInfoReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMChangeSignInfoReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMChangeSignInfoReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      */
@@ -11043,7 +11301,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // required string sign_info = 2;
     /**
      * <code>required string sign_info = 2;</code>
      */
@@ -11058,7 +11315,6 @@ public final class IMBuddy {
     com.google.protobuf.ByteString
         getSignInfoBytes();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -11076,14 +11332,15 @@ public final class IMBuddy {
    * </pre>
    */
   public static final class IMChangeSignInfoReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMChangeSignInfoReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMChangeSignInfoReq)
+      IMChangeSignInfoReqOrBuilder {
     // Use IMChangeSignInfoReq.newBuilder() to construct.
     private IMChangeSignInfoReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMChangeSignInfoReq(boolean noInit) {}
+    private IMChangeSignInfoReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMChangeSignInfoReq defaultInstance;
     public static IMChangeSignInfoReq getDefaultInstance() {
@@ -11094,12 +11351,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMChangeSignInfoReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -11109,7 +11372,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -11121,8 +11384,9 @@ public final class IMBuddy {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              signInfo_ = input.readBytes();
+              signInfo_ = bs;
               break;
             }
             case 162: {
@@ -11138,6 +11402,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -11157,7 +11428,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -11173,7 +11443,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // required string sign_info = 2;
     public static final int SIGN_INFO_FIELD_NUMBER = 2;
     private java.lang.Object signInfo_;
     /**
@@ -11216,7 +11485,6 @@ public final class IMBuddy {
       }
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -11240,7 +11508,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -11266,6 +11535,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -11286,6 +11556,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -11367,7 +11638,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMChangeSignInfoReq, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMChangeSignInfoReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMChangeSignInfoReq)
+        com.mogujie.tt.protobuf.IMBuddy.IMChangeSignInfoReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMChangeSignInfoReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -11439,6 +11712,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -11473,7 +11748,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -11506,7 +11780,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required string sign_info = 2;
       private java.lang.Object signInfo_ = "";
       /**
        * <code>required string sign_info = 2;</code>
@@ -11520,9 +11793,12 @@ public final class IMBuddy {
       public java.lang.String getSignInfo() {
         java.lang.Object ref = signInfo_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          signInfo_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            signInfo_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11580,7 +11856,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -11627,10 +11902,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMChangeSignInfoReq)
   }
 
-  public interface IMChangeSignInfoRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMChangeSignInfoRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMChangeSignInfoRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -11648,7 +11923,6 @@ public final class IMBuddy {
      */
     int getUserId();
 
-    // required uint32 result_code = 2;
     /**
      * <code>required uint32 result_code = 2;</code>
      */
@@ -11658,7 +11932,6 @@ public final class IMBuddy {
      */
     int getResultCode();
 
-    // optional string sign_info = 3;
     /**
      * <code>optional string sign_info = 3;</code>
      *
@@ -11685,7 +11958,6 @@ public final class IMBuddy {
     com.google.protobuf.ByteString
         getSignInfoBytes();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -11699,14 +11971,15 @@ public final class IMBuddy {
    * Protobuf type {@code IM.Buddy.IMChangeSignInfoRsp}
    */
   public static final class IMChangeSignInfoRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMChangeSignInfoRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMChangeSignInfoRsp)
+      IMChangeSignInfoRspOrBuilder {
     // Use IMChangeSignInfoRsp.newBuilder() to construct.
     private IMChangeSignInfoRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMChangeSignInfoRsp(boolean noInit) {}
+    private IMChangeSignInfoRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMChangeSignInfoRsp defaultInstance;
     public static IMChangeSignInfoRsp getDefaultInstance() {
@@ -11717,12 +11990,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMChangeSignInfoRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -11732,7 +12011,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -11749,8 +12028,9 @@ public final class IMBuddy {
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              signInfo_ = input.readBytes();
+              signInfo_ = bs;
               break;
             }
             case 162: {
@@ -11766,6 +12046,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -11785,7 +12072,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -11809,7 +12095,6 @@ public final class IMBuddy {
       return userId_;
     }
 
-    // required uint32 result_code = 2;
     public static final int RESULT_CODE_FIELD_NUMBER = 2;
     private int resultCode_;
     /**
@@ -11825,7 +12110,6 @@ public final class IMBuddy {
       return resultCode_;
     }
 
-    // optional string sign_info = 3;
     public static final int SIGN_INFO_FIELD_NUMBER = 3;
     private java.lang.Object signInfo_;
     /**
@@ -11880,7 +12164,6 @@ public final class IMBuddy {
       }
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -11905,7 +12188,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -11934,6 +12218,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -11958,6 +12243,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -12035,7 +12321,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMChangeSignInfoRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMChangeSignInfoRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMChangeSignInfoRsp)
+        com.mogujie.tt.protobuf.IMBuddy.IMChangeSignInfoRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMChangeSignInfoRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -12116,6 +12404,8 @@ public final class IMBuddy {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -12150,7 +12440,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -12199,7 +12488,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required uint32 result_code = 2;
       private int resultCode_ ;
       /**
        * <code>required uint32 result_code = 2;</code>
@@ -12232,7 +12520,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional string sign_info = 3;
       private java.lang.Object signInfo_ = "";
       /**
        * <code>optional string sign_info = 3;</code>
@@ -12254,9 +12541,12 @@ public final class IMBuddy {
       public java.lang.String getSignInfo() {
         java.lang.Object ref = signInfo_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          signInfo_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            signInfo_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -12330,7 +12620,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -12377,10 +12666,10 @@ public final class IMBuddy {
     // @@protoc_insertion_point(class_scope:IM.Buddy.IMChangeSignInfoRsp)
   }
 
-  public interface IMSignInfoChangedNotifyOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMSignInfoChangedNotifyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Buddy.IMSignInfoChangedNotify)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 changed_user_id = 1;
     /**
      * <code>required uint32 changed_user_id = 1;</code>
      *
@@ -12398,7 +12687,6 @@ public final class IMBuddy {
      */
     int getChangedUserId();
 
-    // required string sign_info = 2;
     /**
      * <code>required string sign_info = 2;</code>
      */
@@ -12421,14 +12709,15 @@ public final class IMBuddy {
    * </pre>
    */
   public static final class IMSignInfoChangedNotify extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMSignInfoChangedNotifyOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Buddy.IMSignInfoChangedNotify)
+      IMSignInfoChangedNotifyOrBuilder {
     // Use IMSignInfoChangedNotify.newBuilder() to construct.
     private IMSignInfoChangedNotify(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMSignInfoChangedNotify(boolean noInit) {}
+    private IMSignInfoChangedNotify(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMSignInfoChangedNotify defaultInstance;
     public static IMSignInfoChangedNotify getDefaultInstance() {
@@ -12439,12 +12728,18 @@ public final class IMBuddy {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMSignInfoChangedNotify(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -12454,7 +12749,7 @@ public final class IMBuddy {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -12466,8 +12761,9 @@ public final class IMBuddy {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              signInfo_ = input.readBytes();
+              signInfo_ = bs;
               break;
             }
           }
@@ -12478,6 +12774,13 @@ public final class IMBuddy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -12497,7 +12800,6 @@ public final class IMBuddy {
     }
 
     private int bitField0_;
-    // required uint32 changed_user_id = 1;
     public static final int CHANGED_USER_ID_FIELD_NUMBER = 1;
     private int changedUserId_;
     /**
@@ -12521,7 +12823,6 @@ public final class IMBuddy {
       return changedUserId_;
     }
 
-    // required string sign_info = 2;
     public static final int SIGN_INFO_FIELD_NUMBER = 2;
     private java.lang.Object signInfo_;
     /**
@@ -12571,7 +12872,8 @@ public final class IMBuddy {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasChangedUserId()) {
         memoizedIsInitialized = 0;
@@ -12594,6 +12896,7 @@ public final class IMBuddy {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getSignInfoBytes());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -12610,6 +12913,7 @@ public final class IMBuddy {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, getSignInfoBytes());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -12691,7 +12995,9 @@ public final class IMBuddy {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMBuddy.IMSignInfoChangedNotify, Builder>
-        implements com.mogujie.tt.protobuf.IMBuddy.IMSignInfoChangedNotifyOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Buddy.IMSignInfoChangedNotify)
+        com.mogujie.tt.protobuf.IMBuddy.IMSignInfoChangedNotifyOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMBuddy.IMSignInfoChangedNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -12754,6 +13060,8 @@ public final class IMBuddy {
           signInfo_ = other.signInfo_;
           
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -12788,7 +13096,6 @@ public final class IMBuddy {
       }
       private int bitField0_;
 
-      // required uint32 changed_user_id = 1;
       private int changedUserId_ ;
       /**
        * <code>required uint32 changed_user_id = 1;</code>
@@ -12837,7 +13144,6 @@ public final class IMBuddy {
         return this;
       }
 
-      // required string sign_info = 2;
       private java.lang.Object signInfo_ = "";
       /**
        * <code>required string sign_info = 2;</code>
@@ -12851,9 +13157,12 @@ public final class IMBuddy {
       public java.lang.String getSignInfo() {
         java.lang.Object ref = signInfo_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          signInfo_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            signInfo_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;

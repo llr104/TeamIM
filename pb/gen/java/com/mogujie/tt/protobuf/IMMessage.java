@@ -8,10 +8,10 @@ public final class IMMessage {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-  public interface IMMsgDataOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMMsgDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMMsgData)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 from_user_id = 1;
     /**
      * <code>required uint32 from_user_id = 1;</code>
      *
@@ -29,7 +29,6 @@ public final class IMMessage {
      */
     int getFromUserId();
 
-    // required uint32 to_session_id = 2;
     /**
      * <code>required uint32 to_session_id = 2;</code>
      *
@@ -47,7 +46,6 @@ public final class IMMessage {
      */
     int getToSessionId();
 
-    // required uint32 msg_id = 3;
     /**
      * <code>required uint32 msg_id = 3;</code>
      */
@@ -57,7 +55,6 @@ public final class IMMessage {
      */
     int getMsgId();
 
-    // required uint32 create_time = 4;
     /**
      * <code>required uint32 create_time = 4;</code>
      */
@@ -67,7 +64,6 @@ public final class IMMessage {
      */
     int getCreateTime();
 
-    // required .IM.BaseDefine.MsgType msg_type = 5;
     /**
      * <code>required .IM.BaseDefine.MsgType msg_type = 5;</code>
      */
@@ -77,7 +73,6 @@ public final class IMMessage {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.MsgType getMsgType();
 
-    // required bytes msg_data = 6;
     /**
      * <code>required bytes msg_data = 6;</code>
      */
@@ -87,7 +82,6 @@ public final class IMMessage {
      */
     com.google.protobuf.ByteString getMsgData();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -105,14 +99,15 @@ public final class IMMessage {
    * </pre>
    */
   public static final class IMMsgData extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMMsgDataOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMMsgData)
+      IMMsgDataOrBuilder {
     // Use IMMsgData.newBuilder() to construct.
     private IMMsgData(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMMsgData(boolean noInit) {}
+    private IMMsgData(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMMsgData defaultInstance;
     public static IMMsgData getDefaultInstance() {
@@ -123,12 +118,18 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMMsgData(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -138,7 +139,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -167,7 +168,10 @@ public final class IMMessage {
             case 40: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.MsgType value = com.mogujie.tt.protobuf.IMBaseDefine.MsgType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000010;
                 msgType_ = value;
               }
@@ -191,6 +195,13 @@ public final class IMMessage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -210,7 +221,6 @@ public final class IMMessage {
     }
 
     private int bitField0_;
-    // required uint32 from_user_id = 1;
     public static final int FROM_USER_ID_FIELD_NUMBER = 1;
     private int fromUserId_;
     /**
@@ -234,7 +244,6 @@ public final class IMMessage {
       return fromUserId_;
     }
 
-    // required uint32 to_session_id = 2;
     public static final int TO_SESSION_ID_FIELD_NUMBER = 2;
     private int toSessionId_;
     /**
@@ -258,7 +267,6 @@ public final class IMMessage {
       return toSessionId_;
     }
 
-    // required uint32 msg_id = 3;
     public static final int MSG_ID_FIELD_NUMBER = 3;
     private int msgId_;
     /**
@@ -274,7 +282,6 @@ public final class IMMessage {
       return msgId_;
     }
 
-    // required uint32 create_time = 4;
     public static final int CREATE_TIME_FIELD_NUMBER = 4;
     private int createTime_;
     /**
@@ -290,7 +297,6 @@ public final class IMMessage {
       return createTime_;
     }
 
-    // required .IM.BaseDefine.MsgType msg_type = 5;
     public static final int MSG_TYPE_FIELD_NUMBER = 5;
     private com.mogujie.tt.protobuf.IMBaseDefine.MsgType msgType_;
     /**
@@ -306,7 +312,6 @@ public final class IMMessage {
       return msgType_;
     }
 
-    // required bytes msg_data = 6;
     public static final int MSG_DATA_FIELD_NUMBER = 6;
     private com.google.protobuf.ByteString msgData_;
     /**
@@ -322,7 +327,6 @@ public final class IMMessage {
       return msgData_;
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -350,7 +354,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasFromUserId()) {
         memoizedIsInitialized = 0;
@@ -404,6 +409,7 @@ public final class IMMessage {
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -440,6 +446,7 @@ public final class IMMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -521,7 +528,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMMsgData, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMMsgDataOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMMsgData)
+        com.mogujie.tt.protobuf.IMMessage.IMMsgDataOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMMsgData.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -627,6 +636,8 @@ public final class IMMessage {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -677,7 +688,6 @@ public final class IMMessage {
       }
       private int bitField0_;
 
-      // required uint32 from_user_id = 1;
       private int fromUserId_ ;
       /**
        * <code>required uint32 from_user_id = 1;</code>
@@ -726,7 +736,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 to_session_id = 2;
       private int toSessionId_ ;
       /**
        * <code>required uint32 to_session_id = 2;</code>
@@ -775,7 +784,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 msg_id = 3;
       private int msgId_ ;
       /**
        * <code>required uint32 msg_id = 3;</code>
@@ -808,7 +816,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 create_time = 4;
       private int createTime_ ;
       /**
        * <code>required uint32 create_time = 4;</code>
@@ -841,7 +848,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required .IM.BaseDefine.MsgType msg_type = 5;
       private com.mogujie.tt.protobuf.IMBaseDefine.MsgType msgType_ = com.mogujie.tt.protobuf.IMBaseDefine.MsgType.MSG_TYPE_SINGLE_TEXT;
       /**
        * <code>required .IM.BaseDefine.MsgType msg_type = 5;</code>
@@ -877,7 +883,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required bytes msg_data = 6;
       private com.google.protobuf.ByteString msgData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>required bytes msg_data = 6;</code>
@@ -913,7 +918,6 @@ public final class IMMessage {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -960,10 +964,10 @@ public final class IMMessage {
     // @@protoc_insertion_point(class_scope:IM.Message.IMMsgData)
   }
 
-  public interface IMMsgDataAckOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMMsgDataAckOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMMsgDataAck)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -981,7 +985,6 @@ public final class IMMessage {
      */
     int getUserId();
 
-    // required uint32 session_id = 2;
     /**
      * <code>required uint32 session_id = 2;</code>
      */
@@ -991,7 +994,6 @@ public final class IMMessage {
      */
     int getSessionId();
 
-    // required uint32 msg_id = 3;
     /**
      * <code>required uint32 msg_id = 3;</code>
      */
@@ -1001,7 +1003,6 @@ public final class IMMessage {
      */
     int getMsgId();
 
-    // required .IM.BaseDefine.SessionType session_type = 4;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 4;</code>
      */
@@ -1015,14 +1016,15 @@ public final class IMMessage {
    * Protobuf type {@code IM.Message.IMMsgDataAck}
    */
   public static final class IMMsgDataAck extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMMsgDataAckOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMMsgDataAck)
+      IMMsgDataAckOrBuilder {
     // Use IMMsgDataAck.newBuilder() to construct.
     private IMMsgDataAck(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMMsgDataAck(boolean noInit) {}
+    private IMMsgDataAck(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMMsgDataAck defaultInstance;
     public static IMMsgDataAck getDefaultInstance() {
@@ -1033,12 +1035,18 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMMsgDataAck(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -1048,7 +1056,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -1072,7 +1080,10 @@ public final class IMMessage {
             case 32: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000008;
                 sessionType_ = value;
               }
@@ -1086,6 +1097,13 @@ public final class IMMessage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -1105,7 +1123,6 @@ public final class IMMessage {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -1129,7 +1146,6 @@ public final class IMMessage {
       return userId_;
     }
 
-    // required uint32 session_id = 2;
     public static final int SESSION_ID_FIELD_NUMBER = 2;
     private int sessionId_;
     /**
@@ -1145,7 +1161,6 @@ public final class IMMessage {
       return sessionId_;
     }
 
-    // required uint32 msg_id = 3;
     public static final int MSG_ID_FIELD_NUMBER = 3;
     private int msgId_;
     /**
@@ -1161,7 +1176,6 @@ public final class IMMessage {
       return msgId_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 4;
     public static final int SESSION_TYPE_FIELD_NUMBER = 4;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -1186,7 +1200,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -1223,6 +1238,7 @@ public final class IMMessage {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeEnum(4, sessionType_.getNumber());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -1247,6 +1263,7 @@ public final class IMMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, sessionType_.getNumber());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -1324,7 +1341,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMMsgDataAck, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMMsgDataAckOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMMsgDataAck)
+        com.mogujie.tt.protobuf.IMMessage.IMMsgDataAckOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMMsgDataAck.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -1403,6 +1422,8 @@ public final class IMMessage {
         if (other.hasSessionType()) {
           setSessionType(other.getSessionType());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -1445,7 +1466,6 @@ public final class IMMessage {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -1494,7 +1514,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 session_id = 2;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 2;</code>
@@ -1527,7 +1546,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 msg_id = 3;
       private int msgId_ ;
       /**
        * <code>required uint32 msg_id = 3;</code>
@@ -1560,7 +1578,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 4;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 4;</code>
@@ -1607,10 +1624,10 @@ public final class IMMessage {
     // @@protoc_insertion_point(class_scope:IM.Message.IMMsgDataAck)
   }
 
-  public interface IMMsgDataReadAckOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMMsgDataReadAckOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMMsgDataReadAck)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -1628,7 +1645,6 @@ public final class IMMessage {
      */
     int getUserId();
 
-    // required uint32 session_id = 2;
     /**
      * <code>required uint32 session_id = 2;</code>
      */
@@ -1638,7 +1654,6 @@ public final class IMMessage {
      */
     int getSessionId();
 
-    // required uint32 msg_id = 3;
     /**
      * <code>required uint32 msg_id = 3;</code>
      */
@@ -1648,7 +1663,6 @@ public final class IMMessage {
      */
     int getMsgId();
 
-    // required .IM.BaseDefine.SessionType session_type = 4;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 4;</code>
      */
@@ -1662,14 +1676,15 @@ public final class IMMessage {
    * Protobuf type {@code IM.Message.IMMsgDataReadAck}
    */
   public static final class IMMsgDataReadAck extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMMsgDataReadAckOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMMsgDataReadAck)
+      IMMsgDataReadAckOrBuilder {
     // Use IMMsgDataReadAck.newBuilder() to construct.
     private IMMsgDataReadAck(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMMsgDataReadAck(boolean noInit) {}
+    private IMMsgDataReadAck(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMMsgDataReadAck defaultInstance;
     public static IMMsgDataReadAck getDefaultInstance() {
@@ -1680,12 +1695,18 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMMsgDataReadAck(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -1695,7 +1716,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -1719,7 +1740,10 @@ public final class IMMessage {
             case 32: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000008;
                 sessionType_ = value;
               }
@@ -1733,6 +1757,13 @@ public final class IMMessage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -1752,7 +1783,6 @@ public final class IMMessage {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -1776,7 +1806,6 @@ public final class IMMessage {
       return userId_;
     }
 
-    // required uint32 session_id = 2;
     public static final int SESSION_ID_FIELD_NUMBER = 2;
     private int sessionId_;
     /**
@@ -1792,7 +1821,6 @@ public final class IMMessage {
       return sessionId_;
     }
 
-    // required uint32 msg_id = 3;
     public static final int MSG_ID_FIELD_NUMBER = 3;
     private int msgId_;
     /**
@@ -1808,7 +1836,6 @@ public final class IMMessage {
       return msgId_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 4;
     public static final int SESSION_TYPE_FIELD_NUMBER = 4;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -1833,7 +1860,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -1870,6 +1898,7 @@ public final class IMMessage {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeEnum(4, sessionType_.getNumber());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -1894,6 +1923,7 @@ public final class IMMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, sessionType_.getNumber());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -1971,7 +2001,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMMsgDataReadAck, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMMsgDataReadAckOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMMsgDataReadAck)
+        com.mogujie.tt.protobuf.IMMessage.IMMsgDataReadAckOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMMsgDataReadAck.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -2050,6 +2082,8 @@ public final class IMMessage {
         if (other.hasSessionType()) {
           setSessionType(other.getSessionType());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -2092,7 +2126,6 @@ public final class IMMessage {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -2141,7 +2174,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 session_id = 2;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 2;</code>
@@ -2174,7 +2206,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 msg_id = 3;
       private int msgId_ ;
       /**
        * <code>required uint32 msg_id = 3;</code>
@@ -2207,7 +2238,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 4;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 4;</code>
@@ -2254,10 +2284,10 @@ public final class IMMessage {
     // @@protoc_insertion_point(class_scope:IM.Message.IMMsgDataReadAck)
   }
 
-  public interface IMMsgDataReadNotifyOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMMsgDataReadNotifyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMMsgDataReadNotify)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -2275,7 +2305,6 @@ public final class IMMessage {
      */
     int getUserId();
 
-    // required uint32 session_id = 2;
     /**
      * <code>required uint32 session_id = 2;</code>
      */
@@ -2285,7 +2314,6 @@ public final class IMMessage {
      */
     int getSessionId();
 
-    // required uint32 msg_id = 3;
     /**
      * <code>required uint32 msg_id = 3;</code>
      */
@@ -2295,7 +2323,6 @@ public final class IMMessage {
      */
     int getMsgId();
 
-    // required .IM.BaseDefine.SessionType session_type = 4;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 4;</code>
      */
@@ -2309,14 +2336,15 @@ public final class IMMessage {
    * Protobuf type {@code IM.Message.IMMsgDataReadNotify}
    */
   public static final class IMMsgDataReadNotify extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMMsgDataReadNotifyOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMMsgDataReadNotify)
+      IMMsgDataReadNotifyOrBuilder {
     // Use IMMsgDataReadNotify.newBuilder() to construct.
     private IMMsgDataReadNotify(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMMsgDataReadNotify(boolean noInit) {}
+    private IMMsgDataReadNotify(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMMsgDataReadNotify defaultInstance;
     public static IMMsgDataReadNotify getDefaultInstance() {
@@ -2327,12 +2355,18 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMMsgDataReadNotify(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -2342,7 +2376,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -2366,7 +2400,10 @@ public final class IMMessage {
             case 32: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000008;
                 sessionType_ = value;
               }
@@ -2380,6 +2417,13 @@ public final class IMMessage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -2399,7 +2443,6 @@ public final class IMMessage {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -2423,7 +2466,6 @@ public final class IMMessage {
       return userId_;
     }
 
-    // required uint32 session_id = 2;
     public static final int SESSION_ID_FIELD_NUMBER = 2;
     private int sessionId_;
     /**
@@ -2439,7 +2481,6 @@ public final class IMMessage {
       return sessionId_;
     }
 
-    // required uint32 msg_id = 3;
     public static final int MSG_ID_FIELD_NUMBER = 3;
     private int msgId_;
     /**
@@ -2455,7 +2496,6 @@ public final class IMMessage {
       return msgId_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 4;
     public static final int SESSION_TYPE_FIELD_NUMBER = 4;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -2480,7 +2520,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -2517,6 +2558,7 @@ public final class IMMessage {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeEnum(4, sessionType_.getNumber());
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -2541,6 +2583,7 @@ public final class IMMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, sessionType_.getNumber());
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -2618,7 +2661,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMMsgDataReadNotify, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMMsgDataReadNotifyOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMMsgDataReadNotify)
+        com.mogujie.tt.protobuf.IMMessage.IMMsgDataReadNotifyOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMMsgDataReadNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -2697,6 +2742,8 @@ public final class IMMessage {
         if (other.hasSessionType()) {
           setSessionType(other.getSessionType());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -2739,7 +2786,6 @@ public final class IMMessage {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -2788,7 +2834,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 session_id = 2;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 2;</code>
@@ -2821,7 +2866,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 msg_id = 3;
       private int msgId_ ;
       /**
        * <code>required uint32 msg_id = 3;</code>
@@ -2854,7 +2898,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 4;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 4;</code>
@@ -2901,8 +2944,9 @@ public final class IMMessage {
     // @@protoc_insertion_point(class_scope:IM.Message.IMMsgDataReadNotify)
   }
 
-  public interface IMClientTimeReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMClientTimeReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMClientTimeReq)
+      com.google.protobuf.MessageLiteOrBuilder {
   }
   /**
    * Protobuf type {@code IM.Message.IMClientTimeReq}
@@ -2912,14 +2956,15 @@ public final class IMMessage {
    * </pre>
    */
   public static final class IMClientTimeReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMClientTimeReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMClientTimeReq)
+      IMClientTimeReqOrBuilder {
     // Use IMClientTimeReq.newBuilder() to construct.
     private IMClientTimeReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMClientTimeReq(boolean noInit) {}
+    private IMClientTimeReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMClientTimeReq defaultInstance;
     public static IMClientTimeReq getDefaultInstance() {
@@ -2930,11 +2975,17 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMClientTimeReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -2944,7 +2995,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -2958,6 +3009,13 @@ public final class IMMessage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -2981,7 +3039,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -2990,6 +3049,7 @@ public final class IMMessage {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -2998,6 +3058,7 @@ public final class IMMessage {
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -3079,7 +3140,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMClientTimeReq, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMClientTimeReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMClientTimeReq)
+        com.mogujie.tt.protobuf.IMMessage.IMClientTimeReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMClientTimeReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -3119,6 +3182,8 @@ public final class IMMessage {
 
       public Builder mergeFrom(com.mogujie.tt.protobuf.IMMessage.IMClientTimeReq other) {
         if (other == com.mogujie.tt.protobuf.IMMessage.IMClientTimeReq.getDefaultInstance()) return this;
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -3155,10 +3220,10 @@ public final class IMMessage {
     // @@protoc_insertion_point(class_scope:IM.Message.IMClientTimeReq)
   }
 
-  public interface IMClientTimeRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMClientTimeRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMClientTimeRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 server_time = 1;
     /**
      * <code>required uint32 server_time = 1;</code>
      *
@@ -3180,14 +3245,15 @@ public final class IMMessage {
    * Protobuf type {@code IM.Message.IMClientTimeRsp}
    */
   public static final class IMClientTimeRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMClientTimeRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMClientTimeRsp)
+      IMClientTimeRspOrBuilder {
     // Use IMClientTimeRsp.newBuilder() to construct.
     private IMClientTimeRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMClientTimeRsp(boolean noInit) {}
+    private IMClientTimeRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMClientTimeRsp defaultInstance;
     public static IMClientTimeRsp getDefaultInstance() {
@@ -3198,12 +3264,18 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMClientTimeRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -3213,7 +3285,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -3232,6 +3304,13 @@ public final class IMMessage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -3251,7 +3330,6 @@ public final class IMMessage {
     }
 
     private int bitField0_;
-    // required uint32 server_time = 1;
     public static final int SERVER_TIME_FIELD_NUMBER = 1;
     private int serverTime_;
     /**
@@ -3281,7 +3359,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasServerTime()) {
         memoizedIsInitialized = 0;
@@ -3297,6 +3376,7 @@ public final class IMMessage {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt32(1, serverTime_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -3309,6 +3389,7 @@ public final class IMMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, serverTime_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -3386,7 +3467,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMClientTimeRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMClientTimeRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMClientTimeRsp)
+        com.mogujie.tt.protobuf.IMMessage.IMClientTimeRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMClientTimeRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -3438,6 +3521,8 @@ public final class IMMessage {
         if (other.hasServerTime()) {
           setServerTime(other.getServerTime());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -3468,7 +3553,6 @@ public final class IMMessage {
       }
       private int bitField0_;
 
-      // required uint32 server_time = 1;
       private int serverTime_ ;
       /**
        * <code>required uint32 server_time = 1;</code>
@@ -3528,10 +3612,10 @@ public final class IMMessage {
     // @@protoc_insertion_point(class_scope:IM.Message.IMClientTimeRsp)
   }
 
-  public interface IMUnreadMsgCntReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMUnreadMsgCntReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMUnreadMsgCntReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -3549,7 +3633,6 @@ public final class IMMessage {
      */
     int getUserId();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -3563,14 +3646,15 @@ public final class IMMessage {
    * Protobuf type {@code IM.Message.IMUnreadMsgCntReq}
    */
   public static final class IMUnreadMsgCntReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMUnreadMsgCntReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMUnreadMsgCntReq)
+      IMUnreadMsgCntReqOrBuilder {
     // Use IMUnreadMsgCntReq.newBuilder() to construct.
     private IMUnreadMsgCntReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMUnreadMsgCntReq(boolean noInit) {}
+    private IMUnreadMsgCntReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMUnreadMsgCntReq defaultInstance;
     public static IMUnreadMsgCntReq getDefaultInstance() {
@@ -3581,12 +3665,18 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMUnreadMsgCntReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -3596,7 +3686,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -3620,6 +3710,13 @@ public final class IMMessage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -3639,7 +3736,6 @@ public final class IMMessage {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -3663,7 +3759,6 @@ public final class IMMessage {
       return userId_;
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -3686,7 +3781,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -3705,6 +3801,7 @@ public final class IMMessage {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -3721,6 +3818,7 @@ public final class IMMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -3798,7 +3896,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMUnreadMsgCntReq, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMUnreadMsgCntReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMUnreadMsgCntReq)
+        com.mogujie.tt.protobuf.IMMessage.IMUnreadMsgCntReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMUnreadMsgCntReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -3859,6 +3959,8 @@ public final class IMMessage {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -3889,7 +3991,6 @@ public final class IMMessage {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -3938,7 +4039,6 @@ public final class IMMessage {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -3985,10 +4085,10 @@ public final class IMMessage {
     // @@protoc_insertion_point(class_scope:IM.Message.IMUnreadMsgCntReq)
   }
 
-  public interface IMUnreadMsgCntRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMUnreadMsgCntRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMUnreadMsgCntRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -4006,7 +4106,6 @@ public final class IMMessage {
      */
     int getUserId();
 
-    // required uint32 total_cnt = 2;
     /**
      * <code>required uint32 total_cnt = 2;</code>
      */
@@ -4016,7 +4115,6 @@ public final class IMMessage {
      */
     int getTotalCnt();
 
-    // repeated .IM.BaseDefine.UnreadInfo unreadinfo_list = 3;
     /**
      * <code>repeated .IM.BaseDefine.UnreadInfo unreadinfo_list = 3;</code>
      */
@@ -4031,7 +4129,6 @@ public final class IMMessage {
      */
     int getUnreadinfoListCount();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -4045,14 +4142,15 @@ public final class IMMessage {
    * Protobuf type {@code IM.Message.IMUnreadMsgCntRsp}
    */
   public static final class IMUnreadMsgCntRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMUnreadMsgCntRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMUnreadMsgCntRsp)
+      IMUnreadMsgCntRspOrBuilder {
     // Use IMUnreadMsgCntRsp.newBuilder() to construct.
     private IMUnreadMsgCntRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMUnreadMsgCntRsp(boolean noInit) {}
+    private IMUnreadMsgCntRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMUnreadMsgCntRsp defaultInstance;
     public static IMUnreadMsgCntRsp getDefaultInstance() {
@@ -4063,12 +4161,18 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMUnreadMsgCntRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -4078,7 +4182,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -4118,6 +4222,13 @@ public final class IMMessage {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           unreadinfoList_ = java.util.Collections.unmodifiableList(unreadinfoList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -4137,7 +4248,6 @@ public final class IMMessage {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -4161,7 +4271,6 @@ public final class IMMessage {
       return userId_;
     }
 
-    // required uint32 total_cnt = 2;
     public static final int TOTAL_CNT_FIELD_NUMBER = 2;
     private int totalCnt_;
     /**
@@ -4177,7 +4286,6 @@ public final class IMMessage {
       return totalCnt_;
     }
 
-    // repeated .IM.BaseDefine.UnreadInfo unreadinfo_list = 3;
     public static final int UNREADINFO_LIST_FIELD_NUMBER = 3;
     private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.UnreadInfo> unreadinfoList_;
     /**
@@ -4213,7 +4321,6 @@ public final class IMMessage {
       return unreadinfoList_.get(index);
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -4238,7 +4345,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -4273,6 +4381,7 @@ public final class IMMessage {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -4297,6 +4406,7 @@ public final class IMMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -4374,7 +4484,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMUnreadMsgCntRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMUnreadMsgCntRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMUnreadMsgCntRsp)
+        com.mogujie.tt.protobuf.IMMessage.IMUnreadMsgCntRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMUnreadMsgCntRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -4461,6 +4573,8 @@ public final class IMMessage {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -4501,7 +4615,6 @@ public final class IMMessage {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -4550,7 +4663,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 total_cnt = 2;
       private int totalCnt_ ;
       /**
        * <code>required uint32 total_cnt = 2;</code>
@@ -4583,7 +4695,6 @@ public final class IMMessage {
         return this;
       }
 
-      // repeated .IM.BaseDefine.UnreadInfo unreadinfo_list = 3;
       private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.UnreadInfo> unreadinfoList_ =
         java.util.Collections.emptyList();
       private void ensureUnreadinfoListIsMutable() {
@@ -4685,7 +4796,8 @@ public final class IMMessage {
       public Builder addAllUnreadinfoList(
           java.lang.Iterable<? extends com.mogujie.tt.protobuf.IMBaseDefine.UnreadInfo> values) {
         ensureUnreadinfoListIsMutable();
-        super.addAll(values, unreadinfoList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, unreadinfoList_);
 
         return this;
       }
@@ -4708,7 +4820,6 @@ public final class IMMessage {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -4755,10 +4866,10 @@ public final class IMMessage {
     // @@protoc_insertion_point(class_scope:IM.Message.IMUnreadMsgCntRsp)
   }
 
-  public interface IMGetMsgListReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMGetMsgListReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMGetMsgListReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -4776,7 +4887,6 @@ public final class IMMessage {
      */
     int getUserId();
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
@@ -4786,7 +4896,6 @@ public final class IMMessage {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.SessionType getSessionType();
 
-    // required uint32 session_id = 3;
     /**
      * <code>required uint32 session_id = 3;</code>
      */
@@ -4796,7 +4905,6 @@ public final class IMMessage {
      */
     int getSessionId();
 
-    // required uint32 msg_id_begin = 4;
     /**
      * <code>required uint32 msg_id_begin = 4;</code>
      */
@@ -4806,7 +4914,6 @@ public final class IMMessage {
      */
     int getMsgIdBegin();
 
-    // required uint32 msg_cnt = 5;
     /**
      * <code>required uint32 msg_cnt = 5;</code>
      */
@@ -4816,7 +4923,6 @@ public final class IMMessage {
      */
     int getMsgCnt();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -4830,14 +4936,15 @@ public final class IMMessage {
    * Protobuf type {@code IM.Message.IMGetMsgListReq}
    */
   public static final class IMGetMsgListReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMGetMsgListReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMGetMsgListReq)
+      IMGetMsgListReqOrBuilder {
     // Use IMGetMsgListReq.newBuilder() to construct.
     private IMGetMsgListReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMGetMsgListReq(boolean noInit) {}
+    private IMGetMsgListReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMGetMsgListReq defaultInstance;
     public static IMGetMsgListReq getDefaultInstance() {
@@ -4848,12 +4955,18 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMGetMsgListReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -4863,7 +4976,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -4877,7 +4990,10 @@ public final class IMMessage {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 sessionType_ = value;
               }
@@ -4911,6 +5027,13 @@ public final class IMMessage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -4930,7 +5053,6 @@ public final class IMMessage {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -4954,7 +5076,6 @@ public final class IMMessage {
       return userId_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     public static final int SESSION_TYPE_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -4970,7 +5091,6 @@ public final class IMMessage {
       return sessionType_;
     }
 
-    // required uint32 session_id = 3;
     public static final int SESSION_ID_FIELD_NUMBER = 3;
     private int sessionId_;
     /**
@@ -4986,7 +5106,6 @@ public final class IMMessage {
       return sessionId_;
     }
 
-    // required uint32 msg_id_begin = 4;
     public static final int MSG_ID_BEGIN_FIELD_NUMBER = 4;
     private int msgIdBegin_;
     /**
@@ -5002,7 +5121,6 @@ public final class IMMessage {
       return msgIdBegin_;
     }
 
-    // required uint32 msg_cnt = 5;
     public static final int MSG_CNT_FIELD_NUMBER = 5;
     private int msgCnt_;
     /**
@@ -5018,7 +5136,6 @@ public final class IMMessage {
       return msgCnt_;
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -5045,7 +5162,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -5092,6 +5210,7 @@ public final class IMMessage {
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -5124,6 +5243,7 @@ public final class IMMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -5201,7 +5321,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMGetMsgListReq, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMGetMsgListReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMGetMsgListReq)
+        com.mogujie.tt.protobuf.IMMessage.IMGetMsgListReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMGetMsgListReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -5298,6 +5420,8 @@ public final class IMMessage {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -5344,7 +5468,6 @@ public final class IMMessage {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -5393,7 +5516,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
@@ -5429,7 +5551,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 session_id = 3;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 3;</code>
@@ -5462,7 +5583,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 msg_id_begin = 4;
       private int msgIdBegin_ ;
       /**
        * <code>required uint32 msg_id_begin = 4;</code>
@@ -5495,7 +5615,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 msg_cnt = 5;
       private int msgCnt_ ;
       /**
        * <code>required uint32 msg_cnt = 5;</code>
@@ -5528,7 +5647,6 @@ public final class IMMessage {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -5575,10 +5693,10 @@ public final class IMMessage {
     // @@protoc_insertion_point(class_scope:IM.Message.IMGetMsgListReq)
   }
 
-  public interface IMGetMsgListRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMGetMsgListRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMGetMsgListRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -5596,7 +5714,6 @@ public final class IMMessage {
      */
     int getUserId();
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
@@ -5606,7 +5723,6 @@ public final class IMMessage {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.SessionType getSessionType();
 
-    // required uint32 session_id = 3;
     /**
      * <code>required uint32 session_id = 3;</code>
      */
@@ -5616,7 +5732,6 @@ public final class IMMessage {
      */
     int getSessionId();
 
-    // required uint32 msg_id_begin = 4;
     /**
      * <code>required uint32 msg_id_begin = 4;</code>
      */
@@ -5626,7 +5741,6 @@ public final class IMMessage {
      */
     int getMsgIdBegin();
 
-    // repeated .IM.BaseDefine.MsgInfo msg_list = 5;
     /**
      * <code>repeated .IM.BaseDefine.MsgInfo msg_list = 5;</code>
      */
@@ -5641,7 +5755,6 @@ public final class IMMessage {
      */
     int getMsgListCount();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -5661,14 +5774,15 @@ public final class IMMessage {
    * </pre>
    */
   public static final class IMGetMsgListRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMGetMsgListRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMGetMsgListRsp)
+      IMGetMsgListRspOrBuilder {
     // Use IMGetMsgListRsp.newBuilder() to construct.
     private IMGetMsgListRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMGetMsgListRsp(boolean noInit) {}
+    private IMGetMsgListRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMGetMsgListRsp defaultInstance;
     public static IMGetMsgListRsp getDefaultInstance() {
@@ -5679,12 +5793,18 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMGetMsgListRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -5694,7 +5814,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -5708,7 +5828,10 @@ public final class IMMessage {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 sessionType_ = value;
               }
@@ -5748,6 +5871,13 @@ public final class IMMessage {
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           msgList_ = java.util.Collections.unmodifiableList(msgList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -5767,7 +5897,6 @@ public final class IMMessage {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -5791,7 +5920,6 @@ public final class IMMessage {
       return userId_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     public static final int SESSION_TYPE_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -5807,7 +5935,6 @@ public final class IMMessage {
       return sessionType_;
     }
 
-    // required uint32 session_id = 3;
     public static final int SESSION_ID_FIELD_NUMBER = 3;
     private int sessionId_;
     /**
@@ -5823,7 +5950,6 @@ public final class IMMessage {
       return sessionId_;
     }
 
-    // required uint32 msg_id_begin = 4;
     public static final int MSG_ID_BEGIN_FIELD_NUMBER = 4;
     private int msgIdBegin_;
     /**
@@ -5839,7 +5965,6 @@ public final class IMMessage {
       return msgIdBegin_;
     }
 
-    // repeated .IM.BaseDefine.MsgInfo msg_list = 5;
     public static final int MSG_LIST_FIELD_NUMBER = 5;
     private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.MsgInfo> msgList_;
     /**
@@ -5875,7 +6000,6 @@ public final class IMMessage {
       return msgList_.get(index);
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -5902,7 +6026,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -5951,6 +6076,7 @@ public final class IMMessage {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -5983,6 +6109,7 @@ public final class IMMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -6066,7 +6193,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMGetMsgListRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMGetMsgListRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMGetMsgListRsp)
+        com.mogujie.tt.protobuf.IMMessage.IMGetMsgListRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMGetMsgListRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -6171,6 +6300,8 @@ public final class IMMessage {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -6219,7 +6350,6 @@ public final class IMMessage {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -6268,7 +6398,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
@@ -6304,7 +6433,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 session_id = 3;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 3;</code>
@@ -6337,7 +6465,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 msg_id_begin = 4;
       private int msgIdBegin_ ;
       /**
        * <code>required uint32 msg_id_begin = 4;</code>
@@ -6370,7 +6497,6 @@ public final class IMMessage {
         return this;
       }
 
-      // repeated .IM.BaseDefine.MsgInfo msg_list = 5;
       private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.MsgInfo> msgList_ =
         java.util.Collections.emptyList();
       private void ensureMsgListIsMutable() {
@@ -6472,7 +6598,8 @@ public final class IMMessage {
       public Builder addAllMsgList(
           java.lang.Iterable<? extends com.mogujie.tt.protobuf.IMBaseDefine.MsgInfo> values) {
         ensureMsgListIsMutable();
-        super.addAll(values, msgList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, msgList_);
 
         return this;
       }
@@ -6495,7 +6622,6 @@ public final class IMMessage {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -6542,10 +6668,10 @@ public final class IMMessage {
     // @@protoc_insertion_point(class_scope:IM.Message.IMGetMsgListRsp)
   }
 
-  public interface IMGetLatestMsgIdReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMGetLatestMsgIdReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMGetLatestMsgIdReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -6563,7 +6689,6 @@ public final class IMMessage {
      */
     int getUserId();
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
@@ -6573,7 +6698,6 @@ public final class IMMessage {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.SessionType getSessionType();
 
-    // required uint32 session_id = 3;
     /**
      * <code>required uint32 session_id = 3;</code>
      */
@@ -6583,7 +6707,6 @@ public final class IMMessage {
      */
     int getSessionId();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -6597,14 +6720,15 @@ public final class IMMessage {
    * Protobuf type {@code IM.Message.IMGetLatestMsgIdReq}
    */
   public static final class IMGetLatestMsgIdReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMGetLatestMsgIdReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMGetLatestMsgIdReq)
+      IMGetLatestMsgIdReqOrBuilder {
     // Use IMGetLatestMsgIdReq.newBuilder() to construct.
     private IMGetLatestMsgIdReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMGetLatestMsgIdReq(boolean noInit) {}
+    private IMGetLatestMsgIdReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMGetLatestMsgIdReq defaultInstance;
     public static IMGetLatestMsgIdReq getDefaultInstance() {
@@ -6615,12 +6739,18 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMGetLatestMsgIdReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -6630,7 +6760,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -6644,7 +6774,10 @@ public final class IMMessage {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 sessionType_ = value;
               }
@@ -6668,6 +6801,13 @@ public final class IMMessage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -6687,7 +6827,6 @@ public final class IMMessage {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -6711,7 +6850,6 @@ public final class IMMessage {
       return userId_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     public static final int SESSION_TYPE_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -6727,7 +6865,6 @@ public final class IMMessage {
       return sessionType_;
     }
 
-    // required uint32 session_id = 3;
     public static final int SESSION_ID_FIELD_NUMBER = 3;
     private int sessionId_;
     /**
@@ -6743,7 +6880,6 @@ public final class IMMessage {
       return sessionId_;
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -6768,7 +6904,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -6801,6 +6938,7 @@ public final class IMMessage {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -6825,6 +6963,7 @@ public final class IMMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -6902,7 +7041,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMGetLatestMsgIdReq, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMGetLatestMsgIdReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMGetLatestMsgIdReq)
+        com.mogujie.tt.protobuf.IMMessage.IMGetLatestMsgIdReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMGetLatestMsgIdReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -6981,6 +7122,8 @@ public final class IMMessage {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -7019,7 +7162,6 @@ public final class IMMessage {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -7068,7 +7210,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
@@ -7104,7 +7245,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 session_id = 3;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 3;</code>
@@ -7137,7 +7277,6 @@ public final class IMMessage {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -7184,10 +7323,10 @@ public final class IMMessage {
     // @@protoc_insertion_point(class_scope:IM.Message.IMGetLatestMsgIdReq)
   }
 
-  public interface IMGetLatestMsgIdRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMGetLatestMsgIdRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMGetLatestMsgIdRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -7205,7 +7344,6 @@ public final class IMMessage {
      */
     int getUserId();
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
@@ -7215,7 +7353,6 @@ public final class IMMessage {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.SessionType getSessionType();
 
-    // required uint32 session_id = 3;
     /**
      * <code>required uint32 session_id = 3;</code>
      */
@@ -7225,7 +7362,6 @@ public final class IMMessage {
      */
     int getSessionId();
 
-    // required uint32 latest_msg_id = 4;
     /**
      * <code>required uint32 latest_msg_id = 4;</code>
      */
@@ -7235,7 +7371,6 @@ public final class IMMessage {
      */
     int getLatestMsgId();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -7249,14 +7384,15 @@ public final class IMMessage {
    * Protobuf type {@code IM.Message.IMGetLatestMsgIdRsp}
    */
   public static final class IMGetLatestMsgIdRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMGetLatestMsgIdRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMGetLatestMsgIdRsp)
+      IMGetLatestMsgIdRspOrBuilder {
     // Use IMGetLatestMsgIdRsp.newBuilder() to construct.
     private IMGetLatestMsgIdRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMGetLatestMsgIdRsp(boolean noInit) {}
+    private IMGetLatestMsgIdRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMGetLatestMsgIdRsp defaultInstance;
     public static IMGetLatestMsgIdRsp getDefaultInstance() {
@@ -7267,12 +7403,18 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMGetLatestMsgIdRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -7282,7 +7424,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -7296,7 +7438,10 @@ public final class IMMessage {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 sessionType_ = value;
               }
@@ -7325,6 +7470,13 @@ public final class IMMessage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -7344,7 +7496,6 @@ public final class IMMessage {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -7368,7 +7519,6 @@ public final class IMMessage {
       return userId_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     public static final int SESSION_TYPE_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -7384,7 +7534,6 @@ public final class IMMessage {
       return sessionType_;
     }
 
-    // required uint32 session_id = 3;
     public static final int SESSION_ID_FIELD_NUMBER = 3;
     private int sessionId_;
     /**
@@ -7400,7 +7549,6 @@ public final class IMMessage {
       return sessionId_;
     }
 
-    // required uint32 latest_msg_id = 4;
     public static final int LATEST_MSG_ID_FIELD_NUMBER = 4;
     private int latestMsgId_;
     /**
@@ -7416,7 +7564,6 @@ public final class IMMessage {
       return latestMsgId_;
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -7442,7 +7589,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -7482,6 +7630,7 @@ public final class IMMessage {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -7510,6 +7659,7 @@ public final class IMMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -7587,7 +7737,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMGetLatestMsgIdRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMGetLatestMsgIdRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMGetLatestMsgIdRsp)
+        com.mogujie.tt.protobuf.IMMessage.IMGetLatestMsgIdRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMGetLatestMsgIdRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -7675,6 +7827,8 @@ public final class IMMessage {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -7717,7 +7871,6 @@ public final class IMMessage {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -7766,7 +7919,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
@@ -7802,7 +7954,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 session_id = 3;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 3;</code>
@@ -7835,7 +7986,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 latest_msg_id = 4;
       private int latestMsgId_ ;
       /**
        * <code>required uint32 latest_msg_id = 4;</code>
@@ -7868,7 +8018,6 @@ public final class IMMessage {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -7915,10 +8064,10 @@ public final class IMMessage {
     // @@protoc_insertion_point(class_scope:IM.Message.IMGetLatestMsgIdRsp)
   }
 
-  public interface IMGetMsgByIdReqOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMGetMsgByIdReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMGetMsgByIdReq)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -7936,7 +8085,6 @@ public final class IMMessage {
      */
     int getUserId();
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
@@ -7946,7 +8094,6 @@ public final class IMMessage {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.SessionType getSessionType();
 
-    // required uint32 session_id = 3;
     /**
      * <code>required uint32 session_id = 3;</code>
      */
@@ -7956,7 +8103,6 @@ public final class IMMessage {
      */
     int getSessionId();
 
-    // repeated uint32 msg_id_list = 4;
     /**
      * <code>repeated uint32 msg_id_list = 4;</code>
      */
@@ -7970,7 +8116,6 @@ public final class IMMessage {
      */
     int getMsgIdList(int index);
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -7984,14 +8129,15 @@ public final class IMMessage {
    * Protobuf type {@code IM.Message.IMGetMsgByIdReq}
    */
   public static final class IMGetMsgByIdReq extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMGetMsgByIdReqOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMGetMsgByIdReq)
+      IMGetMsgByIdReqOrBuilder {
     // Use IMGetMsgByIdReq.newBuilder() to construct.
     private IMGetMsgByIdReq(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMGetMsgByIdReq(boolean noInit) {}
+    private IMGetMsgByIdReq(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMGetMsgByIdReq defaultInstance;
     public static IMGetMsgByIdReq getDefaultInstance() {
@@ -8002,12 +8148,18 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMGetMsgByIdReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -8017,7 +8169,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -8031,7 +8183,10 @@ public final class IMMessage {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 sessionType_ = value;
               }
@@ -8079,6 +8234,13 @@ public final class IMMessage {
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           msgIdList_ = java.util.Collections.unmodifiableList(msgIdList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -8098,7 +8260,6 @@ public final class IMMessage {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -8122,7 +8283,6 @@ public final class IMMessage {
       return userId_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     public static final int SESSION_TYPE_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -8138,7 +8298,6 @@ public final class IMMessage {
       return sessionType_;
     }
 
-    // required uint32 session_id = 3;
     public static final int SESSION_ID_FIELD_NUMBER = 3;
     private int sessionId_;
     /**
@@ -8154,7 +8313,6 @@ public final class IMMessage {
       return sessionId_;
     }
 
-    // repeated uint32 msg_id_list = 4;
     public static final int MSG_ID_LIST_FIELD_NUMBER = 4;
     private java.util.List<java.lang.Integer> msgIdList_;
     /**
@@ -8177,7 +8335,6 @@ public final class IMMessage {
       return msgIdList_.get(index);
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -8203,7 +8360,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -8239,6 +8397,7 @@ public final class IMMessage {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -8272,6 +8431,7 @@ public final class IMMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -8349,7 +8509,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMGetMsgByIdReq, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMGetMsgByIdReqOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMGetMsgByIdReq)
+        com.mogujie.tt.protobuf.IMMessage.IMGetMsgByIdReqOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMGetMsgByIdReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -8445,6 +8607,8 @@ public final class IMMessage {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -8483,7 +8647,6 @@ public final class IMMessage {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -8532,7 +8695,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
@@ -8568,7 +8730,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 session_id = 3;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 3;</code>
@@ -8601,7 +8762,6 @@ public final class IMMessage {
         return this;
       }
 
-      // repeated uint32 msg_id_list = 4;
       private java.util.List<java.lang.Integer> msgIdList_ = java.util.Collections.emptyList();
       private void ensureMsgIdListIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
@@ -8653,7 +8813,8 @@ public final class IMMessage {
       public Builder addAllMsgIdList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureMsgIdListIsMutable();
-        super.addAll(values, msgIdList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, msgIdList_);
         
         return this;
       }
@@ -8667,7 +8828,6 @@ public final class IMMessage {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
@@ -8714,10 +8874,10 @@ public final class IMMessage {
     // @@protoc_insertion_point(class_scope:IM.Message.IMGetMsgByIdReq)
   }
 
-  public interface IMGetMsgByIdRspOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+  public interface IMGetMsgByIdRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Message.IMGetMsgByIdRsp)
+      com.google.protobuf.MessageLiteOrBuilder {
 
-    // required uint32 user_id = 1;
     /**
      * <code>required uint32 user_id = 1;</code>
      *
@@ -8735,7 +8895,6 @@ public final class IMMessage {
      */
     int getUserId();
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     /**
      * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
      */
@@ -8745,7 +8904,6 @@ public final class IMMessage {
      */
     com.mogujie.tt.protobuf.IMBaseDefine.SessionType getSessionType();
 
-    // required uint32 session_id = 3;
     /**
      * <code>required uint32 session_id = 3;</code>
      */
@@ -8755,7 +8913,6 @@ public final class IMMessage {
      */
     int getSessionId();
 
-    // repeated .IM.BaseDefine.MsgInfo msg_list = 4;
     /**
      * <code>repeated .IM.BaseDefine.MsgInfo msg_list = 4;</code>
      */
@@ -8770,7 +8927,6 @@ public final class IMMessage {
      */
     int getMsgListCount();
 
-    // optional bytes attach_data = 20;
     /**
      * <code>optional bytes attach_data = 20;</code>
      */
@@ -8784,14 +8940,15 @@ public final class IMMessage {
    * Protobuf type {@code IM.Message.IMGetMsgByIdRsp}
    */
   public static final class IMGetMsgByIdRsp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements IMGetMsgByIdRspOrBuilder {
+      com.google.protobuf.GeneratedMessageLite implements
+      // @@protoc_insertion_point(message_implements:IM.Message.IMGetMsgByIdRsp)
+      IMGetMsgByIdRspOrBuilder {
     // Use IMGetMsgByIdRsp.newBuilder() to construct.
     private IMGetMsgByIdRsp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
       super(builder);
-
+      this.unknownFields = builder.getUnknownFields();
     }
-    private IMGetMsgByIdRsp(boolean noInit) {}
+    private IMGetMsgByIdRsp(boolean noInit) { this.unknownFields = com.google.protobuf.ByteString.EMPTY;}
 
     private static final IMGetMsgByIdRsp defaultInstance;
     public static IMGetMsgByIdRsp getDefaultInstance() {
@@ -8802,12 +8959,18 @@ public final class IMMessage {
       return defaultInstance;
     }
 
+    private final com.google.protobuf.ByteString unknownFields;
     private IMGetMsgByIdRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.ByteString.Output unknownFieldsOutput =
+          com.google.protobuf.ByteString.newOutput();
+      com.google.protobuf.CodedOutputStream unknownFieldsCodedOutput =
+          com.google.protobuf.CodedOutputStream.newInstance(
+              unknownFieldsOutput);
       try {
         boolean done = false;
         while (!done) {
@@ -8817,7 +8980,7 @@ public final class IMMessage {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input,
+              if (!parseUnknownField(input, unknownFieldsCodedOutput,
                                      extensionRegistry, tag)) {
                 done = true;
               }
@@ -8831,7 +8994,10 @@ public final class IMMessage {
             case 16: {
               int rawValue = input.readEnum();
               com.mogujie.tt.protobuf.IMBaseDefine.SessionType value = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.valueOf(rawValue);
-              if (value != null) {
+              if (value == null) {
+                unknownFieldsCodedOutput.writeRawVarint32(tag);
+                unknownFieldsCodedOutput.writeRawVarint32(rawValue);
+              } else {
                 bitField0_ |= 0x00000002;
                 sessionType_ = value;
               }
@@ -8866,6 +9032,13 @@ public final class IMMessage {
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           msgList_ = java.util.Collections.unmodifiableList(msgList_);
         }
+        try {
+          unknownFieldsCodedOutput.flush();
+        } catch (java.io.IOException e) {
+        // Should not happen
+        } finally {
+          unknownFields = unknownFieldsOutput.toByteString();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -8885,7 +9058,6 @@ public final class IMMessage {
     }
 
     private int bitField0_;
-    // required uint32 user_id = 1;
     public static final int USER_ID_FIELD_NUMBER = 1;
     private int userId_;
     /**
@@ -8909,7 +9081,6 @@ public final class IMMessage {
       return userId_;
     }
 
-    // required .IM.BaseDefine.SessionType session_type = 2;
     public static final int SESSION_TYPE_FIELD_NUMBER = 2;
     private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_;
     /**
@@ -8925,7 +9096,6 @@ public final class IMMessage {
       return sessionType_;
     }
 
-    // required uint32 session_id = 3;
     public static final int SESSION_ID_FIELD_NUMBER = 3;
     private int sessionId_;
     /**
@@ -8941,7 +9111,6 @@ public final class IMMessage {
       return sessionId_;
     }
 
-    // repeated .IM.BaseDefine.MsgInfo msg_list = 4;
     public static final int MSG_LIST_FIELD_NUMBER = 4;
     private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.MsgInfo> msgList_;
     /**
@@ -8977,7 +9146,6 @@ public final class IMMessage {
       return msgList_.get(index);
     }
 
-    // optional bytes attach_data = 20;
     public static final int ATTACH_DATA_FIELD_NUMBER = 20;
     private com.google.protobuf.ByteString attachData_;
     /**
@@ -9003,7 +9171,8 @@ public final class IMMessage {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasUserId()) {
         memoizedIsInitialized = 0;
@@ -9045,6 +9214,7 @@ public final class IMMessage {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(20, attachData_);
       }
+      output.writeRawBytes(unknownFields);
     }
 
     private int memoizedSerializedSize = -1;
@@ -9073,6 +9243,7 @@ public final class IMMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(20, attachData_);
       }
+      size += unknownFields.size();
       memoizedSerializedSize = size;
       return size;
     }
@@ -9150,7 +9321,9 @@ public final class IMMessage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           com.mogujie.tt.protobuf.IMMessage.IMGetMsgByIdRsp, Builder>
-        implements com.mogujie.tt.protobuf.IMMessage.IMGetMsgByIdRspOrBuilder {
+        implements
+        // @@protoc_insertion_point(builder_implements:IM.Message.IMGetMsgByIdRsp)
+        com.mogujie.tt.protobuf.IMMessage.IMGetMsgByIdRspOrBuilder {
       // Construct using com.mogujie.tt.protobuf.IMMessage.IMGetMsgByIdRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
@@ -9246,6 +9419,8 @@ public final class IMMessage {
         if (other.hasAttachData()) {
           setAttachData(other.getAttachData());
         }
+        setUnknownFields(
+            getUnknownFields().concat(other.unknownFields));
         return this;
       }
 
@@ -9290,7 +9465,6 @@ public final class IMMessage {
       }
       private int bitField0_;
 
-      // required uint32 user_id = 1;
       private int userId_ ;
       /**
        * <code>required uint32 user_id = 1;</code>
@@ -9339,7 +9513,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required .IM.BaseDefine.SessionType session_type = 2;
       private com.mogujie.tt.protobuf.IMBaseDefine.SessionType sessionType_ = com.mogujie.tt.protobuf.IMBaseDefine.SessionType.SESSION_TYPE_SINGLE;
       /**
        * <code>required .IM.BaseDefine.SessionType session_type = 2;</code>
@@ -9375,7 +9548,6 @@ public final class IMMessage {
         return this;
       }
 
-      // required uint32 session_id = 3;
       private int sessionId_ ;
       /**
        * <code>required uint32 session_id = 3;</code>
@@ -9408,7 +9580,6 @@ public final class IMMessage {
         return this;
       }
 
-      // repeated .IM.BaseDefine.MsgInfo msg_list = 4;
       private java.util.List<com.mogujie.tt.protobuf.IMBaseDefine.MsgInfo> msgList_ =
         java.util.Collections.emptyList();
       private void ensureMsgListIsMutable() {
@@ -9510,7 +9681,8 @@ public final class IMMessage {
       public Builder addAllMsgList(
           java.lang.Iterable<? extends com.mogujie.tt.protobuf.IMBaseDefine.MsgInfo> values) {
         ensureMsgListIsMutable();
-        super.addAll(values, msgList_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, msgList_);
 
         return this;
       }
@@ -9533,7 +9705,6 @@ public final class IMMessage {
         return this;
       }
 
-      // optional bytes attach_data = 20;
       private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes attach_data = 20;</code>
