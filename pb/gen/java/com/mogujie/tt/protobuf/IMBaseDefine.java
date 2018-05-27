@@ -3305,15 +3305,43 @@ public final class IMBaseDefine {
     int getStatus();
 
     /**
-     * <code>optional string sign_info = 11;</code>
+     * <code>optional string password = 11;</code>
+     */
+    boolean hasPassword();
+    /**
+     * <code>optional string password = 11;</code>
+     */
+    java.lang.String getPassword();
+    /**
+     * <code>optional string password = 11;</code>
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+
+    /**
+     * <code>optional string salt = 12;</code>
+     */
+    boolean hasSalt();
+    /**
+     * <code>optional string salt = 12;</code>
+     */
+    java.lang.String getSalt();
+    /**
+     * <code>optional string salt = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getSaltBytes();
+
+    /**
+     * <code>optional string sign_info = 13;</code>
      */
     boolean hasSignInfo();
     /**
-     * <code>optional string sign_info = 11;</code>
+     * <code>optional string sign_info = 13;</code>
      */
     java.lang.String getSignInfo();
     /**
-     * <code>optional string sign_info = 11;</code>
+     * <code>optional string sign_info = 13;</code>
      */
     com.google.protobuf.ByteString
         getSignInfoBytes();
@@ -3427,6 +3455,18 @@ public final class IMBaseDefine {
             case 90: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000400;
+              password_ = bs;
+              break;
+            }
+            case 98: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000800;
+              salt_ = bs;
+              break;
+            }
+            case 106: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00001000;
               signInfo_ = bs;
               break;
             }
@@ -3828,16 +3868,100 @@ public final class IMBaseDefine {
       return status_;
     }
 
-    public static final int SIGN_INFO_FIELD_NUMBER = 11;
-    private java.lang.Object signInfo_;
+    public static final int PASSWORD_FIELD_NUMBER = 11;
+    private java.lang.Object password_;
     /**
-     * <code>optional string sign_info = 11;</code>
+     * <code>optional string password = 11;</code>
      */
-    public boolean hasSignInfo() {
+    public boolean hasPassword() {
       return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
-     * <code>optional string sign_info = 11;</code>
+     * <code>optional string password = 11;</code>
+     */
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          password_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string password = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SALT_FIELD_NUMBER = 12;
+    private java.lang.Object salt_;
+    /**
+     * <code>optional string salt = 12;</code>
+     */
+    public boolean hasSalt() {
+      return ((bitField0_ & 0x00000800) == 0x00000800);
+    }
+    /**
+     * <code>optional string salt = 12;</code>
+     */
+    public java.lang.String getSalt() {
+      java.lang.Object ref = salt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          salt_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string salt = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSaltBytes() {
+      java.lang.Object ref = salt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        salt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SIGN_INFO_FIELD_NUMBER = 13;
+    private java.lang.Object signInfo_;
+    /**
+     * <code>optional string sign_info = 13;</code>
+     */
+    public boolean hasSignInfo() {
+      return ((bitField0_ & 0x00001000) == 0x00001000);
+    }
+    /**
+     * <code>optional string sign_info = 13;</code>
      */
     public java.lang.String getSignInfo() {
       java.lang.Object ref = signInfo_;
@@ -3854,7 +3978,7 @@ public final class IMBaseDefine {
       }
     }
     /**
-     * <code>optional string sign_info = 11;</code>
+     * <code>optional string sign_info = 13;</code>
      */
     public com.google.protobuf.ByteString
         getSignInfoBytes() {
@@ -3881,6 +4005,8 @@ public final class IMBaseDefine {
       userTel_ = "";
       userDomain_ = "";
       status_ = 0;
+      password_ = "";
+      salt_ = "";
       signInfo_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -3967,7 +4093,13 @@ public final class IMBaseDefine {
         output.writeUInt32(10, status_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeBytes(11, getSignInfoBytes());
+        output.writeBytes(11, getPasswordBytes());
+      }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        output.writeBytes(12, getSaltBytes());
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        output.writeBytes(13, getSignInfoBytes());
       }
       output.writeRawBytes(unknownFields);
     }
@@ -4020,7 +4152,15 @@ public final class IMBaseDefine {
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(11, getSignInfoBytes());
+          .computeBytesSize(11, getPasswordBytes());
+      }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(12, getSaltBytes());
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(13, getSignInfoBytes());
       }
       size += unknownFields.size();
       memoizedSerializedSize = size;
@@ -4136,8 +4276,12 @@ public final class IMBaseDefine {
         bitField0_ = (bitField0_ & ~0x00000100);
         status_ = 0;
         bitField0_ = (bitField0_ & ~0x00000200);
-        signInfo_ = "";
+        password_ = "";
         bitField0_ = (bitField0_ & ~0x00000400);
+        salt_ = "";
+        bitField0_ = (bitField0_ & ~0x00000800);
+        signInfo_ = "";
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
 
@@ -4204,6 +4348,14 @@ public final class IMBaseDefine {
         if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000400;
         }
+        result.password_ = password_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000800;
+        }
+        result.salt_ = salt_;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
+        }
         result.signInfo_ = signInfo_;
         result.bitField0_ = to_bitField0_;
         return result;
@@ -4253,8 +4405,18 @@ public final class IMBaseDefine {
         if (other.hasStatus()) {
           setStatus(other.getStatus());
         }
-        if (other.hasSignInfo()) {
+        if (other.hasPassword()) {
           bitField0_ |= 0x00000400;
+          password_ = other.password_;
+          
+        }
+        if (other.hasSalt()) {
+          bitField0_ |= 0x00000800;
+          salt_ = other.salt_;
+          
+        }
+        if (other.hasSignInfo()) {
+          bitField0_ |= 0x00001000;
           signInfo_ = other.signInfo_;
           
         }
@@ -5014,15 +5176,167 @@ public final class IMBaseDefine {
         return this;
       }
 
-      private java.lang.Object signInfo_ = "";
+      private java.lang.Object password_ = "";
       /**
-       * <code>optional string sign_info = 11;</code>
+       * <code>optional string password = 11;</code>
        */
-      public boolean hasSignInfo() {
+      public boolean hasPassword() {
         return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
-       * <code>optional string sign_info = 11;</code>
+       * <code>optional string password = 11;</code>
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            password_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string password = 11;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string password = 11;</code>
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
+        password_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string password = 11;</code>
+       */
+      public Builder clearPassword() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        password_ = getDefaultInstance().getPassword();
+        
+        return this;
+      }
+      /**
+       * <code>optional string password = 11;</code>
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
+        password_ = value;
+        
+        return this;
+      }
+
+      private java.lang.Object salt_ = "";
+      /**
+       * <code>optional string salt = 12;</code>
+       */
+      public boolean hasSalt() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      /**
+       * <code>optional string salt = 12;</code>
+       */
+      public java.lang.String getSalt() {
+        java.lang.Object ref = salt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            salt_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string salt = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSaltBytes() {
+        java.lang.Object ref = salt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          salt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string salt = 12;</code>
+       */
+      public Builder setSalt(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        salt_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string salt = 12;</code>
+       */
+      public Builder clearSalt() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        salt_ = getDefaultInstance().getSalt();
+        
+        return this;
+      }
+      /**
+       * <code>optional string salt = 12;</code>
+       */
+      public Builder setSaltBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        salt_ = value;
+        
+        return this;
+      }
+
+      private java.lang.Object signInfo_ = "";
+      /**
+       * <code>optional string sign_info = 13;</code>
+       */
+      public boolean hasSignInfo() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
+      }
+      /**
+       * <code>optional string sign_info = 13;</code>
        */
       public java.lang.String getSignInfo() {
         java.lang.Object ref = signInfo_;
@@ -5039,7 +5353,7 @@ public final class IMBaseDefine {
         }
       }
       /**
-       * <code>optional string sign_info = 11;</code>
+       * <code>optional string sign_info = 13;</code>
        */
       public com.google.protobuf.ByteString
           getSignInfoBytes() {
@@ -5055,36 +5369,36 @@ public final class IMBaseDefine {
         }
       }
       /**
-       * <code>optional string sign_info = 11;</code>
+       * <code>optional string sign_info = 13;</code>
        */
       public Builder setSignInfo(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00001000;
         signInfo_ = value;
         
         return this;
       }
       /**
-       * <code>optional string sign_info = 11;</code>
+       * <code>optional string sign_info = 13;</code>
        */
       public Builder clearSignInfo() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00001000);
         signInfo_ = getDefaultInstance().getSignInfo();
         
         return this;
       }
       /**
-       * <code>optional string sign_info = 11;</code>
+       * <code>optional string sign_info = 13;</code>
        */
       public Builder setSignInfoBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00001000;
         signInfo_ = value;
         
         return this;

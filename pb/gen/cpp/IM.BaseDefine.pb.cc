@@ -685,6 +685,8 @@ const int UserInfo::kUserRealNameFieldNumber;
 const int UserInfo::kUserTelFieldNumber;
 const int UserInfo::kUserDomainFieldNumber;
 const int UserInfo::kStatusFieldNumber;
+const int UserInfo::kPasswordFieldNumber;
+const int UserInfo::kSaltFieldNumber;
 const int UserInfo::kSignInfoFieldNumber;
 #endif  // !_MSC_VER
 
@@ -717,6 +719,8 @@ void UserInfo::SharedCtor() {
   user_tel_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   user_domain_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   status_ = 0u;
+  password_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  salt_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   sign_info_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -744,6 +748,12 @@ void UserInfo::SharedDtor() {
   }
   if (user_domain_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete user_domain_;
+  }
+  if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete password_;
+  }
+  if (salt_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete salt_;
   }
   if (sign_info_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete sign_info_;
@@ -816,13 +826,23 @@ void UserInfo::Clear() {
       }
     }
   }
-  if (_has_bits_[8 / 32] & 1792) {
+  if (_has_bits_[8 / 32] & 7936) {
     if (has_user_domain()) {
       if (user_domain_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         user_domain_->clear();
       }
     }
     status_ = 0u;
+    if (has_password()) {
+      if (password_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        password_->clear();
+      }
+    }
+    if (has_salt()) {
+      if (salt_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        salt_->clear();
+      }
+    }
     if (has_sign_info()) {
       if (sign_info_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         sign_info_->clear();
@@ -984,13 +1004,39 @@ bool UserInfo::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(90)) goto parse_sign_info;
+        if (input->ExpectTag(90)) goto parse_password;
         break;
       }
 
-      // optional string sign_info = 11;
+      // optional string password = 11;
       case 11: {
         if (tag == 90) {
+         parse_password:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_password()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(98)) goto parse_salt;
+        break;
+      }
+
+      // optional string salt = 12;
+      case 12: {
+        if (tag == 98) {
+         parse_salt:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_salt()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(106)) goto parse_sign_info;
+        break;
+      }
+
+      // optional string sign_info = 13;
+      case 13: {
+        if (tag == 106) {
          parse_sign_info:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_sign_info()));
@@ -1082,10 +1128,22 @@ void UserInfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(10, this->status(), output);
   }
 
-  // optional string sign_info = 11;
+  // optional string password = 11;
+  if (has_password()) {
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      11, this->password(), output);
+  }
+
+  // optional string salt = 12;
+  if (has_salt()) {
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      12, this->salt(), output);
+  }
+
+  // optional string sign_info = 13;
   if (has_sign_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      11, this->sign_info(), output);
+      13, this->sign_info(), output);
   }
 
   output->WriteRaw(unknown_fields().data(),
@@ -1169,7 +1227,21 @@ int UserInfo::ByteSize() const {
           this->status());
     }
 
-    // optional string sign_info = 11;
+    // optional string password = 11;
+    if (has_password()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->password());
+    }
+
+    // optional string salt = 12;
+    if (has_salt()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->salt());
+    }
+
+    // optional string sign_info = 13;
     if (has_sign_info()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -1225,6 +1297,12 @@ void UserInfo::MergeFrom(const UserInfo& from) {
     if (from.has_status()) {
       set_status(from.status());
     }
+    if (from.has_password()) {
+      set_password(from.password());
+    }
+    if (from.has_salt()) {
+      set_salt(from.salt());
+    }
     if (from.has_sign_info()) {
       set_sign_info(from.sign_info());
     }
@@ -1256,6 +1334,8 @@ void UserInfo::Swap(UserInfo* other) {
     std::swap(user_tel_, other->user_tel_);
     std::swap(user_domain_, other->user_domain_);
     std::swap(status_, other->status_);
+    std::swap(password_, other->password_);
+    std::swap(salt_, other->salt_);
     std::swap(sign_info_, other->sign_info_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.swap(other->_unknown_fields_);
