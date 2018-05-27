@@ -318,10 +318,12 @@ void CHttpConn::_HandleMsgServRequest(string& url, string& post_data)
 /*注册*/
 void CHttpConn::_HandleRegisterRequest(string& url, string& post_data)
 {
-   log("CHttpConn _HandleRegisterRequest：%s",post_data.c_str());
+   log("CHttpConn _HandleRegisterRequest begin post_data：%s",post_data.c_str());
    CHttpClient httpClient;
    string strResponse;
-   httpClient.Post(httpMsgServer,post_data,strResponse);
+   httpClient.Post(httpMsgServer+"/register",post_data,strResponse);
+   
+   log("CHttpConn _HandleRegisterRequest end strResponse ：%s",strResponse.c_str());
    
 }
 

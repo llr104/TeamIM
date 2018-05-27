@@ -64,6 +64,8 @@ private:
 	CHttpQuery() {}
     static void _QueryCreateGroup(const string& strAppKey,Json::Value& post_json_obj, CHttpConn* pHttpConn);
     static void _QueryChangeMember(const string& strAppKey,Json::Value& post_json_obj, CHttpConn* pHttpConn);
+    static void _QueyRegister(const string& strAppKey, Json::Value &post_json_obj, CHttpConn *pHttpConn);
+    
     static HTTP_ERROR_CODE _CheckAuth(const string& strAppKey, const uint32_t userId, const string& strInterface, const string& strIp);
     static HTTP_ERROR_CODE _CheckPermission(const string& strAppKey, uint8_t nType, const list<uint32_t>& lsToId , string strMsg);
     

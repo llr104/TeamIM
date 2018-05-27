@@ -119,6 +119,9 @@ void CHttpQuery::DispatchQuery(std::string& url, std::string& post_data, CHttpCo
     {
         _QueryChangeMember(strAppKey, value, pHttpConn);
     }
+    else if(strcmp(url.c_str(), "/query/register") == 0){
+
+    }
     else {
         log("url not support ");
         pHttpConn->Close();
@@ -304,6 +307,49 @@ void CHttpQuery::_QueryChangeMember(const string& strAppKey, Json::Value &post_j
         pHttpConn->Send(response_buf, (uint32_t)strlen(response_buf));
         pHttpConn->Close();
     }
+}
+
+void CHttpQuery::_QueyRegister(const string& strAppKey, Json::Value &post_json_obj, CHttpConn *pHttpConn)
+{
+    log("_QueyRegister");
+    HTTP::CDBServConn *pConn = HTTP::get_db_serv_conn();
+    if (!pConn) {
+        log("no connection to RouteServConn ");
+        char* response_buf = PackSendResult(HTTP_ERROR_SERVER_EXCEPTION, HTTP_ERROR_MSG[9].c_str());
+        pHttpConn->Send(response_buf, (uint32_t)strlen(response_buf));
+        pHttpConn->Close();
+        return;
+    }
+    
+    if(post_json_obj["userName"].isNull()){
+        log("no userName ");
+        char* response_buf = PackSendResult(HTTP_ERROR_SERVER_EXCEPTION, HTTP_ERROR_MSG[1].c_str());
+        pHttpConn->Send(response_buf, (uint32_t)strlen(response_buf));
+        pHttpConn->Close();
+        return;
+    }
+
+    if(post_json_obj["password"].isNull()){
+        log("password ");
+        char* response_buf = PackSendResult(HTTP_ERROR_SERVER_EXCEPTION, HTTP_ERROR_MSG[1].c_str());
+        pHttpConn->Send(response_buf, (uint32_t)strlen(response_buf));
+        pHttpConn->Close();
+        return;
+    }
+    
+    if(post_json_obj["nickName"].isNull()){
+        log("no nickName ");
+        char* response_buf = PackSendResult(HTTP_ERROR_SERVER_EXCEPTION, HTTP_ERROR_MSG[1].c_str());
+        pHttpConn->Send(response_buf, (uint32_t)strlen(response_buf));
+        pHttpConn->Close();
+        return;
+    }
+    
+    //发送到dbproxyserver检测注册信息
+    char* response_buf = PackSendResult(HTTP_ERROR_SERVER_EXCEPTION, HTTP_ERROR_MSG[0].c_str());
+    pHttpConn->Send(response_buf, (uint32_t)strlen(response_buf));
+    pHttpConn->Close();
+
 }
 
 HTTP_ERROR_CODE CHttpQuery::_CheckAuth(const string& strAppKey, const uint32_t userId, const string& strInterface, const string& strIp)
