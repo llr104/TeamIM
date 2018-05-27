@@ -116,7 +116,7 @@ message IMRegisterReq{
 	required string user_name = 1;
 	required string password = 2;
 	required string nickname = 3;
-	optional sex = 4;
+	optional uint32 sex = 4;
 	optional string avatar = 5;
 }
 
