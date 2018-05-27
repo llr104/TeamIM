@@ -16,6 +16,8 @@
 #include "IM.Buddy.pb.h"
 #include "IM.SwitchService.pb.h"
 #include "IM.Group.pb.h"
+#include "IM.Login.pb.h"
+
 static uint32_t g_total_query = 0;
 static uint32_t g_last_year = 0;
 static uint32_t g_last_month = 0;
