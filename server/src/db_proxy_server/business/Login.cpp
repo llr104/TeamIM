@@ -19,6 +19,7 @@
 #include "json/json.h"
 #include "Common.h"
 #include "IM.Server.pb.h"
+#include "IM.Login.pb.h"
 #include "Base64.h"
 #include "InterLogin.h"
 #include "ExterLogin.h"
