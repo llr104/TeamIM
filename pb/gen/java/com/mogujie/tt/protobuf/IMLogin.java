@@ -8831,6 +8831,15 @@ public final class IMLogin {
      */
     com.google.protobuf.ByteString
         getAvatarBytes();
+
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    boolean hasAttachData();
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    com.google.protobuf.ByteString getAttachData();
   }
   /**
    * Protobuf type {@code IM.Login.IMRegisterReq}
@@ -8909,6 +8918,11 @@ public final class IMLogin {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000010;
               avatar_ = bs;
+              break;
+            }
+            case 162: {
+              bitField0_ |= 0x00000020;
+              attachData_ = input.readBytes();
               break;
             }
           }
@@ -9140,12 +9154,28 @@ public final class IMLogin {
       }
     }
 
+    public static final int ATTACH_DATA_FIELD_NUMBER = 20;
+    private com.google.protobuf.ByteString attachData_;
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    public boolean hasAttachData() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional bytes attach_data = 20;</code>
+     */
+    public com.google.protobuf.ByteString getAttachData() {
+      return attachData_;
+    }
+
     private void initFields() {
       userName_ = "";
       password_ = "";
       nickname_ = "";
       sex_ = 0;
       avatar_ = "";
+      attachData_ = com.google.protobuf.ByteString.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -9187,6 +9217,9 @@ public final class IMLogin {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(5, getAvatarBytes());
       }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(20, attachData_);
+      }
       output.writeRawBytes(unknownFields);
     }
 
@@ -9215,6 +9248,10 @@ public final class IMLogin {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(5, getAvatarBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(20, attachData_);
       }
       size += unknownFields.size();
       memoizedSerializedSize = size;
@@ -9320,6 +9357,8 @@ public final class IMLogin {
         bitField0_ = (bitField0_ & ~0x00000008);
         avatar_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
+        attachData_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -9363,6 +9402,10 @@ public final class IMLogin {
           to_bitField0_ |= 0x00000010;
         }
         result.avatar_ = avatar_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.attachData_ = attachData_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
@@ -9391,6 +9434,9 @@ public final class IMLogin {
           bitField0_ |= 0x00000010;
           avatar_ = other.avatar_;
           
+        }
+        if (other.hasAttachData()) {
+          setAttachData(other.getAttachData());
         }
         setUnknownFields(
             getUnknownFields().concat(other.unknownFields));
@@ -9788,6 +9834,41 @@ public final class IMLogin {
   }
   bitField0_ |= 0x00000010;
         avatar_ = value;
+        
+        return this;
+      }
+
+      private com.google.protobuf.ByteString attachData_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public boolean hasAttachData() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public com.google.protobuf.ByteString getAttachData() {
+        return attachData_;
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public Builder setAttachData(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        attachData_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional bytes attach_data = 20;</code>
+       */
+      public Builder clearAttachData() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        attachData_ = getDefaultInstance().getAttachData();
         
         return this;
       }

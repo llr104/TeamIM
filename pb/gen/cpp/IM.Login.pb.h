@@ -1841,6 +1841,18 @@ class IMRegisterReq : public ::google::protobuf::MessageLite {
   inline ::std::string* release_avatar();
   inline void set_allocated_avatar(::std::string* avatar);
 
+  // optional bytes attach_data = 20;
+  inline bool has_attach_data() const;
+  inline void clear_attach_data();
+  static const int kAttachDataFieldNumber = 20;
+  inline const ::std::string& attach_data() const;
+  inline void set_attach_data(const ::std::string& value);
+  inline void set_attach_data(const char* value);
+  inline void set_attach_data(const void* value, size_t size);
+  inline ::std::string* mutable_attach_data();
+  inline ::std::string* release_attach_data();
+  inline void set_allocated_attach_data(::std::string* attach_data);
+
   // @@protoc_insertion_point(class_scope:IM.Login.IMRegisterReq)
  private:
   inline void set_has_user_name();
@@ -1853,6 +1865,8 @@ class IMRegisterReq : public ::google::protobuf::MessageLite {
   inline void clear_has_sex();
   inline void set_has_avatar();
   inline void clear_has_avatar();
+  inline void set_has_attach_data();
+  inline void clear_has_attach_data();
 
   ::std::string _unknown_fields_;
 
@@ -1862,6 +1876,7 @@ class IMRegisterReq : public ::google::protobuf::MessageLite {
   ::std::string* password_;
   ::std::string* nickname_;
   ::std::string* avatar_;
+  ::std::string* attach_data_;
   ::google::protobuf::uint32 sex_;
   #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
   friend void  protobuf_AddDesc_IM_2eLogin_2eproto_impl();
@@ -3907,6 +3922,82 @@ inline void IMRegisterReq::set_allocated_avatar(::std::string* avatar) {
     avatar_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:IM.Login.IMRegisterReq.avatar)
+}
+
+// optional bytes attach_data = 20;
+inline bool IMRegisterReq::has_attach_data() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void IMRegisterReq::set_has_attach_data() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void IMRegisterReq::clear_has_attach_data() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void IMRegisterReq::clear_attach_data() {
+  if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_->clear();
+  }
+  clear_has_attach_data();
+}
+inline const ::std::string& IMRegisterReq::attach_data() const {
+  // @@protoc_insertion_point(field_get:IM.Login.IMRegisterReq.attach_data)
+  return *attach_data_;
+}
+inline void IMRegisterReq::set_attach_data(const ::std::string& value) {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  attach_data_->assign(value);
+  // @@protoc_insertion_point(field_set:IM.Login.IMRegisterReq.attach_data)
+}
+inline void IMRegisterReq::set_attach_data(const char* value) {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  attach_data_->assign(value);
+  // @@protoc_insertion_point(field_set_char:IM.Login.IMRegisterReq.attach_data)
+}
+inline void IMRegisterReq::set_attach_data(const void* value, size_t size) {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  attach_data_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:IM.Login.IMRegisterReq.attach_data)
+}
+inline ::std::string* IMRegisterReq::mutable_attach_data() {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:IM.Login.IMRegisterReq.attach_data)
+  return attach_data_;
+}
+inline ::std::string* IMRegisterReq::release_attach_data() {
+  clear_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = attach_data_;
+    attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void IMRegisterReq::set_allocated_attach_data(::std::string* attach_data) {
+  if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete attach_data_;
+  }
+  if (attach_data) {
+    set_has_attach_data();
+    attach_data_ = attach_data;
+  } else {
+    clear_has_attach_data();
+    attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:IM.Login.IMRegisterReq.attach_data)
 }
 
 
