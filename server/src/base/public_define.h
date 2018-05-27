@@ -139,6 +139,7 @@ typedef struct DBUserInfo_t
     string strEmail;// Email
     string strAvatar;// 头像
     string sign_info;//个性签名
+    string password;//密码
     DBUserInfo_t& operator=(const DBUserInfo_t& rhs)
     {
         if(this != &rhs)

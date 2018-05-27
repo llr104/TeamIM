@@ -212,7 +212,10 @@ bool CUserModel::insertUser(DBUserInfo_t &cUser)
     CDBConn* pDBConn = pDBManager->GetDBConn("teamtalk_master");
     if (pDBConn)
     {
-        string strSql = "insert into IMUser(`id`,`sex`,`nick`,`domain`,`name`,`phone`,`email`,`avatar`,`sign_info`,`departId`,`status`,`created`,`updated`) values(?,?,?,?,?,?,?,?,?,?,?,?)";
+        string strSql = "insert into IMUser(`id`,`sex`,`nick`,`password`,`domain`,`name`,`phone`,
+        `email`,`avatar`,`sign_info`,`departId`,`status`,`created`,`updated`)
+         values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+         
         CPrepareStatement* stmt = new CPrepareStatement();
         if (stmt->Init(pDBConn->GetMysql(), strSql))
         {
@@ -223,6 +226,7 @@ bool CUserModel::insertUser(DBUserInfo_t &cUser)
             stmt->SetParam(index++, cUser.nId);
             stmt->SetParam(index++, nGender);
             stmt->SetParam(index++, cUser.strNick);
+            stmt->SetParam(index++, cUser.password);
             stmt->SetParam(index++, cUser.strDomain);
             stmt->SetParam(index++, cUser.strName);
             stmt->SetParam(index++, cUser.strTel);
