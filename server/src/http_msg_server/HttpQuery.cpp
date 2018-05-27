@@ -231,7 +231,7 @@ void CHttpQuery::_QueryChangeMember(const string& strAppKey, Json::Value &post_j
 {
     HTTP::CDBServConn *pConn = HTTP::get_db_serv_conn();
     if (!pConn) {
-        log("no connection to RouteServConn ");
+        log("no connection to DBProxy ");
         char* response_buf = PackSendResult(HTTP_ERROR_SERVER_EXCEPTION, HTTP_ERROR_MSG[9].c_str());
         pHttpConn->Send(response_buf, (uint32_t)strlen(response_buf));
         pHttpConn->Close();
@@ -314,7 +314,7 @@ void CHttpQuery::_QueyRegister(const string& strAppKey, Json::Value &post_json_o
     log("_QueyRegister");
     HTTP::CDBServConn *pConn = HTTP::get_db_serv_conn();
     if (!pConn) {
-        log("no connection to RouteServConn ");
+        log("no connection to DBProxy ");
         char* response_buf = PackSendResult(HTTP_ERROR_SERVER_EXCEPTION, HTTP_ERROR_MSG[9].c_str());
         pHttpConn->Send(response_buf, (uint32_t)strlen(response_buf));
         pHttpConn->Close();

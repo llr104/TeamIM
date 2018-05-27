@@ -324,7 +324,7 @@ void CHttpConn::_HandleRegisterRequest(string& url, string& post_data)
    httpClient.Post(httpMsgServer+"/register",post_data,strResponse);
    
    log("CHttpConn _HandleRegisterRequest end strResponse ：%s",strResponse.c_str());
-   
+   Send((void*)strResponse.c_str(), strlen(strResponse.c_str()));
 }
 
 
