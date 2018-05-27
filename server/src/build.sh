@@ -209,6 +209,8 @@ build() {
 
     cp tools/daeml ../$build_version/
     cp ../run/restart.sh ../$build_version/
+    cp ../run/restart_all.sh ../$build_version/
+    cp ../run/stop_all.sh ../$build_version/
 
     cd ../
     tar zcvf    $build_name $build_version
