@@ -346,7 +346,7 @@ void CHttpQuery::_QueyRegister(const string& strAppKey, Json::Value &post_json_o
     }
     
     //发送到dbproxyserver检测注册信息
-    char* response_buf = PackSendResult(HTTP_ERROR_SERVER_EXCEPTION, HTTP_ERROR_MSG[0].c_str());
+    char* response_buf = PackSendResult(HTTP_ERROR_SUCCESS, HTTP_ERROR_MSG[0].c_str());
     pHttpConn->Send(response_buf, (uint32_t)strlen(response_buf));
     pHttpConn->Close();
 
