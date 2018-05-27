@@ -193,10 +193,11 @@ void CHttpConn::OnRead()
 
 	if (m_cHttpParser.IsReadAll()) {
 		string url =  m_cHttpParser.GetUrl();
+        log("CHttpConn url, url=%s ", url.c_str());
 		if (strncmp(url.c_str(), "/msg_server", 11) == 0) {
             string content = m_cHttpParser.GetBodyContent();
             _HandleMsgServRequest(url, content);
-		} else if(strncmp(url.c_str(), "/register", 11) == 0) {
+		} else if(strncmp(url.c_str(), "/register", 9) == 0) {
             string content = m_cHttpParser.GetBodyContent();
             _HandleRegisterRequest(url, content);
 		} else {
