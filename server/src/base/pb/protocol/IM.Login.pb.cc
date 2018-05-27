@@ -4020,6 +4020,7 @@ const int IMRegisterReq::kPasswordFieldNumber;
 const int IMRegisterReq::kNicknameFieldNumber;
 const int IMRegisterReq::kSexFieldNumber;
 const int IMRegisterReq::kAvatarFieldNumber;
+const int IMRegisterReq::kAttachDataFieldNumber;
 #endif  // !_MSC_VER
 
 IMRegisterReq::IMRegisterReq()
@@ -4046,6 +4047,7 @@ void IMRegisterReq::SharedCtor() {
   nickname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   sex_ = 0u;
   avatar_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -4066,6 +4068,9 @@ void IMRegisterReq::SharedDtor() {
   }
   if (avatar_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete avatar_;
+  }
+  if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete attach_data_;
   }
   #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
   if (this != &default_instance()) {
@@ -4096,7 +4101,7 @@ IMRegisterReq* IMRegisterReq::New() const {
 }
 
 void IMRegisterReq::Clear() {
-  if (_has_bits_[0 / 32] & 31) {
+  if (_has_bits_[0 / 32] & 63) {
     if (has_user_name()) {
       if (user_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         user_name_->clear();
@@ -4118,6 +4123,11 @@ void IMRegisterReq::Clear() {
         avatar_->clear();
       }
     }
+    if (has_attach_data()) {
+      if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        attach_data_->clear();
+      }
+    }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->clear();
@@ -4133,7 +4143,7 @@ bool IMRegisterReq::MergePartialFromCodedStream(
       &unknown_fields_string);
   // @@protoc_insertion_point(parse_start:IM.Login.IMRegisterReq)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(16383);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -4199,6 +4209,19 @@ bool IMRegisterReq::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(162)) goto parse_attach_data;
+        break;
+      }
+
+      // optional bytes attach_data = 20;
+      case 20: {
+        if (tag == 162) {
+         parse_attach_data:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_attach_data()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -4257,6 +4280,12 @@ void IMRegisterReq::SerializeWithCachedSizes(
       5, this->avatar(), output);
   }
 
+  // optional bytes attach_data = 20;
+  if (has_attach_data()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      20, this->attach_data(), output);
+  }
+
   output->WriteRaw(unknown_fields().data(),
                    unknown_fields().size());
   // @@protoc_insertion_point(serialize_end:IM.Login.IMRegisterReq)
@@ -4301,6 +4330,13 @@ int IMRegisterReq::ByteSize() const {
           this->avatar());
     }
 
+    // optional bytes attach_data = 20;
+    if (has_attach_data()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::BytesSize(
+          this->attach_data());
+    }
+
   }
   total_size += unknown_fields().size();
 
@@ -4333,6 +4369,9 @@ void IMRegisterReq::MergeFrom(const IMRegisterReq& from) {
     if (from.has_avatar()) {
       set_avatar(from.avatar());
     }
+    if (from.has_attach_data()) {
+      set_attach_data(from.attach_data());
+    }
   }
   mutable_unknown_fields()->append(from.unknown_fields());
 }
@@ -4356,6 +4395,7 @@ void IMRegisterReq::Swap(IMRegisterReq* other) {
     std::swap(nickname_, other->nickname_);
     std::swap(sex_, other->sex_);
     std::swap(avatar_, other->avatar_);
+    std::swap(attach_data_, other->attach_data_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.swap(other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
