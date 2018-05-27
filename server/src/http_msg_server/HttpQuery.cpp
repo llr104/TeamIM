@@ -345,12 +345,41 @@ void CHttpQuery::_QueyRegister(const string& strAppKey, Json::Value &post_json_o
         return;
     }
     
-    //发送到dbproxyserver检测注册信息
+   
     /*
     char* response_buf = PackSendResult(HTTP_ERROR_SUCCESS, HTTP_ERROR_MSG[0].c_str());
     pHttpConn->Send(response_buf, (uint32_t)strlen(response_buf));
     pHttpConn->Close();
     */
+
+    //发送到dbproxyserver检测注册信息
+    CDbAttachData attach_data(ATTACH_TYPE_HANDLE, pHttpConn->GetConnHandle());
+    IM::Login::IMRegisterReq msg;
+
+    msg.set_user_name(post_json_obj["userName"].asString());
+    msg.set_password(post_json_obj["password"].asString());
+    msg.set_nickname(post_json_obj["nickName"].asString());
+
+    if(post_json_obj["sex"].isNull()){
+        log("no sex ");
+    }
+    else{
+        msg.set_sex(post_json_obj["sex"].asInt());
+    }
+
+    if(post_json_obj["avatar"].isNull()){
+        log("no avatar ");
+    }
+    else{
+        msg.set_avatar(post_json_obj["avatar"].asString());
+    }
+
+    msg.set_attach_data(attach_data.GetBuffer(), attach_data.GetLength());
+    CImPdu pdu;
+    pdu.SetPBMsg(&msg);
+    pdu.SetServiceId(IM::BaseDefine::SID_LOGIN);
+    pdu.SetCommandId(IM::BaseDefine::CID_LOGIN_RES_REGISTER);
+    pConn->SendPdu(&pdu);
 
 }
 
