@@ -380,7 +380,7 @@ void CHttpQuery::_QueyRegister(const string& strAppKey, Json::Value &post_json_o
     CImPdu pdu;
     pdu.SetPBMsg(&msg);
     pdu.SetServiceId(IM::BaseDefine::SID_LOGIN);
-    pdu.SetCommandId(IM::BaseDefine::CID_LOGIN_RES_REGISTER);
+    pdu.SetCommandId(IM::BaseDefine::CID_LOGIN_REQ_REGISTER);
     pConn->SendPdu(&pdu);
 
 }
