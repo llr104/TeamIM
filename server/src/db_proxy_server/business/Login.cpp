@@ -193,7 +193,6 @@ void doRegister(CImPdu* pPdu, uint32_t conn_uuid)
     pUser->set_password(cUser.password());
     pUser->set_salt(cUser.salt());
     msgResp.set_result_code(nRet);
-    msgResp.set_result_string("");
   
     pPduResp->SetPBMsg(&msgResp);
     pPduResp->SetSeqNum(pPdu->GetSeqNum());

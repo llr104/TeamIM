@@ -218,6 +218,9 @@ void CDBServConn::HandlePdu(CImPdu* pPdu)
         case CID_GROUP_CHANGE_MEMBER_RESPONSE:
             _HandleChangeMemberRsp(pPdu);
             break;
+        case CID_LOGIN_RES_REGISTER:
+            _HandleRegisterRsp(pPdu);
+            break; 
         default:
             log("db server, wrong cmd id=%d", pPdu->GetCommandId());
 	}
@@ -319,6 +322,28 @@ void CDBServConn::_HandleChangeMemberRsp(CImPdu *pPdu)
             pRouteConn->SendPdu(&pdu);
         }
     }
+}
+
+void CDBServConn::_HandleRegisterRsp(CImPdu *pPdu)
+{
+    log("_HandleRegisterRsp ----");
+    IM::Login::IMMsgServRsp msg;
+    CHECK_PB_PARSE_MSG(msg.ParseFromArray(pPdu->GetBodyData(), pPdu->GetBodyLength()));
+    
+    CDbAttachData attach_data((uchar_t*)msg.attach_data().c_str(), msg.attach_data().length());
+    uint32_t http_handle = attach_data.GetHandle();
+    CHttpConn* pHttpConn = FindHttpConnByHandle(http_handle);
+    if(!pHttpConn)
+    {
+        log("no http connection.");
+        return;
+    }
+
+    uint32_t result = msg.result_code();
+    string result_string = msg.result_string();
+    char* response_buf = PackSendResult(HTTP_ERROR_CHANGE_MEMBER, result_string.c_str());;
+    pHttpConn->Send(response_buf, (uint32_t)strlen(response_buf));
+    pHttpConn->Close();
 }
     
 };

@@ -34,6 +34,8 @@ private:
 	void _HandleStopReceivePacket(CImPdu* pPdu);
     void _HandleCreateGroupRsp(CImPdu* pPdu);
     void _HandleChangeMemberRsp(CImPdu* pPdu);
+	void _HandleRegisterRsp(CImPdu *pPdu);
+
 private:
 	bool 		m_bOpen;
 	uint32_t	m_serv_idx;
