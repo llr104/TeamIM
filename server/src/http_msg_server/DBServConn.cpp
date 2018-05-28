@@ -342,9 +342,11 @@ void CDBServConn::_HandleRegisterRsp(CImPdu *pPdu)
 
     uint32_t result = msg.result_code();
     string result_string = msg.result_string();
-    char* response_buf = PackSendResult(HTTP_ERROR_CHANGE_MEMBER, result_string.c_str());;
+    char* response_buf = PackSendResult(result, result_string.c_str());;
     pHttpConn->Send(response_buf, (uint32_t)strlen(response_buf));
     pHttpConn->Close();
+
+    log("_HandleRegisterRsp end：%s",response_buf);
 }
     
 };
