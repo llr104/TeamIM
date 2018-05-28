@@ -153,6 +153,9 @@ void doRegister(CImPdu* pPdu, uint32_t conn_uuid)
     log("doRegister-----------");
     CImPdu* pPduResp = new CImPdu;
     IM::Login::IMRegisterReq msg;
+    IM::Login::IMRegisterRsp msgResp;
+    IM::BaseDefine::UserInfo cUser;
+    int32_t nRet = 0;
     if(msg.ParseFromArray(pPdu->GetBodyData(), pPdu->GetBodyLength()))
     {
         string strDomain = msg.user_name();
@@ -160,15 +163,44 @@ void doRegister(CImPdu* pPdu, uint32_t conn_uuid)
         int32_t sex = msg.sex();
         string strAvatar = msg.avatar();
         string strNick = msg.nickname();
-
-        IM::BaseDefine::UserInfo cUser;
-        if(g_loginStrategy.doRegister(strDomain,strPass,strNick,sex,strAvatar,cUser) == 0){
+        nRet = g_loginStrategy.doRegister(strDomain,strPass,strNick,sex,strAvatar,cUser);
+        if(nRet == 0){
             log("doRegister----------- success");
+            msgResp.set_result_string("注册成功");
         }else{
             log("doRegister----------- fail");
+            msgResp.set_result_string("注册失败");
         }
-
+    }else{
+        nRet = -1;
     }
+
+    /*
+    回应登录服
+    */
+    IM::BaseDefine::UserInfo* pUser = msgResp.mutable_user_info();
+    pUser->set_user_id(cUser.user_id());
+    pUser->set_user_gender(cUser.user_gender());
+    pUser->set_department_id(cUser.department_id());
+    pUser->set_user_nick_name(cUser.user_nick_name());
+    pUser->set_user_domain(cUser.user_domain());
+    pUser->set_avatar_url(cUser.avatar_url());
+    pUser->set_email(cUser.email());
+    pUser->set_user_tel(cUser.user_tel());
+    pUser->set_user_real_name(cUser.user_real_name());
+    pUser->set_status(0);
+    pUser->set_sign_info(cUser.sign_info());
+    pUser->set_password(cUser.password());
+    pUser->set_salt(cUser.salt());
+    msgResp.set_result_code(nRet);
+    msgResp.set_result_string("");
+  
+    pPduResp->SetPBMsg(&msgResp);
+    pPduResp->SetSeqNum(pPdu->GetSeqNum());
+    pPduResp->SetServiceId(IM::BaseDefine::SID_LOGIN);
+    pPduResp->SetCommandId(IM::BaseDefine::CID_LOGIN_RES_REGISTER);
+    CProxyConn::AddResponsePdu(conn_uuid, pPduResp);
+
 }
 
 };

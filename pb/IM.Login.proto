@@ -121,3 +121,12 @@ message IMRegisterReq{
 	optional bytes attach_data = 20;
 }
 
+message IMRegisterRsp{
+	//cmd id:	0x0111
+	required string user_name = 1;
+	required uint32 result_code = 2;
+	optional string result_string = 3;
+	optional IM.BaseDefine.UserInfo user_info = 4;
+	optional bytes attach_data = 20;
+}
+
