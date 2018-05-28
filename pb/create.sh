@@ -13,3 +13,7 @@ mkdir -p $DST_DIR/java
 #PYTHON
 mkdir -p $DST_DIR/python
 ./protoc -I=$SRC_DIR --python_out=$DST_DIR/python/ $SRC_DIR/*.proto
+
+#JavaScript
+mkdir -p $DST_DIR/js
+./protoc -I=$SRC_DIR  --js_out=$DST_DIR/js/ $SRC_DIR/*.proto
