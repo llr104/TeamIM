@@ -16,6 +16,7 @@
 #include "IM.Message.pb.h"
 #include "IM.Buddy.pb.h"
 #include "IM.Server.pb.h"
+#include "IM.Login.pb.h"
 #include "IM.SwitchService.pb.h"
 #include "IM.Group.pb.h"
 #include <list>
@@ -327,7 +328,7 @@ void CDBServConn::_HandleChangeMemberRsp(CImPdu *pPdu)
 void CDBServConn::_HandleRegisterRsp(CImPdu *pPdu)
 {
     log("_HandleRegisterRsp ----");
-    IM::Login::IMMsgServRsp msg;
+    IM::Login::IMRegisterRsp msg;
     CHECK_PB_PARSE_MSG(msg.ParseFromArray(pPdu->GetBodyData(), pPdu->GetBodyLength()));
     
     CDbAttachData attach_data((uchar_t*)msg.attach_data().c_str(), msg.attach_data().length());
