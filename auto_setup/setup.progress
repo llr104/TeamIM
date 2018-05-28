@@ -1,0 +1,12 @@
+redis start
+redis success
+mariadb start
+mariadb success
+nginx start
+nginx success
+php start
+php success
+im_web start
+im_web start
+im_web success
+im_server start
