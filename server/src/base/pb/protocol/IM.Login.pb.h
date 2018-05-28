@@ -50,6 +50,7 @@ class IMPushShieldRsp;
 class IMQueryPushShieldReq;
 class IMQueryPushShieldRsp;
 class IMRegisterReq;
+class IMRegisterRsp;
 
 // ===================================================================
 
@@ -1888,6 +1889,154 @@ class IMRegisterReq : public ::google::protobuf::MessageLite {
 
   void InitAsDefaultInstance();
   static IMRegisterReq* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class IMRegisterRsp : public ::google::protobuf::MessageLite {
+ public:
+  IMRegisterRsp();
+  virtual ~IMRegisterRsp();
+
+  IMRegisterRsp(const IMRegisterRsp& from);
+
+  inline IMRegisterRsp& operator=(const IMRegisterRsp& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::std::string& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::std::string* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const IMRegisterRsp& default_instance();
+
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  // Returns the internal default instance pointer. This function can
+  // return NULL thus should not be used by the user. This is intended
+  // for Protobuf internal code. Please use default_instance() declared
+  // above instead.
+  static inline const IMRegisterRsp* internal_default_instance() {
+    return default_instance_;
+  }
+  #endif
+
+  void Swap(IMRegisterRsp* other);
+
+  // implements Message ----------------------------------------------
+
+  IMRegisterRsp* New() const;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from);
+  void CopyFrom(const IMRegisterRsp& from);
+  void MergeFrom(const IMRegisterRsp& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  void DiscardUnknownFields();
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::std::string GetTypeName() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string user_name = 1;
+  inline bool has_user_name() const;
+  inline void clear_user_name();
+  static const int kUserNameFieldNumber = 1;
+  inline const ::std::string& user_name() const;
+  inline void set_user_name(const ::std::string& value);
+  inline void set_user_name(const char* value);
+  inline void set_user_name(const char* value, size_t size);
+  inline ::std::string* mutable_user_name();
+  inline ::std::string* release_user_name();
+  inline void set_allocated_user_name(::std::string* user_name);
+
+  // required uint32 result_code = 2;
+  inline bool has_result_code() const;
+  inline void clear_result_code();
+  static const int kResultCodeFieldNumber = 2;
+  inline ::google::protobuf::uint32 result_code() const;
+  inline void set_result_code(::google::protobuf::uint32 value);
+
+  // optional string result_string = 3;
+  inline bool has_result_string() const;
+  inline void clear_result_string();
+  static const int kResultStringFieldNumber = 3;
+  inline const ::std::string& result_string() const;
+  inline void set_result_string(const ::std::string& value);
+  inline void set_result_string(const char* value);
+  inline void set_result_string(const char* value, size_t size);
+  inline ::std::string* mutable_result_string();
+  inline ::std::string* release_result_string();
+  inline void set_allocated_result_string(::std::string* result_string);
+
+  // optional .IM.BaseDefine.UserInfo user_info = 4;
+  inline bool has_user_info() const;
+  inline void clear_user_info();
+  static const int kUserInfoFieldNumber = 4;
+  inline const ::IM::BaseDefine::UserInfo& user_info() const;
+  inline ::IM::BaseDefine::UserInfo* mutable_user_info();
+  inline ::IM::BaseDefine::UserInfo* release_user_info();
+  inline void set_allocated_user_info(::IM::BaseDefine::UserInfo* user_info);
+
+  // optional bytes attach_data = 20;
+  inline bool has_attach_data() const;
+  inline void clear_attach_data();
+  static const int kAttachDataFieldNumber = 20;
+  inline const ::std::string& attach_data() const;
+  inline void set_attach_data(const ::std::string& value);
+  inline void set_attach_data(const char* value);
+  inline void set_attach_data(const void* value, size_t size);
+  inline ::std::string* mutable_attach_data();
+  inline ::std::string* release_attach_data();
+  inline void set_allocated_attach_data(::std::string* attach_data);
+
+  // @@protoc_insertion_point(class_scope:IM.Login.IMRegisterRsp)
+ private:
+  inline void set_has_user_name();
+  inline void clear_has_user_name();
+  inline void set_has_result_code();
+  inline void clear_has_result_code();
+  inline void set_has_result_string();
+  inline void clear_has_result_string();
+  inline void set_has_user_info();
+  inline void clear_has_user_info();
+  inline void set_has_attach_data();
+  inline void clear_has_attach_data();
+
+  ::std::string _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* user_name_;
+  ::std::string* result_string_;
+  ::IM::BaseDefine::UserInfo* user_info_;
+  ::std::string* attach_data_;
+  ::google::protobuf::uint32 result_code_;
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  friend void  protobuf_AddDesc_IM_2eLogin_2eproto_impl();
+  #else
+  friend void  protobuf_AddDesc_IM_2eLogin_2eproto();
+  #endif
+  friend void protobuf_AssignDesc_IM_2eLogin_2eproto();
+  friend void protobuf_ShutdownFile_IM_2eLogin_2eproto();
+
+  void InitAsDefaultInstance();
+  static IMRegisterRsp* default_instance_;
 };
 // ===================================================================
 
@@ -3998,6 +4147,307 @@ inline void IMRegisterReq::set_allocated_attach_data(::std::string* attach_data)
     attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:IM.Login.IMRegisterReq.attach_data)
+}
+
+// -------------------------------------------------------------------
+
+// IMRegisterRsp
+
+// required string user_name = 1;
+inline bool IMRegisterRsp::has_user_name() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void IMRegisterRsp::set_has_user_name() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void IMRegisterRsp::clear_has_user_name() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void IMRegisterRsp::clear_user_name() {
+  if (user_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    user_name_->clear();
+  }
+  clear_has_user_name();
+}
+inline const ::std::string& IMRegisterRsp::user_name() const {
+  // @@protoc_insertion_point(field_get:IM.Login.IMRegisterRsp.user_name)
+  return *user_name_;
+}
+inline void IMRegisterRsp::set_user_name(const ::std::string& value) {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    user_name_ = new ::std::string;
+  }
+  user_name_->assign(value);
+  // @@protoc_insertion_point(field_set:IM.Login.IMRegisterRsp.user_name)
+}
+inline void IMRegisterRsp::set_user_name(const char* value) {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    user_name_ = new ::std::string;
+  }
+  user_name_->assign(value);
+  // @@protoc_insertion_point(field_set_char:IM.Login.IMRegisterRsp.user_name)
+}
+inline void IMRegisterRsp::set_user_name(const char* value, size_t size) {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    user_name_ = new ::std::string;
+  }
+  user_name_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:IM.Login.IMRegisterRsp.user_name)
+}
+inline ::std::string* IMRegisterRsp::mutable_user_name() {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    user_name_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:IM.Login.IMRegisterRsp.user_name)
+  return user_name_;
+}
+inline ::std::string* IMRegisterRsp::release_user_name() {
+  clear_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = user_name_;
+    user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void IMRegisterRsp::set_allocated_user_name(::std::string* user_name) {
+  if (user_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete user_name_;
+  }
+  if (user_name) {
+    set_has_user_name();
+    user_name_ = user_name;
+  } else {
+    clear_has_user_name();
+    user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:IM.Login.IMRegisterRsp.user_name)
+}
+
+// required uint32 result_code = 2;
+inline bool IMRegisterRsp::has_result_code() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void IMRegisterRsp::set_has_result_code() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void IMRegisterRsp::clear_has_result_code() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void IMRegisterRsp::clear_result_code() {
+  result_code_ = 0u;
+  clear_has_result_code();
+}
+inline ::google::protobuf::uint32 IMRegisterRsp::result_code() const {
+  // @@protoc_insertion_point(field_get:IM.Login.IMRegisterRsp.result_code)
+  return result_code_;
+}
+inline void IMRegisterRsp::set_result_code(::google::protobuf::uint32 value) {
+  set_has_result_code();
+  result_code_ = value;
+  // @@protoc_insertion_point(field_set:IM.Login.IMRegisterRsp.result_code)
+}
+
+// optional string result_string = 3;
+inline bool IMRegisterRsp::has_result_string() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void IMRegisterRsp::set_has_result_string() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void IMRegisterRsp::clear_has_result_string() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void IMRegisterRsp::clear_result_string() {
+  if (result_string_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    result_string_->clear();
+  }
+  clear_has_result_string();
+}
+inline const ::std::string& IMRegisterRsp::result_string() const {
+  // @@protoc_insertion_point(field_get:IM.Login.IMRegisterRsp.result_string)
+  return *result_string_;
+}
+inline void IMRegisterRsp::set_result_string(const ::std::string& value) {
+  set_has_result_string();
+  if (result_string_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    result_string_ = new ::std::string;
+  }
+  result_string_->assign(value);
+  // @@protoc_insertion_point(field_set:IM.Login.IMRegisterRsp.result_string)
+}
+inline void IMRegisterRsp::set_result_string(const char* value) {
+  set_has_result_string();
+  if (result_string_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    result_string_ = new ::std::string;
+  }
+  result_string_->assign(value);
+  // @@protoc_insertion_point(field_set_char:IM.Login.IMRegisterRsp.result_string)
+}
+inline void IMRegisterRsp::set_result_string(const char* value, size_t size) {
+  set_has_result_string();
+  if (result_string_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    result_string_ = new ::std::string;
+  }
+  result_string_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:IM.Login.IMRegisterRsp.result_string)
+}
+inline ::std::string* IMRegisterRsp::mutable_result_string() {
+  set_has_result_string();
+  if (result_string_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    result_string_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:IM.Login.IMRegisterRsp.result_string)
+  return result_string_;
+}
+inline ::std::string* IMRegisterRsp::release_result_string() {
+  clear_has_result_string();
+  if (result_string_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = result_string_;
+    result_string_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void IMRegisterRsp::set_allocated_result_string(::std::string* result_string) {
+  if (result_string_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete result_string_;
+  }
+  if (result_string) {
+    set_has_result_string();
+    result_string_ = result_string;
+  } else {
+    clear_has_result_string();
+    result_string_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:IM.Login.IMRegisterRsp.result_string)
+}
+
+// optional .IM.BaseDefine.UserInfo user_info = 4;
+inline bool IMRegisterRsp::has_user_info() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void IMRegisterRsp::set_has_user_info() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void IMRegisterRsp::clear_has_user_info() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void IMRegisterRsp::clear_user_info() {
+  if (user_info_ != NULL) user_info_->::IM::BaseDefine::UserInfo::Clear();
+  clear_has_user_info();
+}
+inline const ::IM::BaseDefine::UserInfo& IMRegisterRsp::user_info() const {
+  // @@protoc_insertion_point(field_get:IM.Login.IMRegisterRsp.user_info)
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  return user_info_ != NULL ? *user_info_ : *default_instance().user_info_;
+#else
+  return user_info_ != NULL ? *user_info_ : *default_instance_->user_info_;
+#endif
+}
+inline ::IM::BaseDefine::UserInfo* IMRegisterRsp::mutable_user_info() {
+  set_has_user_info();
+  if (user_info_ == NULL) user_info_ = new ::IM::BaseDefine::UserInfo;
+  // @@protoc_insertion_point(field_mutable:IM.Login.IMRegisterRsp.user_info)
+  return user_info_;
+}
+inline ::IM::BaseDefine::UserInfo* IMRegisterRsp::release_user_info() {
+  clear_has_user_info();
+  ::IM::BaseDefine::UserInfo* temp = user_info_;
+  user_info_ = NULL;
+  return temp;
+}
+inline void IMRegisterRsp::set_allocated_user_info(::IM::BaseDefine::UserInfo* user_info) {
+  delete user_info_;
+  user_info_ = user_info;
+  if (user_info) {
+    set_has_user_info();
+  } else {
+    clear_has_user_info();
+  }
+  // @@protoc_insertion_point(field_set_allocated:IM.Login.IMRegisterRsp.user_info)
+}
+
+// optional bytes attach_data = 20;
+inline bool IMRegisterRsp::has_attach_data() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void IMRegisterRsp::set_has_attach_data() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void IMRegisterRsp::clear_has_attach_data() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void IMRegisterRsp::clear_attach_data() {
+  if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_->clear();
+  }
+  clear_has_attach_data();
+}
+inline const ::std::string& IMRegisterRsp::attach_data() const {
+  // @@protoc_insertion_point(field_get:IM.Login.IMRegisterRsp.attach_data)
+  return *attach_data_;
+}
+inline void IMRegisterRsp::set_attach_data(const ::std::string& value) {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  attach_data_->assign(value);
+  // @@protoc_insertion_point(field_set:IM.Login.IMRegisterRsp.attach_data)
+}
+inline void IMRegisterRsp::set_attach_data(const char* value) {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  attach_data_->assign(value);
+  // @@protoc_insertion_point(field_set_char:IM.Login.IMRegisterRsp.attach_data)
+}
+inline void IMRegisterRsp::set_attach_data(const void* value, size_t size) {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  attach_data_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:IM.Login.IMRegisterRsp.attach_data)
+}
+inline ::std::string* IMRegisterRsp::mutable_attach_data() {
+  set_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    attach_data_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:IM.Login.IMRegisterRsp.attach_data)
+  return attach_data_;
+}
+inline ::std::string* IMRegisterRsp::release_attach_data() {
+  clear_has_attach_data();
+  if (attach_data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = attach_data_;
+    attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void IMRegisterRsp::set_allocated_attach_data(::std::string* attach_data) {
+  if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete attach_data_;
+  }
+  if (attach_data) {
+    set_has_attach_data();
+    attach_data_ = attach_data;
+  } else {
+    clear_has_attach_data();
+    attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:IM.Login.IMRegisterRsp.attach_data)
 }
 
 

@@ -19,7 +19,7 @@ import IM.BaseDefine_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='IM.Login.proto',
   package='IM.Login',
-  serialized_pb=_b('\n\x0eIM.Login.proto\x12\x08IM.Login\x1a\x13IM.BaseDefine.proto\"\x0e\n\x0cIMMsgServReq\"q\n\x0cIMMsgServRsp\x12.\n\x0bresult_code\x18\x01 \x02(\x0e\x32\x19.IM.BaseDefine.ResultType\x12\x10\n\x08prior_ip\x18\x02 \x01(\t\x12\x11\n\tbackip_ip\x18\x03 \x01(\t\x12\x0c\n\x04port\x18\x04 \x01(\r\"\xad\x01\n\nIMLoginReq\x12\x11\n\tuser_name\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\x12\x32\n\ronline_status\x18\x03 \x02(\x0e\x32\x1b.IM.BaseDefine.UserStatType\x12.\n\x0b\x63lient_type\x18\x04 \x02(\x0e\x32\x19.IM.BaseDefine.ClientType\x12\x16\n\x0e\x63lient_version\x18\x05 \x01(\t\"\xc8\x01\n\nIMLoginRes\x12\x13\n\x0bserver_time\x18\x01 \x02(\r\x12.\n\x0bresult_code\x18\x02 \x02(\x0e\x32\x19.IM.BaseDefine.ResultType\x12\x15\n\rresult_string\x18\x03 \x01(\t\x12\x32\n\ronline_status\x18\x04 \x01(\x0e\x32\x1b.IM.BaseDefine.UserStatType\x12*\n\tuser_info\x18\x05 \x01(\x0b\x32\x17.IM.BaseDefine.UserInfo\"\r\n\x0bIMLogoutReq\"\"\n\x0bIMLogoutRsp\x12\x13\n\x0bresult_code\x18\x01 \x02(\r\"Q\n\nIMKickUser\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x32\n\x0bkick_reason\x18\x02 \x02(\x0e\x32\x1d.IM.BaseDefine.KickReasonType\"~\n\x10IMDeviceTokenReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x14\n\x0c\x64\x65vice_token\x18\x02 \x02(\t\x12.\n\x0b\x63lient_type\x18\x03 \x01(\x0e\x32\x19.IM.BaseDefine.ClientType\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"8\n\x10IMDeviceTokenRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"$\n\x11IMKickPCClientReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\"9\n\x11IMKickPCClientRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\"N\n\x0fIMPushShieldReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x15\n\rshield_status\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"c\n\x0fIMPushShieldRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x15\n\rshield_status\x18\x03 \x01(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"<\n\x14IMQueryPushShieldReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"h\n\x14IMQueryPushShieldRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x15\n\rshield_status\x18\x03 \x01(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"x\n\rIMRegisterReq\x12\x11\n\tuser_name\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\x12\x10\n\x08nickname\x18\x03 \x02(\t\x12\x0b\n\x03sex\x18\x04 \x01(\r\x12\x0e\n\x06\x61vatar\x18\x05 \x01(\t\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\x42\x1b\n\x17\x63om.mogujie.tt.protobufH\x03')
+  serialized_pb=_b('\n\x0eIM.Login.proto\x12\x08IM.Login\x1a\x13IM.BaseDefine.proto\"\x0e\n\x0cIMMsgServReq\"q\n\x0cIMMsgServRsp\x12.\n\x0bresult_code\x18\x01 \x02(\x0e\x32\x19.IM.BaseDefine.ResultType\x12\x10\n\x08prior_ip\x18\x02 \x01(\t\x12\x11\n\tbackip_ip\x18\x03 \x01(\t\x12\x0c\n\x04port\x18\x04 \x01(\r\"\xad\x01\n\nIMLoginReq\x12\x11\n\tuser_name\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\x12\x32\n\ronline_status\x18\x03 \x02(\x0e\x32\x1b.IM.BaseDefine.UserStatType\x12.\n\x0b\x63lient_type\x18\x04 \x02(\x0e\x32\x19.IM.BaseDefine.ClientType\x12\x16\n\x0e\x63lient_version\x18\x05 \x01(\t\"\xc8\x01\n\nIMLoginRes\x12\x13\n\x0bserver_time\x18\x01 \x02(\r\x12.\n\x0bresult_code\x18\x02 \x02(\x0e\x32\x19.IM.BaseDefine.ResultType\x12\x15\n\rresult_string\x18\x03 \x01(\t\x12\x32\n\ronline_status\x18\x04 \x01(\x0e\x32\x1b.IM.BaseDefine.UserStatType\x12*\n\tuser_info\x18\x05 \x01(\x0b\x32\x17.IM.BaseDefine.UserInfo\"\r\n\x0bIMLogoutReq\"\"\n\x0bIMLogoutRsp\x12\x13\n\x0bresult_code\x18\x01 \x02(\r\"Q\n\nIMKickUser\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x32\n\x0bkick_reason\x18\x02 \x02(\x0e\x32\x1d.IM.BaseDefine.KickReasonType\"~\n\x10IMDeviceTokenReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x14\n\x0c\x64\x65vice_token\x18\x02 \x02(\t\x12.\n\x0b\x63lient_type\x18\x03 \x01(\x0e\x32\x19.IM.BaseDefine.ClientType\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"8\n\x10IMDeviceTokenRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"$\n\x11IMKickPCClientReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\"9\n\x11IMKickPCClientRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\"N\n\x0fIMPushShieldReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x15\n\rshield_status\x18\x02 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"c\n\x0fIMPushShieldRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x15\n\rshield_status\x18\x03 \x01(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"<\n\x14IMQueryPushShieldReq\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"h\n\x14IMQueryPushShieldRsp\x12\x0f\n\x07user_id\x18\x01 \x02(\r\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x15\n\rshield_status\x18\x03 \x01(\r\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"x\n\rIMRegisterReq\x12\x11\n\tuser_name\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\x12\x10\n\x08nickname\x18\x03 \x02(\t\x12\x0b\n\x03sex\x18\x04 \x01(\r\x12\x0e\n\x06\x61vatar\x18\x05 \x01(\t\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\"\x8f\x01\n\rIMRegisterRsp\x12\x11\n\tuser_name\x18\x01 \x02(\t\x12\x13\n\x0bresult_code\x18\x02 \x02(\r\x12\x15\n\rresult_string\x18\x03 \x01(\t\x12*\n\tuser_info\x18\x04 \x01(\x0b\x32\x17.IM.BaseDefine.UserInfo\x12\x13\n\x0b\x61ttach_data\x18\x14 \x01(\x0c\x42\x1b\n\x17\x63om.mogujie.tt.protobufH\x03')
   ,
   dependencies=[IM.BaseDefine_pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -709,6 +709,64 @@ _IMREGISTERREQ = _descriptor.Descriptor(
   serialized_end=1445,
 )
 
+
+_IMREGISTERRSP = _descriptor.Descriptor(
+  name='IMRegisterRsp',
+  full_name='IM.Login.IMRegisterRsp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_name', full_name='IM.Login.IMRegisterRsp.user_name', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='result_code', full_name='IM.Login.IMRegisterRsp.result_code', index=1,
+      number=2, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='result_string', full_name='IM.Login.IMRegisterRsp.result_string', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='user_info', full_name='IM.Login.IMRegisterRsp.user_info', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='attach_data', full_name='IM.Login.IMRegisterRsp.attach_data', index=4,
+      number=20, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1448,
+  serialized_end=1591,
+)
+
 _IMMSGSERVRSP.fields_by_name['result_code'].enum_type = IM.BaseDefine_pb2._RESULTTYPE
 _IMLOGINREQ.fields_by_name['online_status'].enum_type = IM.BaseDefine_pb2._USERSTATTYPE
 _IMLOGINREQ.fields_by_name['client_type'].enum_type = IM.BaseDefine_pb2._CLIENTTYPE
@@ -717,6 +775,7 @@ _IMLOGINRES.fields_by_name['online_status'].enum_type = IM.BaseDefine_pb2._USERS
 _IMLOGINRES.fields_by_name['user_info'].message_type = IM.BaseDefine_pb2._USERINFO
 _IMKICKUSER.fields_by_name['kick_reason'].enum_type = IM.BaseDefine_pb2._KICKREASONTYPE
 _IMDEVICETOKENREQ.fields_by_name['client_type'].enum_type = IM.BaseDefine_pb2._CLIENTTYPE
+_IMREGISTERRSP.fields_by_name['user_info'].message_type = IM.BaseDefine_pb2._USERINFO
 DESCRIPTOR.message_types_by_name['IMMsgServReq'] = _IMMSGSERVREQ
 DESCRIPTOR.message_types_by_name['IMMsgServRsp'] = _IMMSGSERVRSP
 DESCRIPTOR.message_types_by_name['IMLoginReq'] = _IMLOGINREQ
@@ -733,6 +792,7 @@ DESCRIPTOR.message_types_by_name['IMPushShieldRsp'] = _IMPUSHSHIELDRSP
 DESCRIPTOR.message_types_by_name['IMQueryPushShieldReq'] = _IMQUERYPUSHSHIELDREQ
 DESCRIPTOR.message_types_by_name['IMQueryPushShieldRsp'] = _IMQUERYPUSHSHIELDRSP
 DESCRIPTOR.message_types_by_name['IMRegisterReq'] = _IMREGISTERREQ
+DESCRIPTOR.message_types_by_name['IMRegisterRsp'] = _IMREGISTERRSP
 
 IMMsgServReq = _reflection.GeneratedProtocolMessageType('IMMsgServReq', (_message.Message,), dict(
   DESCRIPTOR = _IMMSGSERVREQ,
@@ -845,6 +905,13 @@ IMRegisterReq = _reflection.GeneratedProtocolMessageType('IMRegisterReq', (_mess
   # @@protoc_insertion_point(class_scope:IM.Login.IMRegisterReq)
   ))
 _sym_db.RegisterMessage(IMRegisterReq)
+
+IMRegisterRsp = _reflection.GeneratedProtocolMessageType('IMRegisterRsp', (_message.Message,), dict(
+  DESCRIPTOR = _IMREGISTERRSP,
+  __module__ = 'IM.Login_pb2'
+  # @@protoc_insertion_point(class_scope:IM.Login.IMRegisterRsp)
+  ))
+_sym_db.RegisterMessage(IMRegisterRsp)
 
 
 DESCRIPTOR.has_options = True

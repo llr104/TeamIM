@@ -259,13 +259,21 @@ public final class IMBaseDefine {
      */
     CID_LOGIN_RES_QUERY_PUSH_SHIELD(14, 271),
     /**
-     * <code>CID_LOGIN_RES_REGISTER = 272;</code>
+     * <code>CID_LOGIN_REQ_REGISTER = 272;</code>
      *
      * <pre>
-     *注册
+     *请求注册
      * </pre>
      */
-    CID_LOGIN_RES_REGISTER(15, 272),
+    CID_LOGIN_REQ_REGISTER(15, 272),
+    /**
+     * <code>CID_LOGIN_RES_REGISTER = 273;</code>
+     *
+     * <pre>
+     *注册回应
+     * </pre>
+     */
+    CID_LOGIN_RES_REGISTER(16, 273),
     ;
 
     /**
@@ -366,13 +374,21 @@ public final class IMBaseDefine {
      */
     public static final int CID_LOGIN_RES_QUERY_PUSH_SHIELD_VALUE = 271;
     /**
-     * <code>CID_LOGIN_RES_REGISTER = 272;</code>
+     * <code>CID_LOGIN_REQ_REGISTER = 272;</code>
      *
      * <pre>
-     *注册
+     *请求注册
      * </pre>
      */
-    public static final int CID_LOGIN_RES_REGISTER_VALUE = 272;
+    public static final int CID_LOGIN_REQ_REGISTER_VALUE = 272;
+    /**
+     * <code>CID_LOGIN_RES_REGISTER = 273;</code>
+     *
+     * <pre>
+     *注册回应
+     * </pre>
+     */
+    public static final int CID_LOGIN_RES_REGISTER_VALUE = 273;
 
 
     public final int getNumber() { return value; }
@@ -394,7 +410,8 @@ public final class IMBaseDefine {
         case 269: return CID_LOGIN_RES_PUSH_SHIELD;
         case 270: return CID_LOGIN_REQ_QUERY_PUSH_SHIELD;
         case 271: return CID_LOGIN_RES_QUERY_PUSH_SHIELD;
-        case 272: return CID_LOGIN_RES_REGISTER;
+        case 272: return CID_LOGIN_REQ_REGISTER;
+        case 273: return CID_LOGIN_RES_REGISTER;
         default: return null;
       }
     }

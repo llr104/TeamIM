@@ -33,6 +33,7 @@ void protobuf_ShutdownFile_IM_2eLogin_2eproto() {
   delete IMQueryPushShieldReq::default_instance_;
   delete IMQueryPushShieldRsp::default_instance_;
   delete IMRegisterReq::default_instance_;
+  delete IMRegisterRsp::default_instance_;
 }
 
 #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
@@ -64,6 +65,7 @@ void protobuf_AddDesc_IM_2eLogin_2eproto() {
   IMQueryPushShieldReq::default_instance_ = new IMQueryPushShieldReq();
   IMQueryPushShieldRsp::default_instance_ = new IMQueryPushShieldRsp();
   IMRegisterReq::default_instance_ = new IMRegisterReq();
+  IMRegisterRsp::default_instance_ = new IMRegisterRsp();
   IMMsgServReq::default_instance_->InitAsDefaultInstance();
   IMMsgServRsp::default_instance_->InitAsDefaultInstance();
   IMLoginReq::default_instance_->InitAsDefaultInstance();
@@ -80,6 +82,7 @@ void protobuf_AddDesc_IM_2eLogin_2eproto() {
   IMQueryPushShieldReq::default_instance_->InitAsDefaultInstance();
   IMQueryPushShieldRsp::default_instance_->InitAsDefaultInstance();
   IMRegisterReq::default_instance_->InitAsDefaultInstance();
+  IMRegisterRsp::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_IM_2eLogin_2eproto);
 }
 
@@ -4404,6 +4407,366 @@ void IMRegisterReq::Swap(IMRegisterReq* other) {
 
 ::std::string IMRegisterReq::GetTypeName() const {
   return "IM.Login.IMRegisterReq";
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int IMRegisterRsp::kUserNameFieldNumber;
+const int IMRegisterRsp::kResultCodeFieldNumber;
+const int IMRegisterRsp::kResultStringFieldNumber;
+const int IMRegisterRsp::kUserInfoFieldNumber;
+const int IMRegisterRsp::kAttachDataFieldNumber;
+#endif  // !_MSC_VER
+
+IMRegisterRsp::IMRegisterRsp()
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:IM.Login.IMRegisterRsp)
+}
+
+void IMRegisterRsp::InitAsDefaultInstance() {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  user_info_ = const_cast< ::IM::BaseDefine::UserInfo*>(
+      ::IM::BaseDefine::UserInfo::internal_default_instance());
+#else
+  user_info_ = const_cast< ::IM::BaseDefine::UserInfo*>(&::IM::BaseDefine::UserInfo::default_instance());
+#endif
+}
+
+IMRegisterRsp::IMRegisterRsp(const IMRegisterRsp& from)
+  : ::google::protobuf::MessageLite() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:IM.Login.IMRegisterRsp)
+}
+
+void IMRegisterRsp::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  result_code_ = 0u;
+  result_string_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  user_info_ = NULL;
+  attach_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+IMRegisterRsp::~IMRegisterRsp() {
+  // @@protoc_insertion_point(destructor:IM.Login.IMRegisterRsp)
+  SharedDtor();
+}
+
+void IMRegisterRsp::SharedDtor() {
+  if (user_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete user_name_;
+  }
+  if (result_string_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete result_string_;
+  }
+  if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete attach_data_;
+  }
+  #ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  if (this != &default_instance()) {
+  #else
+  if (this != default_instance_) {
+  #endif
+    delete user_info_;
+  }
+}
+
+void IMRegisterRsp::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const IMRegisterRsp& IMRegisterRsp::default_instance() {
+#ifdef GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+  protobuf_AddDesc_IM_2eLogin_2eproto();
+#else
+  if (default_instance_ == NULL) protobuf_AddDesc_IM_2eLogin_2eproto();
+#endif
+  return *default_instance_;
+}
+
+IMRegisterRsp* IMRegisterRsp::default_instance_ = NULL;
+
+IMRegisterRsp* IMRegisterRsp::New() const {
+  return new IMRegisterRsp;
+}
+
+void IMRegisterRsp::Clear() {
+  if (_has_bits_[0 / 32] & 31) {
+    if (has_user_name()) {
+      if (user_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        user_name_->clear();
+      }
+    }
+    result_code_ = 0u;
+    if (has_result_string()) {
+      if (result_string_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        result_string_->clear();
+      }
+    }
+    if (has_user_info()) {
+      if (user_info_ != NULL) user_info_->::IM::BaseDefine::UserInfo::Clear();
+    }
+    if (has_attach_data()) {
+      if (attach_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        attach_data_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->clear();
+}
+
+bool IMRegisterRsp::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::io::StringOutputStream unknown_fields_string(
+      mutable_unknown_fields());
+  ::google::protobuf::io::CodedOutputStream unknown_fields_stream(
+      &unknown_fields_string);
+  // @@protoc_insertion_point(parse_start:IM.Login.IMRegisterRsp)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(16383);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string user_name = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_user_name()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_result_code;
+        break;
+      }
+
+      // required uint32 result_code = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_result_code:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &result_code_)));
+          set_has_result_code();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_result_string;
+        break;
+      }
+
+      // optional string result_string = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_result_string:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_result_string()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_user_info;
+        break;
+      }
+
+      // optional .IM.BaseDefine.UserInfo user_info = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_user_info:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_user_info()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(162)) goto parse_attach_data;
+        break;
+      }
+
+      // optional bytes attach_data = 20;
+      case 20: {
+        if (tag == 162) {
+         parse_attach_data:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_attach_data()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(
+            input, tag, &unknown_fields_stream));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:IM.Login.IMRegisterRsp)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:IM.Login.IMRegisterRsp)
+  return false;
+#undef DO_
+}
+
+void IMRegisterRsp::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:IM.Login.IMRegisterRsp)
+  // required string user_name = 1;
+  if (has_user_name()) {
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->user_name(), output);
+  }
+
+  // required uint32 result_code = 2;
+  if (has_result_code()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->result_code(), output);
+  }
+
+  // optional string result_string = 3;
+  if (has_result_string()) {
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->result_string(), output);
+  }
+
+  // optional .IM.BaseDefine.UserInfo user_info = 4;
+  if (has_user_info()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessage(
+      4, this->user_info(), output);
+  }
+
+  // optional bytes attach_data = 20;
+  if (has_attach_data()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      20, this->attach_data(), output);
+  }
+
+  output->WriteRaw(unknown_fields().data(),
+                   unknown_fields().size());
+  // @@protoc_insertion_point(serialize_end:IM.Login.IMRegisterRsp)
+}
+
+int IMRegisterRsp::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string user_name = 1;
+    if (has_user_name()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->user_name());
+    }
+
+    // required uint32 result_code = 2;
+    if (has_result_code()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->result_code());
+    }
+
+    // optional string result_string = 3;
+    if (has_result_string()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->result_string());
+    }
+
+    // optional .IM.BaseDefine.UserInfo user_info = 4;
+    if (has_user_info()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->user_info());
+    }
+
+    // optional bytes attach_data = 20;
+    if (has_attach_data()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::BytesSize(
+          this->attach_data());
+    }
+
+  }
+  total_size += unknown_fields().size();
+
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void IMRegisterRsp::CheckTypeAndMergeFrom(
+    const ::google::protobuf::MessageLite& from) {
+  MergeFrom(*::google::protobuf::down_cast<const IMRegisterRsp*>(&from));
+}
+
+void IMRegisterRsp::MergeFrom(const IMRegisterRsp& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_user_name()) {
+      set_user_name(from.user_name());
+    }
+    if (from.has_result_code()) {
+      set_result_code(from.result_code());
+    }
+    if (from.has_result_string()) {
+      set_result_string(from.result_string());
+    }
+    if (from.has_user_info()) {
+      mutable_user_info()->::IM::BaseDefine::UserInfo::MergeFrom(from.user_info());
+    }
+    if (from.has_attach_data()) {
+      set_attach_data(from.attach_data());
+    }
+  }
+  mutable_unknown_fields()->append(from.unknown_fields());
+}
+
+void IMRegisterRsp::CopyFrom(const IMRegisterRsp& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool IMRegisterRsp::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  if (has_user_info()) {
+    if (!this->user_info().IsInitialized()) return false;
+  }
+  return true;
+}
+
+void IMRegisterRsp::Swap(IMRegisterRsp* other) {
+  if (other != this) {
+    std::swap(user_name_, other->user_name_);
+    std::swap(result_code_, other->result_code_);
+    std::swap(result_string_, other->result_string_);
+    std::swap(user_info_, other->user_info_);
+    std::swap(attach_data_, other->attach_data_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.swap(other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::std::string IMRegisterRsp::GetTypeName() const {
+  return "IM.Login.IMRegisterRsp";
 }
 
 

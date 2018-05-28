@@ -127,6 +127,7 @@ bool LoginCmdID_IsValid(int value) {
     case 270:
     case 271:
     case 272:
+    case 273:
       return true;
     default:
       return false;
