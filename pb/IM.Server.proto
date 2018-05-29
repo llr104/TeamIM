@@ -1,3 +1,4 @@
+syntax = "proto3";
 package IM.Server;
 import "IM.BaseDefine.proto";
 option optimize_for = LITE_RUNTIME;

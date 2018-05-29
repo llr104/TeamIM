@@ -1,3 +1,4 @@
+syntax = "proto3";
 package IM.SwitchService;
 option java_package = "com.mogujie.tt.protobuf";
 //option java_outer_classname = "MOGUJIEIMMessage";
