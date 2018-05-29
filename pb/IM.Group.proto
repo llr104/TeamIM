@@ -37,7 +37,7 @@ message IMGroupInfoListRsp{
 message IMGroupCreateReq{
 	//cmd id:			0x0405
 	 uint32 user_id = 1;
-	 IM.BaseDefine.GroupType group_type = 2 [default = GROUP_TYPE_TMP];		//默认是创建临时群，且客户端只能创建临时群
+	 IM.BaseDefine.GroupType group_type = 2;
 	 string group_name = 3;
 	 string group_avatar = 4;
 	repeated uint32 member_id_list = 5;
