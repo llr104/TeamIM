@@ -242,119 +242,119 @@ enum DepartmentStatusType{
 }
 
 message IpAddr{
-	required string ip = 1;
-	required uint32 port = 2;
+	 string ip = 1;
+	 uint32 port = 2;
 }
 
 message UserInfo{
-	required uint32 user_id = 1;
-	required uint32 user_gender = 2; 	//// 用户性别,男：1 女：2 人妖/外星人：0
-	required string user_nick_name = 3;	//绰号
-	required string avatar_url = 4;
-	required uint32 department_id = 5;
-	required string email = 6;
-	required string user_real_name = 7;	//真名
-	required string user_tel = 8;
-	required string user_domain = 9;	//用户名拼音
-    required uint32 status = 10;        //0:在职  1. 试用期 2. 正式 3. 离职 4.实习,  client端需要对“离职”进行不展示
-	optional string password = 11;
-	optional string salt = 12;
-    optional string sign_info = 13;
+	 uint32 user_id = 1;
+	 uint32 user_gender = 2; 	//// 用户性别,男：1 女：2 人妖/外星人：0
+	 string user_nick_name = 3;	//绰号
+	 string avatar_url = 4;
+	 uint32 department_id = 5;
+	 string email = 6;
+	 string user_real_name = 7;	//真名
+	 string user_tel = 8;
+	 string user_domain = 9;	//用户名拼音
+     uint32 status = 10;        //0:在职  1. 试用期 2. 正式 3. 离职 4.实习,  client端需要对“离职”进行不展示
+	 string password = 11;
+	 string salt = 12;
+     string sign_info = 13;
 
 }
 
 message ContactSessionInfo{
-	required uint32 session_id = 1;
-	required SessionType session_type = 2;
-    required SessionStatusType session_status = 3;
-	required uint32 updated_time = 4;
-	required uint32 latest_msg_id = 5;
-	required bytes latest_msg_data = 6;
-    required MsgType latest_msg_type = 7;
-    required uint32 latest_msg_from_user_id = 8;
+	 uint32 session_id = 1;
+	 SessionType session_type = 2;
+     SessionStatusType session_status = 3;
+	 uint32 updated_time = 4;
+	 uint32 latest_msg_id = 5;
+	 bytes latest_msg_data = 6;
+     MsgType latest_msg_type = 7;
+     uint32 latest_msg_from_user_id = 8;
 }
 
 message UserStat{
-	required uint32 user_id = 1;
-	required UserStatType status = 2;
+	 uint32 user_id = 1;
+	 UserStatType status = 2;
 }
 
 message ServerUserStat{
-	required uint32 user_id = 1;
-	required UserStatType status = 2;
-	required ClientType client_type = 3;
+	 uint32 user_id = 1;
+	 UserStatType status = 2;
+	 ClientType client_type = 3;
 }
 
 message UnreadInfo{
-	required uint32 session_id = 1;
-	required SessionType session_type = 2;
-	required uint32 unread_cnt = 3;
-	required uint32 latest_msg_id = 4;
-	required bytes latest_msg_data = 5;
-    required MsgType latest_msg_type = 6;
-    required uint32 latest_msg_from_user_id = 7;        //发送得用户id
+	 uint32 session_id = 1;
+	 SessionType session_type = 2;
+	 uint32 unread_cnt = 3;
+	 uint32 latest_msg_id = 4;
+	 bytes latest_msg_data = 5;
+     MsgType latest_msg_type = 6;
+     uint32 latest_msg_from_user_id = 7;        //发送得用户id
 }
 
 message MsgInfo{
-	required uint32 msg_id = 1;
-	required uint32 from_session_id = 2;   //发送的用户id
-	required uint32 create_time = 3;
-	required MsgType msg_type = 4;
-	required bytes msg_data = 5;
+	 uint32 msg_id = 1;
+	 uint32 from_session_id = 2;   //发送的用户id
+	 uint32 create_time = 3;
+	 MsgType msg_type = 4;
+	 bytes msg_data = 5;
 }
 
 message GroupVersionInfo{
-	required uint32 group_id = 1;
-	required uint32 version = 2;
+	 uint32 group_id = 1;
+	 uint32 version = 2;
 	
 }
 
 message GroupInfo{
-	required uint32 group_id = 1;
-	required uint32 version = 2;
-	required string group_name = 3;
-	required string group_avatar = 4;
-	required uint32 group_creator_id = 5;
-	required GroupType group_type = 6;
-	required uint32 shield_status = 7;		//1: shield  0: not shield 
+	 uint32 group_id = 1;
+	 uint32 version = 2;
+	 string group_name = 3;
+	 string group_avatar = 4;
+	 uint32 group_creator_id = 5;
+	 GroupType group_type = 6;
+	 uint32 shield_status = 7;		//1: shield  0: not shield 
 	repeated uint32 group_member_list = 8;
 }
 
 message UserTokenInfo{
-    required uint32 user_id = 1;
-	required ClientType user_type = 2;
-	required string token = 3;
-	required uint32 push_count = 4;
-	required uint32 push_type = 5;			//1: 正常推送  	2:无打扰式推送
+     uint32 user_id = 1;
+	 ClientType user_type = 2;
+	 string token = 3;
+	 uint32 push_count = 4;
+	 uint32 push_type = 5;			//1: 正常推送  	2:无打扰式推送
 }
 
 message PushResult{
-	required string user_token = 1;
-	required uint32 result_code = 2;
+	 string user_token = 1;
+	 uint32 result_code = 2;
 }
 
 message ShieldStatus{
-	required uint32 user_id = 1;		
-	required uint32 group_id = 2;	
-	required uint32 shield_status = 3;		//1: shield  0: not shield 
+	 uint32 user_id = 1;		
+	 uint32 group_id = 2;	
+	 uint32 shield_status = 3;		//1: shield  0: not shield 
 }
 
 message OfflineFileInfo{
-    required uint32 from_user_id = 1;
-    required string task_id = 2;
-    required string file_name = 3;
-    required uint32 file_size = 4;
+     uint32 from_user_id = 1;
+     string task_id = 2;
+     string file_name = 3;
+     uint32 file_size = 4;
 }
 
 message DepartInfo{
-	required uint32 dept_id = 1;
-	required uint32 priority = 2;
-	required string dept_name = 3;
-    required uint32 parent_dept_id = 4;
-    required DepartmentStatusType dept_status = 5;
+	 uint32 dept_id = 1;
+	 uint32 priority = 2;
+	 string dept_name = 3;
+     uint32 parent_dept_id = 4;
+     DepartmentStatusType dept_status = 5;
 }
 
 message PushShieldStatus{
-    required uint32 user_id = 1;
-    required uint32 shield_status = 2;		//1: shield  0: not shield
+     uint32 user_id = 1;
+     uint32 shield_status = 2;		//1: shield  0: not shield
 }
