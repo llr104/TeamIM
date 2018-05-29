@@ -243,9 +243,8 @@ void CDBServConn::_HandleCreateGroupRsp(CImPdu *pPdu)
     string group_name = msg.group_name();
     uint32_t result_code = msg.result_code();
     uint32_t group_id = 0;
-    if (msg.has_group_id()) {
-        group_id = msg.group_id();
-    }
+    group_id = msg.group_id();
+    
     CDbAttachData attach_data((uchar_t*)msg.attach_data().c_str(), msg.attach_data().length());
     uint32_t http_handle = attach_data.GetHandle();
     CHttpConn* pHttpConn = FindHttpConnByHandle(http_handle);
