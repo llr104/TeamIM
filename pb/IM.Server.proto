@@ -32,14 +32,14 @@ message IMValidateRsp{
 //db_proxy
 message IMGetDeviceTokenReq{
 	//cmd id:	0x0705
-	repeated uint32 user_id = 1;
+	 uint32 [] user_id = 1;
 	 bytes attach_data = 20;
 }
 
 //db_proxy
 message IMGetDeviceTokenRsp{
 	//cmd id:	0x0706
-	repeated IM.BaseDefine.UserTokenInfo user_token_info = 1;
+	 IM.BaseDefine.UserTokenInfo [] user_token_info = 1;
 	 bytes attach_data = 20;
 }
 
@@ -50,7 +50,7 @@ message IMRoleSet{
 
 message IMOnlineUserInfo{
 	//cmd id:	0x0708
-	repeated IM.BaseDefine.ServerUserStat user_stat_list = 1;
+	 IM.BaseDefine.ServerUserStat [] user_stat_list = 1;
 }
 
 message IMMsgServInfo{
@@ -93,25 +93,25 @@ message IMPushToUserReq{
 	//cmd id:	0x070f
 	 string flash = 1;
 	 string data = 2;
-	repeated IM.BaseDefine.UserTokenInfo user_token_list = 3;
+	 IM.BaseDefine.UserTokenInfo [] user_token_list = 3;
 }
 
 message IMPushToUserRsp{
 	//cmd id:	0x0710
-	repeated IM.BaseDefine.PushResult push_result_list = 1;
+	 IM.BaseDefine.PushResult [] push_result_list = 1;
 }
 
 message IMGroupGetShieldReq{
 	//cmd id:			0x0711
 	 uint32 group_id = 1;
-	repeated uint32 user_id = 2;
+	 uint32 [] user_id = 2;
 	 bytes attach_data = 20;
 }
 
 message IMGroupGetShieldRsp{
 	//cmd id: 			0x0712
 	 uint32 group_id = 1;
-	repeated IM.BaseDefine.ShieldStatus shield_status_list = 2;
+	 IM.BaseDefine.ShieldStatus [] shield_status_list = 2;
 	 bytes attach_data = 20;
 }
 
@@ -144,5 +144,5 @@ message IMFileServerIPReq{
 
 message IMFileServerIPRsp{
 	//cmd id:			0x0718
-	repeated IM.BaseDefine.IpAddr ip_addr_list = 1;
+	 IM.BaseDefine.IpAddr [] ip_addr_list = 1;
 }

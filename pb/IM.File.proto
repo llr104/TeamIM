@@ -59,7 +59,7 @@ message IMFileRsp{
 	 uint32 to_user_id = 3;
 	 string file_name = 4;
 	 string task_id = 5;
-	repeated IM.BaseDefine.IpAddr ip_addr_list = 6;
+	 IM.BaseDefine.IpAddr [] ip_addr_list = 6;
 	 IM.BaseDefine.TransferFileType trans_mode = 7;
 }
 
@@ -70,7 +70,7 @@ message IMFileNotify{
 	 string file_name = 3;
 	 uint32 file_size = 4;
 	 string task_id = 5;
-	repeated IM.BaseDefine.IpAddr ip_addr_list = 6;
+	 IM.BaseDefine.IpAddr [] ip_addr_list = 6;
 	 IM.BaseDefine.TransferFileType trans_mode = 7;
 	 uint32 offline_ready = 8;				//1:True 0:False
 }
@@ -84,8 +84,8 @@ message IMFileHasOfflineReq{
 message IMFileHasOfflineRsp{
 	//cmd id:	0x050a
 	 uint32 user_id = 1;
-	repeated IM.BaseDefine.OfflineFileInfo offline_file_list = 2;
-	repeated IM.BaseDefine.IpAddr ip_addr_list = 3;
+	 IM.BaseDefine.OfflineFileInfo [] offline_file_list = 2;
+	 IM.BaseDefine.IpAddr [] ip_addr_list = 3;
 	 bytes attach_data = 20;
 }
 

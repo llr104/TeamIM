@@ -335,7 +335,7 @@ message GroupInfo{
 	 uint32 group_creator_id = 5;
 	 GroupType group_type = 6;
 	 uint32 shield_status = 7;		//1: shield  0: not shield 
-	repeated uint32 group_member_list = 8;
+	 uint32 [] group_member_list = 8;
 }
 
 message UserTokenInfo{
