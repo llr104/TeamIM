@@ -219,7 +219,6 @@ enum TransferFileType{
 }
 
 enum ClientFileState{
-	CLIENT_FILE_BEGIN                       = 0x00;
     CLIENT_FILE_PEER_READY  = 0x00;
     CLIENT_FILE_CANCEL      = 0x01;
     CLIENT_FILE_REFUSE      = 0x02;
