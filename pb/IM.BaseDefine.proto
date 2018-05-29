@@ -19,7 +19,7 @@ enum ServiceID{
 
 // command id for login
 enum LoginCmdID{
-    CID_BEGIN                       = 0x00;
+    CID_LOGIN_BEGIN                       = 0x00;
     CID_LOGIN_REQ_MSGSERVER         = 0x0101; 	//
     CID_LOGIN_RES_MSGSERVER         = 0x0102;	//
     CID_LOGIN_REQ_USERLOGIN         = 0x0103;	//
@@ -41,7 +41,7 @@ enum LoginCmdID{
 
 // command id for buddy list
 enum BuddyListCmdID{
-	CID_BEGIN                       = 0x00;
+	CID_BUDDY_BEGIN                       = 0x00;
     CID_BUDDY_LIST_RECENT_CONTACT_SESSION_REQUEST       = 0x0201;
     CID_BUDDY_LIST_RECENT_CONTACT_SESSION_RESPONSE      = 0x0202;
     CID_BUDDY_LIST_STATUS_NOTIFY                        = 0x0203; //
@@ -67,7 +67,7 @@ enum BuddyListCmdID{
 
 // command id for msg
 enum MessageCmdID{
-	CID_BEGIN                       = 0x00;
+	CID_MSG_BEGIN                       = 0x00;
     CID_MSG_DATA					= 0x0301;	//
     CID_MSG_DATA_ACK				= 0x0302; 	//
     CID_MSG_READ_ACK				= 0x0303; 	//
@@ -86,7 +86,7 @@ enum MessageCmdID{
 
 // command id for group message
 enum GroupCmdID{
-	CID_BEGIN                       = 0x00;
+	CID_GROUP_BEGIN                       = 0x00;
     CID_GROUP_NORMAL_LIST_REQUEST			= 0x0401;
     CID_GROUP_NORMAL_LIST_RESPONSE			= 0x0402;
     CID_GROUP_INFO_REQUEST          		= 0x0403;
@@ -101,7 +101,7 @@ enum GroupCmdID{
 }
 
 enum FileCmdID{
-	CID_BEGIN                       = 0x00;
+	CID_FILE_BEGIN                       = 0x00;
     CID_FILE_LOGIN_REQ              = 0x0501; // sender/receiver need to login to
     CID_FILE_LOGIN_RES              = 0x0502; // login success or failure
     CID_FILE_STATE                  = 0x0503;
@@ -119,12 +119,12 @@ enum FileCmdID{
 
 // command id for switch service
 enum SwitchServiceCmdID{
-	CID_BEGIN                       = 0x00;
+	CID_SWITCH_BEGIN                       = 0x00;
     CID_SWITCH_P2P_CMD	= 0x0601;	//
 }
 
 enum OtherCmdID{
-	CID_BEGIN                       = 0x00;
+	CID_OTHER_BEGIN                       = 0x00;
     CID_OTHER_HEARTBEAT                     = 0x0701;
     CID_OTHER_STOP_RECV_PACKET              = 0x0702;
     CID_OTHER_VALIDATE_REQ                  = 0x0703;
@@ -161,31 +161,31 @@ enum ResultType{
 }
 
 enum KickReasonType{
-	CID_BEGIN                       = 0x00;
+	KICK_BEGIN                       = 0x00;
 	KICK_REASON_DUPLICATE_USER = 1;
     KICK_REASON_MOBILE_KICK    = 2;
 }
 
 enum OnlineListType{
-	CID_BEGIN                       = 0x00;
+	ONLINE_BEGIN                       = 0x00;
 	ONLINE_LIST_TYPE_FRIEND_LIST = 1;
 }
 
 enum UserStatType{
-	CID_BEGIN                       = 0x00;
+	USER_STATUS_BEGIN                       = 0x00;
 	USER_STATUS_ONLINE 	= 1;
 	USER_STATUS_OFFLINE	= 2;
 	USER_STATUS_LEAVE	= 3;
 
 }
 enum SessionType{
-	CID_BEGIN                       = 0x00;
+	SESSION_TYPE_BEGIN                       = 0x00;
 	SESSION_TYPE_SINGLE = 1;          	//单个用户会话
 	SESSION_TYPE_GROUP = 2;          	//群会话
 }
 
 enum MsgType{
-	CID_BEGIN                       = 0x00;
+	MSG_TYPE_BEGIN                       = 0x00;
 	MSG_TYPE_SINGLE_TEXT    = 0x01;
     MSG_TYPE_SINGLE_AUDIO   = 0x02;
     MSG_TYPE_GROUP_TEXT     = 0x11;
@@ -193,7 +193,7 @@ enum MsgType{
 }
 
 enum ClientType{
-	CID_BEGIN                       = 0x00;
+	CLIENT_BEGIN                       = 0x00;
 	CLIENT_TYPE_WINDOWS     = 0x01;
     CLIENT_TYPE_MAC         = 0x02;
     CLIENT_TYPE_IOS         = 0x11;
@@ -201,25 +201,25 @@ enum ClientType{
 }
 
 enum GroupType{
-	CID_BEGIN                       = 0x00;
+	GROUP_TYPE_BEGIN                       = 0x00;
 	GROUP_TYPE_NORMAL		= 0x01;
 	GROUP_TYPE_TMP			= 0x02;
 }
 
 enum GroupModifyType{
-	CID_BEGIN                       = 0x00;
+	GROUP_MODIFY_BEGIN                       = 0x00;
 	GROUP_MODIFY_TYPE_ADD	= 0x01;
 	GROUP_MODIFY_TYPE_DEL	= 0x02;
 }
 
 enum TransferFileType{
-	CID_BEGIN                       = 0x00;
+	FILE_TYPE_BEGIN                       = 0x00;
     FILE_TYPE_ONLINE        = 0x01;
     FILE_TYPE_OFFLINE       = 0x02;
 }
 
 enum ClientFileState{
-	CID_BEGIN                       = 0x00;
+	CLIENT_FILE_BEGIN                       = 0x00;
     CLIENT_FILE_PEER_READY  = 0x00;
     CLIENT_FILE_CANCEL      = 0x01;
     CLIENT_FILE_REFUSE      = 0x02;
@@ -227,7 +227,7 @@ enum ClientFileState{
 }
 
 enum ClientFileRole{
-	CID_BEGIN                       = 0x00;
+	CLIENT_REALTIME_BEGIN                       = 0x00;
     CLIENT_REALTIME_SENDER  = 0x01;
     CLIENT_REALTIME_RECVER  = 0x02;
     CLIENT_OFFLINE_UPLOAD   = 0x03;
