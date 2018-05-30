@@ -1,0 +1,30 @@
+/**
+ * @fileoverview
+ * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
+ * @public
+ */
+// GENERATED CODE -- DO NOT EDIT!
+
+goog.provide('proto.IM.BaseDefine.FileServerError');
+
+/**
+ * @enum {number}
+ */
+proto.IM.BaseDefine.FileServerError = {
+  FILE_SERVER_ERRNO_OK: 0,
+  FILE_SERVER_ERRNO_CREATE_TASK_ID_ERROR: 1,
+  FILE_SERVER_ERRNO_CREATE_TASK_ERROR: 2,
+  FILE_SERVER_ERRNO_LOGIN_INVALID_TOKEN: 3,
+  FILE_SERVER_ERRNO_INVALID_USER_FOR_TASK: 4,
+  FILE_SERVER_ERRNO_PULL_DATA_WITH_INVALID_TASK_ID: 5,
+  FILE_SERVER_ERRNO_PULL_DATA_ILLIEAGE_USER: 6,
+  FILE_SERVER_ERRNO_PULL_DATA_MKDIR_ERROR: 7,
+  FILE_SERVER_ERRNO_PULL_DATA_OPEN_FILE_ERROR: 8,
+  FILE_SERVER_ERRNO_PULL_DATA_READ_FILE_HEADER_ERROR: 9,
+  FILE_SERVER_ERRNO_PULL_DATA_ALLOC_MEM_ERROR: 10,
+  FILE_SERVER_ERRNO_PULL_DATA_SEEK_OFFSET_ERROR: 11,
+  FILE_SERVER_ERRNO_PULL_DATA_FINISHED: 12
+};
+
