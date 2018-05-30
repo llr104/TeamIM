@@ -17,7 +17,7 @@ message IMRecentContactSessionReq{
 message IMRecentContactSessionRsp{
 	//cmd id:		0x0202
 	 uint32 user_id = 1;
-	 IM.BaseDefine.ContactSessionInfo [] contact_session_list = 2;
+	 repeated IM.BaseDefine.ContactSessionInfo contact_session_list = 2;
 	 bytes attach_data = 20;
 }
 
@@ -29,14 +29,14 @@ message IMUserStatNotify{
 message IMUsersInfoReq{
 	//cmd id:		0x0204
 	 uint32 user_id = 1;
-	 uint32 [] user_id_list = 2;
+	 repeated uint32 user_id_list = 2;
 	 bytes attach_data = 20;
 }
 
 message IMUsersInfoRsp{
 	//cmd id:		0x0205
 	 uint32 user_id = 1;
-	 IM.BaseDefine.UserInfo [] user_info_list = 2;
+	 repeated IM.BaseDefine.UserInfo user_info_list = 2;
 	 bytes attach_data = 20;
 }
 
@@ -68,21 +68,21 @@ message IMAllUserRsp{
 	//cmd id:		0x0209
 	 uint32 user_id = 1;
 	 uint32 latest_update_time = 2;
-	 IM.BaseDefine.UserInfo [] user_list = 3;		
+	 repeated IM.BaseDefine.UserInfo user_list = 3;		
 	 bytes attach_data = 20;
 }
 
 message IMUsersStatReq{
 	//cmd id:		0x020a
 	 uint32 user_id = 1;
-	 uint32 [] user_id_list = 2;
+	 repeated uint32 user_id_list = 2;
 	 bytes attach_data = 20;
 }
 
 message IMUsersStatRsp{
 	//cmd id:		0x020b
 	 uint32 user_id = 1;
-	 IM.BaseDefine.UserStat [] user_stat_list = 2;
+	 repeated IM.BaseDefine.UserStat user_stat_list = 2;
 	 bytes attach_data = 20;
 }
 
@@ -125,7 +125,7 @@ message IMDepartmentRsp{
 	//cmd id:		0x0211
 	 uint32 user_id = 1;
 	 uint32 latest_update_time = 2;
-	 IM.BaseDefine.DepartInfo [] dept_list = 3;
+	 repeated IM.BaseDefine.DepartInfo dept_list = 3;
 	 bytes attach_data = 20;
 }
 
