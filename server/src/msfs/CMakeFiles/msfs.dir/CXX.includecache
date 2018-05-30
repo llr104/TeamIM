@@ -158,26 +158,6 @@ sys/time.h
 
 /root/TeamIM/server/src/msfs/CriticalSection.h
 
-/root/TeamIM/server/src/msfs/FileLin.cpp
-fcntl.h
--
-unistd.h
--
-string.h
--
-errno.h
--
-assert.h
--
-stdio.h
--
-sys/stat.h
--
-dirent.h
--
-FileLin.h
-/root/TeamIM/server/src/msfs/FileLin.h
-
 /root/TeamIM/server/src/msfs/FileLin.h
 Portable.h
 /root/TeamIM/server/src/msfs/Portable.h
@@ -275,12 +255,6 @@ HttpParserWrapper.h
 /root/TeamIM/server/src/msfs/HttpParserWrapper.h
 
 /root/TeamIM/server/src/msfs/Portable.h
-
-/root/TeamIM/server/src/msfs/StringUtils.cpp
-StringUtils.h
-/root/TeamIM/server/src/msfs/StringUtils.h
-string.h
--
 
 /root/TeamIM/server/src/msfs/StringUtils.h
 string
